@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "build": "env NODE_ENV=production webpack build"
+    "build": "env NODE_ENV=production webpack build -content-base build/"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,11 @@
   "devDependencies": {
     "babel-core": "^5.0.8",
     "babel-loader": "^5.0.0",
+    "css-loader": "^0.11.0",
+    "file-loader": "^0.8.1",
     "react-hot-loader": "^1.2.2",
+    "style-loader": "^0.11.0",
+    "url-loader": "^0.5.5",
     "webpack": "^1.7.2",
     "webpack-dev-server": "^1.7.0"
   },

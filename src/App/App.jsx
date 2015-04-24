@@ -2,6 +2,7 @@ import React from 'react'
 import moment from 'moment'
 import Transmit from 'react-transmit'
 import request from 'superagent-bluebird-promise'
+import './App.css';
 
 moment.locale(window.navigator.userLanguage || window.navigator.language)
 
@@ -17,9 +18,15 @@ class App extends React.Component {
     }
     render() {
         const {id, revs, onChange} = this.props;
-        var rev = revs.length ? this.state.rev : null
+        var rev = revs.length ? this.state.rev : null;
+        
+        var imgURL = require("./images/App-logo.png");
         return (
-            <div></div>
+            <div className="App">
+                APP
+                <img className="App-logo"
+                     src={imgURL}/>
+            </div>
         )
     }
 }
@@ -34,4 +41,7 @@ export default Transmit.createContainer(App, {
         }
     }
 })
+
+
+
 

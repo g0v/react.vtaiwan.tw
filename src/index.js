@@ -1,6 +1,9 @@
 import React from 'react'
-import App from './App'
+import App from './App/App.jsx'
 import request from 'superagent-bluebird-promise'
+
+import './normalize.css';
+import './index.css';
 
 var scripts = document.getElementsByTagName("script");
 var src = scripts[scripts.length - 1].getAttribute("src");
