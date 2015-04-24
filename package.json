@@ -1,0 +1,41 @@
+{
+  "name": "react.vtaiwan.tw",
+  "version": "0.0.0",
+  "description": "行政院法規線上諮詢系統 界面 2.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "env NODE_ENV=production webpack build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/g0v/react.vtaiwan.tw.git"
+  },
+  "keywords": [
+    "vtaiwan",
+    "g0v"
+  ],
+  "author": "vtaiwan.tw",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/g0v/react.vtaiwan.tw/issues"
+  },
+  "homepage": "https://github.com/g0v/react.vtaiwan.tw",
+  "devDependencies": {
+    "babel-core": "^5.0.8",
+    "babel-loader": "^5.0.0",
+    "react-hot-loader": "^1.2.2",
+    "webpack": "^1.7.2",
+    "webpack-dev-server": "^1.7.0"
+  },
+  "dependencies": {
+    "babel-core": "^5.0.8",
+    "babel-loader": "^5.0.0",
+    "bluebird": "^2.9.24",
+    "moment": "^2.9.0",
+    "react": "^0.13.1",
+    "react-style": "^0.5.2",
+    "react-transmit": "^2.5.0",
+    "superagent-bluebird-promise": "^2.0.0"
+  }
+}
