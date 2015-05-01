@@ -1,7 +1,18 @@
 .App {
-	background: lightblue;
+	background: white;
+	min-height: 100vh;
 }
-.App-logo {
-	width: 40px;
-	height: 40px;
+.App-content {
+	margin-top: 50px;
+  	padding-top: 10px;
+}
+.App-wrapper {
+	width: 100%;
+	margin: 0 auto;
+}
+@media screen and (min-width: 1000px){
+  .App-wrapper {
+    width: 1000px;
+
+  }
 }

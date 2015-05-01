@@ -2,7 +2,11 @@ import React from 'react'
 import moment from 'moment'
 import Transmit from 'react-transmit'
 import request from 'superagent-bluebird-promise'
-import './App.css';
+import './App.css'
+
+import AppBar from '../AppBar/AppBar.jsx'
+import ProposalList from '../ProposalList/ProposalList.jsx'
+
 
 moment.locale(window.navigator.userLanguage || window.navigator.language)
 
@@ -20,12 +24,14 @@ class App extends React.Component {
         const {id, revs, onChange} = this.props;
         var rev = revs.length ? this.state.rev : null;
         
-        var imgURL = require("./images/App-logo.png");
         return (
             <div className="App">
-                APP
-                <img className="App-logo"
-                     src={imgURL}/>
+                <AppBar />
+                <div className="App-content">
+                    <div className="App-wrapper">
+                        <ProposalList />
+                    </div>
+                </div>
             </div>
         )
     }

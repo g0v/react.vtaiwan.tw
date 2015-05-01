@@ -1,0 +1,73 @@
+.Stage {
+	background: #fff;
+    margin: 5px;
+    cursor: pointer;
+    color: #353736;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+    padding: 10px 10px 5px;
+    position: relative;
+}
+
+.Stage-header {
+	border-bottom: 1px solid #dcdcdc;
+  	position: relative;
+  	padding-bottom: 4px;
+}
+.Stage-title {
+	font-weight: 800;
+}
+.Stage:hover .Stage-title {
+  	color: #3F9F9B;
+ 
+}
+@media screen and (min-width: 400px){
+  	.Stage-title {
+   		font-size: 20px;
+  	}
+}
+.Stage-content {
+	line-height: 2;
+}
+.Stage-content a, .Stage-content a:visited {
+	color: #3F9F9B;
+	text-decoration: none;
+}
+.Stage-barBackground {
+    margin: 12px 0px 24px 0px;
+    position: relative;
+    background: rgb(230,230,230);
+}
+.Stage-barProgress {
+    background: rgb(63,159,155);
+    height: 8px;
+}
+
+.Stage-startDate {
+  position: absolute;
+  bottom: -24px;
+  font-size: 14px;
+  left: 0px;
+  font-weight: 700;
+  display: inline-block;
+  font-family: Lucida Console, Monaco, monospace;
+}
+.Stage-endDate {
+  display: inline-block;
+  position: absolute;
+  bottom: -24px;
+  font-size: 14px;
+  right: 0px;
+  font-weight: 700;
+  display: inline-block;
+  font-family: Lucida Console, Monaco, monospace;
+}
+.Stage-stat {
+    display: inline-block;
+    width: 30%;
+    padding: 25px 0;
+    text-align: center;
+}
+.Stage-statHighlight {
+	font-size: 20px;
+    font-weight: 800;
+}
