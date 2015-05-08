@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router"
 import moment from 'moment'
 import Transmit from 'react-transmit'
 import request from 'superagent-bluebird-promise'
@@ -93,7 +94,9 @@ class Stage extends React.Component {
         }
         
         return (
-            <div className="Stage">
+            <Link className="Stage" 
+                  to="category" 
+                  params={{proposalName:this.props.proposalName, category:data.category}}>
                 <div className="Stage-header">
                     <div className="Stage-title">{data.name}</div>    
                 </div>
@@ -106,7 +109,7 @@ class Stage extends React.Component {
                     <div className="Stage-stat">討論話題<div className="Stage-statHighlight">{topicCount}</div></div>
                     <div className="Stage-stat">意見數<div className="Stage-statHighlight">{postCount}</div></div>
                 </div>
-            </div>
+            </Link>
         )
     }
 }

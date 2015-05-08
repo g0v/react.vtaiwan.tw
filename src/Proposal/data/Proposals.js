@@ -13,6 +13,7 @@ module.exports = {
                 "name" : "草案 #1",
                 "gitbook_url": "https://g0v.github.io/crowdfunding-ref1-gitbook",
                 "discourse_url": "https://talk.vtaiwan.tw",
+                "category" : "ref1",
                 "start_date" : "March 20, 2015 00:00:00",
                 "end_date" : "April 19, 2015 23:59:59",
                 "category_num": 59  
@@ -21,6 +22,7 @@ module.exports = {
                 "name" : "建議",
                 "gitbook_url": "https://g0v.github.io/crowdfunding-spec-gitbook",
                 "discourse_url": "https://talk.vtaiwan.tw",
+                "category" : "spec",
                 "start_date" : "March 17, 2015 00:00:00",
                 "end_date" : "April 17, 2015 23:59:59",
                 "category_num": 55 
@@ -29,6 +31,7 @@ module.exports = {
                 "name" : "討論",
                 "gitbook_url": "https://g0v.github.io/crowdfunding-gitbook",
                 "discourse_url": "https://talk.vtaiwan.tw",
+                "category" : "init",
                 "start_date" : "February 1, 2015 00:00:00",
                 "end_date" : "March 13, 2015 23:59:59",
                 "category_num": 6
@@ -47,8 +50,9 @@ module.exports = {
         "stages" : [
             {
                 "name" : "定案",
-                "gitbook_url": "https://g0v.github.io/closelyheld-ref1-gitbook",
+                "gitbook_url": "https://g0v.github.io/closelyheld-act1-gitbook",
                 "discourse_url": "https://talk.vtaiwan.tw",
+                "category" : "act1",
                 "start_date" : "May 1, 2015 00:00:00",
                 "end_date" : "May 31, 2015 23:59:59",
                 "category_num": 72
@@ -59,6 +63,7 @@ module.exports = {
                 "proposer_abbr_cht":"邵慶平",
                 "gitbook_url": "https://g0v.github.io/closelyheld-ref1-gitbook",
                 "discourse_url": "https://talk.vtaiwan.tw",
+                "category" : "ref1",
                 "start_date" : "May 1, 2015 00:00:00",
                 "end_date" : "May 31, 2015 23:59:59",
                 "category_num": 36 
@@ -67,6 +72,7 @@ module.exports = {
                 "name" : "建議",
                 "gitbook_url": "https://g0v.github.io/closelyheld-spec-gitbook",
                 "discourse_url": "https://talk.vtaiwan.tw",
+                "category" : "spec",
                 "start_date" : "March 17, 2015 00:00:00",
                 "end_date" : "May 31, 2015 23:59:59",
                 "category_num": 53
@@ -75,6 +81,7 @@ module.exports = {
                 "name" : "討論",
                 "gitbook_url": "https://g0v.github.io/closelyheld-gitbook",
                 "discourse_url": "https://talk.vtaiwan.tw",
+                "category" : "init",
                 "start_date" : "February 1, 2015 00:00:00",
                 "end_date" : "March 13, 2015 23:59:59",
                 "category_num": 5
@@ -95,6 +102,7 @@ module.exports = {
                 "name" : "建議",
                 "gitbook_url": "https://g0v.github.io/etax-spec-gitbook",
                 "discourse_url": "https://talk.vtaiwan.tw",
+                "category" : "spec",
                 "start_date" : "March 17, 2015 00:00:00",
                 "end_date" : "May 31, 2015 23:59:59",
                 "category_num": 53
@@ -103,6 +111,7 @@ module.exports = {
                 "name" : "討論",
                 "gitbook_url": "https://g0v.github.io/etax-gitbook",
                 "discourse_url": "https://talk.vtaiwan.tw",
+                "category" : "init",
                 "start_date" : "February 1, 2015 00:00:00",
                 "end_date" : "March 13, 2015 23:59:59",
                 "category_num": 14
@@ -123,6 +132,7 @@ module.exports = {
                 "name" : "建議",
                 "gitbook_url": "https://g0v.github.io/distant-education-spec-gitbook",
                 "discourse_url": "https://talk.vtaiwan.tw",
+                "category" : "spec",
                 "start_date" : "May 1, 2015 00:00:00",
                 "end_date" : "May 31, 2015 23:59:59",
                 "category_num": 70
@@ -131,6 +141,7 @@ module.exports = {
                 "name" : "討論",
                 "gitbook_url": "https://g0v.github.io/distant-education-gitbook",
                 "discourse_url": "https://talk.vtaiwan.tw",
+                "category" : "init",
                 "start_date" : "March 1, 2015 00:00:00",
                 "end_date" : "April 24, 2015 23:59:59",
                 "category_num": 17
@@ -151,6 +162,7 @@ module.exports = {
                 "name" : "討論",
                 "gitbook_url": "https://g0v.github.io/telework-gitbook",
                 "discourse_url": "https://talk.vtaiwan.tw",
+                "category" : "init",
                 "start_date" : "March 1, 2015 00:00:00",
                 "end_date" : "May 31, 2015 23:59:59",
                 "category_num": 18
@@ -171,6 +183,7 @@ module.exports = {
                 "name" : "討論",
                 "gitbook_url": "https://g0v.github.io/telemedicine-gitbook",
                 "discourse_url": "https://talk.vtaiwan.tw",
+                "category" : "init",
                 "start_date" : "March 1, 2015 00:00:00",
                 "end_date" : "May 31, 2015 23:59:59",
                 "category_num": 19
@@ -191,6 +204,7 @@ module.exports = {
                 "name" : "建議",
                 "gitbook_url": "https://g0v.github.io/data-levy-spec-gitbook",
                 "discourse_url": "https://talk.vtaiwan.tw",
+                "category" : "init",
                 "start_date" : "May 1, 2015 00:00:00",
                 "end_date" : "May 31, 2015 23:59:59",
                 "category_num": 68
@@ -199,6 +213,7 @@ module.exports = {
                 "name" : "討論",
                 "gitbook_url": "https://g0v.github.io/data-levy-gitbook",
                 "discourse_url": "https://talk.vtaiwan.tw",
+                "category" : "init",
                 "start_date" : "March 1, 2015 00:00:00",
                 "end_date" : "April 24, 2015 23:59:59",
                 "category_num": 20
@@ -219,6 +234,7 @@ module.exports = {
                 "name" : "討論",
                 "gitbook_url": "https://g0v.github.io/consumer-protection-gitbook",
                 "discourse_url": "https://talk.vtaiwan.tw",
+                "category" : "init",
                 "start_date" : "March 1, 2015 00:00:00",
                 "end_date" : "May 31, 2015 23:59:59",
                 "category_num": 21
@@ -239,6 +255,7 @@ module.exports = {
                 "name" : "討論",
                 "gitbook_url": "https://g0v.github.io/personal-data-protection-gitbook",
                 "discourse_url": "https://talk.vtaiwan.tw",
+                "category" : "init",
                 "start_date" : "March 1, 2015 00:00:00",
                 "end_date" : "May 31, 2015 23:59:59",
                 "category_num": 22

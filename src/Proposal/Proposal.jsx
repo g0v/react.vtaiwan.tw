@@ -19,9 +19,9 @@ class Proposal extends React.Component {
                      key={key}>
                     <div className="Proposal-stageDate">{start_date}</div>
                     <Stage data={item}
-                           key={key}
                            gitbookURL={item.gitbook_url}
-                           categoryNum={item.category_num} />
+                           categoryNum={item.category_num}
+                           proposalName={data.title_eng} />
                 </div>
             )
         })
@@ -36,7 +36,7 @@ class Proposal extends React.Component {
                 <div className="Proposal-slides">
                     <iframe className="Proposal-iframe"
                             src={data.slides_url}
-                            frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen> </iframe> 
+                            frameBorder="0" marginWidth="0" marginHeight="0" scrolling="no" allowFullScreen> </iframe> 
                 </div>
                 <div className="Proposal-stages">{stages}</div>
             </div>

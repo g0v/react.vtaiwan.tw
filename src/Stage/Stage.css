@@ -1,20 +1,21 @@
-.Stage {
-	background: #fff;
+.Stage, .Stage:visited {
+	  background: #fff;
     margin: 5px;
     cursor: pointer;
     color: #353736;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
     padding: 10px 10px 5px;
     position: relative;
+    display: block;
 }
 
 .Stage-header {
-	border-bottom: 1px solid #dcdcdc;
+	  border-bottom: 1px solid #dcdcdc;
   	position: relative;
   	padding-bottom: 4px;
 }
 .Stage-title {
-	font-weight: 800;
+	  font-weight: 800;
 }
 .Stage:hover .Stage-title {
   	color: #3F9F9B;
