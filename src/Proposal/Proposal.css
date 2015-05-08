@@ -1,11 +1,12 @@
 .Proposal-intro {
 	background: white;
 	padding: 10px;
-	margin: 5px;	
+	margin: 5px;
+	text-align: center;	
 }
 .Proposal-title {
     font-weight: 800;
-    font-size: 20px;
+    font-size: 24px;
 }
 .Proposal-proposer {
     font-size: 12px;
@@ -13,6 +14,7 @@
     font-weight: 700;
     text-transform: uppercase;
     margin-top: 4px;
+    display: block;
 }
 .Proposal-slides {
 	margin: 0 auto;

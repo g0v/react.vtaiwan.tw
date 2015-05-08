@@ -52,7 +52,7 @@ class Stage extends React.Component {
 
         if(isDue){
             //如果已經結束，顯示「本階段已結束 x/xx - o/oo」
-            leftTimeItem = <div className="Stage-stat">本階段已結束<div className="Stage-statHighlight">{start.format('MM/DD')}-{end.format('MM/DD')}</div></div>;
+            leftTimeItem = <div className="Stage-stat">已結束<div className="Stage-statHighlight">{start.format('MM/DD')}-{end.format('MM/DD')}</div></div>;
 
         }else{
             //如果此階段還沒截止，計算剩下的天數

@@ -66,6 +66,7 @@
     width: 30%;
     padding: 25px 0;
     text-align: center;
+    vertical-align: top;
 }
 .Stage-statHighlight {
 	font-size: 20px;
