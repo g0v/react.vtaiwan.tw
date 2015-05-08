@@ -6,5 +6,16 @@
 	text-align: center;
 }
 .ProposalList-item:hover {
-    background: rgb(220,220,220);
+  background: rgb(220,220,220);
+}
+.ProposalList {
+  display: flex;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+.ProposalList-item {
+  width: 33%;
+}
+.ProposalList-item-image {
+  width: 100%;
 }
