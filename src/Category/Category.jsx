@@ -18,12 +18,12 @@ class Issue extends React.Component {
 }
 
 class Category extends React.Component {
-    constructor(props) { super(props)
-        this.state = { page: 1 }
-    }
+    static contextTypes = { router: React.PropTypes.func }
     render() {
         var data = categoryData["crowdfunding-spec"]
-        var {page} = this.state
+        var { router } = this.context
+        var base = router.getCurrentPath().replace(/\/\d+$/, '')
+        var page = Number(router.getCurrentParams().page) || 1
         var {title, content, children} = data[page - 1]
         var proposal = title.replace(/：.*/, '')
         return (
@@ -51,10 +51,10 @@ class Category extends React.Component {
 <div className="q_title">{{ title }}</div>
 <div className="ng-binding" dangerouslySetInnerHTML={{ __html: content }} />
 { (children || []).map((props) => <Issue {...props} />) }
-{ (page > 1) ? <div ng-show="currentCategory.preid" className="navigation navigation--pre ng-hide" onClick={() => this.setState({ page: page-1 })}>
+{ (page > 1) ? <div className="navigation navigation--pre ng-hide" onClick={() => router.transitionTo( base + '/' + String(page - 1) )}>
     <i className="fa fa-chevron-left"></i>
 </div> : '' }
-{ (page < data.length) ? <div ng-show="currentCategory.nextid" className="navigation navigation--next" onClick={() => this.setState({ page: page+1 })}>
+{ (page < data.length) ? <div className="navigation navigation--next" onClick={() => router.transitionTo( base + '/' + String(page + 1) )}>
     <i className="fa fa-chevron-right"></i>
 </div> : '' }
 </div>
