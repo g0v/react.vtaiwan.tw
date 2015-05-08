@@ -13,9 +13,21 @@
   max-width: 100%;
   flex-wrap: wrap;
 }
-.ProposalList-item {
-  width: 33%;
-}
 .ProposalList-item-image {
   width: 100%;
+}
+@media screen and (min-width: 1000px){
+  .ProposalList-item {
+    width: 33%;
+  }
+}
+@media screen and (max-width: 999px){
+  .ProposalList-item {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 449px){
+  .ProposalList-item {
+    width: 100%;
+  }
 }
