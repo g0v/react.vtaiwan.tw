@@ -7,6 +7,20 @@
 	z-index: 100;
 	background: white;
 }
+.AppBar-navCtrl {
+  position: absolute;
+  cursor: pointer;
+  top: 5px;
+  padding-top: 5px;
+  left: 5px;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+}
+.AppBar-navCtrl:hover {
+  background: hsla(0, 0%, 0%, 0.1);
+  border-radius: 50%;
+}
 .AppBar-siteLogo {
 	padding: 5px;
     height: 50px;

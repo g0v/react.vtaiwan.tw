@@ -6,6 +6,10 @@
 	margin-top: 50px;
   	padding-top: 10px;
 }
+.App-content.activeNavBar {
+  margin-left: 255px;
+  will-change: margin-left;
+}
 .App-wrapper {
 	width: 100%;
 	margin: 0 auto;
