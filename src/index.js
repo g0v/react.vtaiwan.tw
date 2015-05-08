@@ -3,6 +3,7 @@ import App from './App/App.jsx'
 import request from 'superagent-bluebird-promise'
 import Router, {Route} from 'react-router'
 import ProposalList from './ProposalList/ProposalList.jsx'
+import Proposal from './Proposal/Proposal.jsx'
 
 import './normalize.css'
 import './index.css'
@@ -14,7 +15,8 @@ window.__webpack_public_path__ = src.substr(0, src.lastIndexOf("/") + 1);
 
 const routes = (
   <Route handler={App} path="/">
-    <Route name="crowdfunding" handler={ProposalList} />
+    <Route name="proposals" path="proposals"              handler={ProposalList} />
+    <Route name="proposal"  path="proposal/:proposalName" handler={Proposal} />
   </Route>
 );
 
