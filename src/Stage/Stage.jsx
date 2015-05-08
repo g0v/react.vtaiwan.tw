@@ -47,7 +47,12 @@ class Stage extends React.Component {
         var isDue = (now.unix() > end.unix());
         var timeLeft = 0;
         var style = { "width" : "100%" }
+        var progressBarItem = "";
+        var leftTimeItem = "";
+
         if(isDue){
+            //如果已經結束，顯示「本階段已結束 x/xx - o/oo」
+            leftTimeItem = <div className="Stage-stat">本階段已結束<div className="Stage-statHighlight">{start.format('MM/DD')}-{end.format('MM/DD')}</div></div>;
 
         }else{
             //如果此階段還沒截止，計算剩下的天數
@@ -59,6 +64,18 @@ class Stage extends React.Component {
             var percentage = Math.round(current/total*100);
             var style = { "width" : percentage+"%" }
 
+            //還沒結束才顯示 progress bar
+            progressBarItem = (
+                <div className="Stage-barBackground">
+                    <div className="Stage-startDate">{start.format('MM/DD')}</div>
+                    <div className="Stage-endDate">{end.format('MM/DD')}</div>
+                    <div className="Stage-barProgress" 
+                         style={style}></div>
+                </div>
+                );
+            
+            //如果還沒結束，顯示「剩下天數」
+            leftTimeItem = <div className="Stage-stat">本階段還有<div className="Stage-statHighlight">{timeLeft} 天</div></div>;
         }
 
         //計算討論區的 post 數量
@@ -83,16 +100,9 @@ class Stage extends React.Component {
                 <div className="Stage-content">
                     <div dangerouslySetInnerHTML={{__html:  previewHTML }} />
                 </div>
-
-                <div className="Stage-barBackground">
-                    <div className="Stage-startDate">{start.format('MM/DD')}</div>
-                    <div className="Stage-endDate">{end.format('MM/DD')}</div>
-                    <div className="Stage-barProgress" 
-                         style={style}></div>
-                </div>
-               
+                {progressBarItem}
                 <div>
-                    <div className="Stage-stat">本階段還有<div className="Stage-statHighlight">{timeLeft} 天</div></div>
+                    {leftTimeItem}
                     <div className="Stage-stat">討論話題<div className="Stage-statHighlight">{topicCount}</div></div>
                     <div className="Stage-stat">意見數<div className="Stage-statHighlight">{postCount}</div></div>
                 </div>
