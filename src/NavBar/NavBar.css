@@ -20,6 +20,19 @@
 
 .NavBar-item {
   display: block;
+  padding: 12px;
+  height: 50px;
+  color: hsl(0, 0%, 97%);
+  background-color: hsl(180, 43%, 23%);
+  font-size: 18px;
+  font-weight: 700;
+  border-bottom: 1px solid hsl(0, 0%, 39%);
+  text-align: left;
+  cursor: pointer;
+}
+
+.NavBar-subItem {
+  display: block;
   padding: 12px 12px 12px 20px;
   min-height: 50px;
   color: hsl(0, 0%, 97%);
@@ -28,4 +41,14 @@
   text-align: left;
   cursor: pointer;
   position: relative;
+}
+.NavBar-subItemIcon {
+  background: hsl(0, 100%, 100%);
+  border-radius: 10px;
+  width: 36px;
+  height: 36px;
+  margin: -5px 10px -10px -10px;
+  vertical-align: middle;
+  border: 3px solid hsl(0, 100%, 100%);
+  padding: 0;
 }

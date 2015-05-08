@@ -1,6 +1,7 @@
 import React from 'react'
 import moment from 'moment'
 import Transmit from 'react-transmit'
+import {Link} from 'react-router'
 import './NavBar.css'
 
 moment.locale(window.navigator.userLanguage || window.navigator.language)
@@ -8,8 +9,17 @@ moment.locale(window.navigator.userLanguage || window.navigator.language)
 class NavBar extends React.Component {
 
     render() {
-        var NavList = this.props.nav_list.map(( {label}:item) => {
-            return (<a className="NavBar-item">{label}</a>);
+        var NavList = this.props.nav_list.map(( {label, type, icon, path}:item) => {
+
+            if(type === 'sub') {
+                return (
+                    <Link to={path} className="NavBar-subItem">
+                        <img className="NavBar-subItemIcon" src={require(`./images/${icon}`)} />
+                        <span className="title_cht">{label}</span>
+                    </Link>
+                );
+            }
+            return <Link to={path || '/'} className="NavBar-item">{label}</Link>;
         });
 
         return (

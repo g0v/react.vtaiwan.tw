@@ -28,7 +28,6 @@ class App extends React.Component {
         this.props.setQueryParams({ id: nextProps.id })
     }
     handleNavBar () {
-        console.log(this);
         this.setState({ showNavBar: !this.state.showNavBar });
     }
     render() {
