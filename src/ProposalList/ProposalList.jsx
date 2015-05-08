@@ -1,26 +1,29 @@
 import React from 'react'
+import { Link } from "react-router"
 import moment from 'moment'
 import Transmit from 'react-transmit'
 import './ProposalList.css'
 
-import proposalListData from './data/ProposalList'
-
-
-import Proposal from '../Proposal/Proposal.jsx'
+import listData from './data/ProposalList'
 
 moment.locale(window.navigator.userLanguage || window.navigator.language)
 
 class ProposalList extends React.Component {
 
     render() {
-        var data = proposalListData["crowdfunding"];
-        var proposal = "";
-        if(data){
-            proposal = <Proposal data={data}/>
-        }
+        
+        var proposalList = listData.list.map((item,key)=>{
+            return (
+                <Link className="ProposalList-item" 
+                      key={key}
+                      to="proposal"
+                      params={{proposalName: item.title_eng}}>{item.title_cht}</Link>
+            )
+
+        });
         return (
             <div className="ProposalList">
-                {proposal}
+                 {proposalList}
             </div>
         )
     }

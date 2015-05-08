@@ -15,8 +15,8 @@ window.__webpack_public_path__ = src.substr(0, src.lastIndexOf("/") + 1);
 
 const routes = (
   <Route handler={App} path="/">
-    <Route name="proposals" path="proposals"              handler={ProposalList} />
-    <Route name="proposal"  path="proposal/:proposalName" handler={Proposal} />
+    	<Route name="proposals" path="/"              handler={ProposalList} />
+    	<Route name="proposal"  path="/:proposalName" handler={Proposal} />
   </Route>
 );
 
