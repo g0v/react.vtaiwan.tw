@@ -22,7 +22,12 @@ class App extends React.Component {
             showNavBar: false
         }
     }
-    componentWillMount() { this.props.setQueryParams(this.props) }
+    componentWillMount() {
+        this.props.setQueryParams(this.props)
+        if( window.screen.availWidth >= 600) {
+            this.setState({ showNavBar: true });
+        }
+    }
     componentWillReceiveProps(nextProps) {
         if (nextProps.id == this.props.id) return
         this.props.setQueryParams({ id: nextProps.id })
