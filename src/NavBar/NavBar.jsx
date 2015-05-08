@@ -9,8 +9,8 @@ moment.locale(window.navigator.userLanguage || window.navigator.language)
 class NavBar extends React.Component {
 
     render() {
-        var NavList = this.props.nav_list.map(( {label, type, icon, path}:item) => {
-
+        var NavList = this.props.nav_list.map(( {label, type, icon, path, title}:item) => {
+            var styleClass = (type === 'title')? 'NavBar-item--title': 'NavBar-item';
             if(type === 'sub') {
                 return (
                     <Link to={path} className="NavBar-subItem">
@@ -19,7 +19,7 @@ class NavBar extends React.Component {
                     </Link>
                 );
             }
-            return <Link to={path || '/'} className="NavBar-item">{label}</Link>;
+            return <Link to={path || '/'} className={styleClass} >{label}</Link>;
         });
 
         return (
