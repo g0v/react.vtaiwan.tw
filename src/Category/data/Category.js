@@ -1,36 +1,148 @@
-module.exports = { "crowdfunding-spec": [
-  {
-    "title": "\u80a1\u6b0a\u5f0f\u7fa4\u52df\uff1a\u5177\u9ad4\u5efa\u8b70",
-    "heading": "h1",
-    "content": "\n<blockquote>\n<p>\u9019\u662f vTaiwan.tw \u793e\u7fa4\u53c3\u8207\u8005\u81ea 2015 \u5e74 1 \u6708 7 \u65e5\u8d77\uff0c\u7d93\u904e 66 \u5929\u7684\u8a0e\u8ad6\uff0c\u5728 <a href=\"https://g0v.hackpad.com/vTaiwan--zjiELIjtDUc\" target=\"_blank\">3 \u6708 14 \u65e5\u5de5\u4f5c\u7d44\u805a\u6703\u6642</a>\u5f59\u6574\u6210\u7684\u300c\u5be6\u52d9\u9700\u6c42\u300d\u8207\u300c\u5177\u9ad4\u5efa\u8b70\u300d\uff0c\u8b39\u4f9b\u5404\u754c\u53c3\u8003\u3002</p>\n</blockquote>\n<p>\u8457\u4f5c\u6388\u6b0a\u70ba\uff1aCC BY 4.0 vTaiwan.tw \u300c\u6578\u4f4d\u5546\u52d9\u6a21\u5f0f\u300d\u5de5\u4f5c\u7d44\u53ca\u53c3\u8207\u8005\u3002</p>\n",
-    "path": "README.md"
-  },
-  {
-    "title": "\u9700\u6c42\u8207\u5efa\u8b70",
-    "heading": "h1",
-    "content": "\n<p>\u300c\u80a1\u6b0a\u5f0f\u7fa4\u52df\u300d\u662f\u91dd\u5c0d\u672a\u4e0a\u5e02\u516c\u53f8\u4e4b\u8cc7\u91d1\u9700\u6c42\uff0c\u900f\u904e\u7db2\u8def\u63d0\u4f9b\u65b0\u7684\u7c4c\u8cc7\u65b9\u5f0f\u3002\u5be6\u52d9\u4e0a\u7684\u9700\u6c42\uff0c\u53ef\u7c21\u5217\u5982\u4e0b\uff1a</p>\n<ul>\n<li>\u61c9\u958b\u653e\u6c11\u9593\u8a2d\u7acb\u80a1\u6b0a\u7fa4\u52df\u5e73\u53f0\uff0c\u8a2d\u7acb\u8cc7\u683c\u61c9\u8f03\u73fe\u884c\u8b49\u5377\u5546\u8cc7\u683c\u5bec\u9b06\u3002</li>\n<li>\u91dd\u5c0d\u63d0\u6848\u52df\u8cc7\u8005\uff0c\u61c9\u7c21\u5316\u5176\u8cc7\u683c\u5be9\u6838\u6d41\u7a0b\u3001\u4e26\u9b06\u7d81\u5c0d\u52df\u8cc7\u984d\u5ea6\u7684\u9650\u5236\u3002</li>\n<li>\u91dd\u5c0d\u6295\u8cc7\u8005\uff0c\u61c9\u7d0d\u5165\u5c08\u696d\u6295\u8cc7\u4eba\uff0c\u4e26\u63d0\u9ad8\u5176\u6295\u8cc7\u984d\u5ea6\u3002</li>\n<li>P2P \u7db2\u8def\u4fe1\u8cb8\u3001\u6b21\u7d1a\u5e02\u5834\u5e73\u53f0\u7b49\u65b0\u578b\u614b\u7db2\u8def\u91d1\u878d\u6a21\u5f0f\uff0c\u61c9\u6301\u7e8c\u7814\u7a76\u5176\u958b\u653e\u4e4b\u53ef\u884c\u6027\u3002</li>\n</ul>\n",
-    "children": [
-      {
-        "title": "\u958b\u653e\u6c11\u9593\u80a1\u6b0a\u7fa4\u52df\u5e73\u53f0",
-        "heading": "h2",
-        "content": "\n<p>\u6ac3\u8cb7\u4e2d\u5fc3\u5df2\u65bc 2014 \u5e74\u7c4c\u8a2d\u300c<span class=\"hint\" data-hint=\"\u5275\u6ac3\u677f\u662f\u7531\u6ac3\u8cb7\u4e2d\u5fc3\u5275\u7acb\u63d0\u4f9b\u8207\u5c0f\u578b\u65b0\u5275\u7522\u696d\u7c4c\u63aa\u8cc7\u672c\u7684\u7ba1\u9053\uff0c\u5c6c\u8208\u6ac3\u5e95\u4e0b\u7684\u5ef6\u4f38\uff0c\u767b\u9304\u5275\u6ac3\u677f\u52df\u8cc7\u7684\u516c\u53f8\uff0c\u539f\u5247\u9700\u5148\u7d93\u904e\u6ac3\u8cb7\u4e2d\u5fc3\u7684\u8f14\u5c0e\uff0c\u8cc7\u672c\u984d\u96505000\u842c\u5143\u4ee5\u4e0b\u4e14\u9650\u70ba\u80a1\u4efd\u6709\u9650\u516c\u53f8\u3002\">\u5275\u6ac3\u677f</span>\u300d\u80a1\u6b0a\u5f0f\u7fa4\u52df\u5e73\u53f0\uff0c\u8f14\u5c0e\u7d93\u71df\u72c0\u6cc1\u826f\u597d\u7684\u4f01\u696d\u900f\u904e\u7db2\u8def\u7c4c\u8cc7\u3002</p>\n<p>\u4f46\u5be6\u52d9\u4e0a\uff0c<span class=\"hint\" data-hint=\"\u5275\u6ac3\u677f\u662f\u7531\u6ac3\u8cb7\u4e2d\u5fc3\u5275\u7acb\u63d0\u4f9b\u8207\u5c0f\u578b\u65b0\u5275\u7522\u696d\u7c4c\u63aa\u8cc7\u672c\u7684\u7ba1\u9053\uff0c\u5c6c\u8208\u6ac3\u5e95\u4e0b\u7684\u5ef6\u4f38\uff0c\u767b\u9304\u5275\u6ac3\u677f\u52df\u8cc7\u7684\u516c\u53f8\uff0c\u539f\u5247\u9700\u5148\u7d93\u904e\u6ac3\u8cb7\u4e2d\u5fc3\u7684\u8f14\u5c0e\uff0c\u8cc7\u672c\u984d\u96505000\u842c\u5143\u4ee5\u4e0b\u4e14\u9650\u70ba\u80a1\u4efd\u6709\u9650\u516c\u53f8\u3002\">\u5275\u6ac3\u677f</span>\u70ba\u78ba\u4fdd\u6210\u529f\u7387\uff0c\u5be9\u6838\u6848\u4ef6\u76f8\u5c0d\u56b4\u683c\uff0c\u9ad8\u98a8\u96aa\u7684\u65b0\u5275\u516c\u53f8\u8f03\u5c11\u3002</p>\n<p>\u70ba\u4f7f\u66f4\u591a\u52df\u8cc7\u8005\u8207\u521d\u65e9\u671f\u5275\u6295\u3001\u5929\u4f7f\u6295\u8cc7\u4eba\u9023\u7d50\uff0c\u6211\u5011\u7684\u5177\u9ad4\u5efa\u8b70\u662f\uff1a</p>\n<ol>\n<li>\u61c9\u4ee5<span class=\"hint\" data-hint=\"\u5275\u6ac3\u677f\u662f\u7531\u6ac3\u8cb7\u4e2d\u5fc3\u5275\u7acb\u63d0\u4f9b\u8207\u5c0f\u578b\u65b0\u5275\u7522\u696d\u7c4c\u63aa\u8cc7\u672c\u7684\u7ba1\u9053\uff0c\u5c6c\u8208\u6ac3\u5e95\u4e0b\u7684\u5ef6\u4f38\uff0c\u767b\u9304\u5275\u6ac3\u677f\u52df\u8cc7\u7684\u516c\u53f8\uff0c\u539f\u5247\u9700\u5148\u7d93\u904e\u6ac3\u8cb7\u4e2d\u5fc3\u7684\u8f14\u5c0e\uff0c\u8cc7\u672c\u984d\u96505000\u842c\u5143\u4ee5\u4e0b\u4e14\u9650\u70ba\u80a1\u4efd\u6709\u9650\u516c\u53f8\u3002\">\u5275\u6ac3\u677f</span>\u7684\u7d93\u71df\u6a21\u5f0f\u70ba\u85cd\u672c\uff0c\u7531\u4e3b\u7ba1\u6a5f\u95dc\u5f9e\u65c1\u8f14\u5c0e\uff0c\u958b\u653e\u6c11\u9593\u8a2d\u7acb\u80a1\u6b0a\u7fa4\u52df\u5e73\u53f0\u3002</li>\n<li>\u5c08\u71df\u80a1\u6b0a\u7fa4\u52df\u696d\u52d9\u4e4b\u5e73\u53f0\u696d\u8005\uff0c\u8cc7\u672c\u984d\u53ca\u4fdd\u8b49\u91d1\u9580\u6abb\u61c9\u4f4e\u65bc\u73fe\u884c\u8b49\u5238\u627f\u92b7\u3001\u7d93\u7d00\u696d\u8005\u3002</li>\n</ol>\n"
-      },
-      {
-        "title": "\u5c0d\u63d0\u6848\u52df\u8cc7\u8005\u7684\u898f\u7bc4",
-        "heading": "h2",
-        "content": "\n<p><span class=\"hint\" data-hint=\"\u900f\u904e\u7db2\u8def\u5e73\u53f0\u5411\u793e\u6703\u5927\u773e\u767c\u4f48\u8cc7\u91d1\u9700\u6c42\u4e26\u8aaa\u660e\u8cc7\u91d1\u7528\u9014\uff0c\u4e26\u85c9\u6b64\u5411\u793e\u6703\u5927\u773e\u52df\u96c6\u8cc7\u91d1\u3002\">\u7fa4\u773e\u52df\u8cc7</span>\u6709\u63d0\u9ad8\u5927\u773e\u53c3\u8207\u53ca\u8b70\u984c\u884c\u92b7\u7684\u529f\u80fd\uff0c\u56e0\u6b64\u53ef\u9810\u671f\u6703\u63d0\u6848\u7fa4\u52df\u7684\u672a\u4e0a\u5e02\u516c\u53f8\uff0c\u5c07\u5305\u62ec\u65b0\u5275\u5718\u968a\u3001\u793e\u6703\u4f01\u696d\u3001\u4ee5\u53ca\u5df2\u5177\u898f\u6a21\u7684\u672a\u4e0a\u5e02\u516c\u53f8\u3002\u6b64\u5916\uff0c\u5728\u5be6\u52d9\u4e0a\uff0c\u672c\u570b\u5718\u968a\u8a3b\u518a\u7684\u5883\u5916\u516c\u53f8\uff0c\u4e5f\u6709\u63d0\u6848\u52df\u8cc7\u7684\u9700\u6c42\u3002</p>\n<p>\u56e0\u6b64\uff0c\u6211\u5011\u7684\u5177\u9ad4\u5efa\u8b70\u662f\uff1a</p>\n<ol>\n<li>\u5c0d\u63d0\u6848\u8005\u7684\u8cc7\u672c\u984d\u4e0d\u61c9\u9650\u5236\uff0c\u4f46\u61c9\u9650\u5236\u540c\u6642\u53ea\u80fd\u5728\u55ae\u4e00\u5e73\u53f0\u4e0a\u63d0\u6848\u3002</li>\n<li>\u61c9\u5faa JOBS Act \u79c1\u52df\u67b6\u69cb\uff0c\u958b\u653e\u52df\u8cc7\u4e0a\u9650\u81f3\u4e00\u767e\u842c\u7f8e\u91d1\u4ee5\u4e0a\uff0c\u81f3\u65b0\u53f0\u5e63\u4e00\u5104\u5143\u4ea6\u5c6c\u5408\u7406\u3002</li>\n<li>\u7fa4\u52df\u7279\u5225\u80a1\u6642\uff0c\u61c9\u898f\u5b9a\u660e\u5217\u5176\u9644\u5e36\u6b0a\u5229\u3001\u7fa9\u52d9\uff0c\u53ca\u672a\u4f86\u4e0a\u5e02\u6642\u8f49\u63db\u666e\u901a\u80a1\u4e4b\u8a08\u7b97\u65b9\u5f0f\u3002</li>\n<li>\u5e0c\u671b\u5141\u8a31\u5883\u5916\u516c\u53f8\uff0c\u5728\u6eff\u8db3\u76f8\u7576\u689d\u4ef6\u6642\uff08\u4f8b\u5982\u900f\u904e\u8a2d\u7f6e\u5883\u5167\u5b50\u516c\u53f8\uff09\uff0c\u53d6\u5f97\u7fa4\u52df\u63d0\u6848\u8cc7\u683c\u3002</li>\n</ol>\n"
-      },
-      {
-        "title": "\u5c0d\u6295\u8cc7\u8005\u7684\u898f\u7bc4",
-        "heading": "h2",
-        "content": "\n<p>\u5be6\u52d9\u4e0a\u7fa4\u52df\u6295\u8cc7\u8005\uff0c\u9664\u4e86\u5929\u4f7f\u6295\u8cc7\u8005\u70ba\u81ea\u7136\u4eba\u5916\uff0c\u4e5f\u5305\u62ec\u898f\u6a21\u8f03\u5c0f\u4e4b\u6cd5\u4eba\uff0c\u4ee5\u53ca\u5c08\u696d\u7684\u6295\u8cc7\u6a5f\u69cb\u3002</p>\n<p>\u91dd\u5c0d\u591a\u6a23\u7684\u6295\u8cc7\u8005\u8eab\u4efd\uff0c\u6211\u5011\u7684\u5177\u9ad4\u5efa\u8b70\u662f\uff1a</p>\n<ol>\n<li>\u61c9\u9f13\u52f5\u5c08\u696d\u6295\u8cc7\u8005\u5728\u5e73\u53f0\u4e0a\u5177\u540d\u9818\u6295\uff0c\u4e26\u514d\u9664\u5176\u6295\u8cc7\u4e0a\u9650\u3002</li>\n<li>\u61c9\u9069\u5ea6\u653e\u5bec\u5c0f\u898f\u6a21\u6cd5\u4eba\u4e4b\u6295\u8cc7\u984d\u5ea6\uff0c\u4f8b\u5982\u8a2d\u70ba\u55ae\u6848\u65b0\u53f0\u5e63\u5341\u842c\u3001\u5e74\u5ea6\u7e3d\u984d\u65b0\u53f0\u5e63\u4e00\u767e\u842c\u5143\u3002</li>\n</ol>\n"
-      },
-      {
-        "title": "\u5176\u4ed6\u7db2\u8def\u91d1\u878d\u6a21\u5f0f",
-        "heading": "h2",
-        "content": "\n<p>\u672a\u4f86\u9664\u4e86\u958b\u653e\u80a1\u6b0a\u5f0f\u7fa4\u52df\u4e4b\u5916\uff0c\u50b5\u6b0a\u5f0f\u7db2\u8cb8\u5e73\u53f0\u3001\u6b21\u7d1a\u5e02\u5834\u4ea4\u6613\u5e73\u53f0\uff0c\u5be6\u52d9\u4e0a\u4e5f\u6709\u6cd5\u5236\u9700\u6c42\u3002</p>\n<p>\u91dd\u5c0d\u591a\u6a23\u7684\u7db2\u8def\u91d1\u878d\u884c\u70ba\uff0c\u6211\u5011\u7684\u5177\u9ad4\u5efa\u8b70\u662f\uff1a</p>\n<ol>\n<li>\u5efa\u8b70\u91d1\u7ba1\u6703\u7814\u7a76\u958b\u653e P2P \u7db2\u8def\u4fe1\u8cb8\u5e73\u53f0\u7684\u53ef\u884c\u6027\uff0c\u4e26\u76e1\u65e9\u4ea4\u4ed8\u516c\u773e\u8a0e\u8ad6\u3002</li>\n<li>\u5efa\u8b70\u91d1\u7ba1\u6703\u7814\u7a76\u958b\u653e\u6b21\u7d1a\u5e02\u5834\u7db2\u8def\u5e73\u53f0\u7684\u53ef\u884c\u6027\uff0c\u4e26\u76e1\u65e9\u4ea4\u4ed8\u516c\u773e\u8a0e\u8ad6\u3002</li>\n</ol>\n"
-      }
-    ],
-    "path": "1.md"
-  }
-] }
+module.exports = {
+    "crowdfunding":
+    {
+        "ref1" : 
+        {
+            "gitbook_url": "https://g0v.github.io/crowdfunding-ref1-gitbook",
+            "category_num": 59,
+            "proposal_cht":"群眾募資",
+            "category_cht":"草案 #1"
+        },
+        "spec" : 
+        {
+            "gitbook_url": "https://g0v.github.io/crowdfunding-spec-gitbook",
+            "category_num": 55,
+            "proposal_cht":"群眾募資",
+            "category_cht":"建議"
+        },
+        "init" : 
+        {
+            "gitbook_url": "https://g0v.github.io/crowdfunding-gitbook",
+            "category_num": 6,
+            "proposal_cht":"群眾募資",
+            "category_cht":"討論"
+        }
+    },
+    "closelyheld":
+    {
+        "act1" : 
+        {
+            "gitbook_url": "https://g0v.github.io/closelyheld-act1-gitbook",
+            "category_num": 72,
+            "proposal_cht":"閉鎖型公司",
+            "category_cht":"定案"
+        },
+        "ref1" :
+        {
+            "gitbook_url": "https://g0v.github.io/closelyheld-ref1-gitbook",
+            "category_num": 36,
+            "proposal_cht":"閉鎖型公司",
+            "category_cht":"草案 #1"
+        },
+        "spec" :
+        {
+            "gitbook_url": "https://g0v.github.io/closelyheld-spec-gitbook",
+            "category_num": 53,
+            "proposal_cht":"閉鎖型公司",
+            "category_cht":"建議"
+        },
+        "init" :
+        {
+            "gitbook_url": "https://g0v.github.io/closelyheld-gitbook",
+            "category_num": 5,
+            "proposal_cht":"閉鎖型公司",
+            "category_cht":"討論"
+        }
+    },
+    "etax":
+    {
+        "spec": 
+        {
+            "gitbook_url": "https://g0v.github.io/etax-spec-gitbook",
+            "category_num": 53,
+            "proposal_cht":"網路交易課稅",
+            "category_cht":"建議"
+        },
+        "init": 
+        {
+            "gitbook_url": "https://g0v.github.io/etax-gitbook",
+            "category_num": 14,
+            "proposal_cht":"網路交易課稅",
+            "category_cht":"討論"
+        }
+    },
+    "distant-education":
+    {
+        "spec":
+        {
+            "gitbook_url": "https://g0v.github.io/distant-education-spec-gitbook",
+            "category_num": 70,
+            "proposal_cht":"遠距教育",
+            "category_cht":"建議"
+        },
+        "init":
+        {
+            "gitbook_url": "https://g0v.github.io/distant-education-gitbook",
+            "category_num": 17,
+            "proposal_cht":"遠距教育",
+            "category_cht":"討論"
+        }
+    },
+    "telework":
+    {
+       "init" :
+        {
+            "gitbook_url": "https://g0v.github.io/telework-gitbook",
+            "category_num": 18,
+            "proposal_cht":"電傳勞動",
+            "category_cht":"討論"
+        }
+    },
+    "telemedicine":
+    {
+        "init" : 
+        {
+            "gitbook_url": "https://g0v.github.io/telemedicine-gitbook",
+            "category_num": 19,
+            "proposal_cht":"遠距健康照護",
+            "category_cht":"討論"
+        }
+    },
+    "data-levy":
+    {
+        "spec" : 
+        {
+            "gitbook_url": "https://g0v.github.io/data-levy-spec-gitbook",
+            "category_num": 68,
+            "proposal_cht":"開放資料例外收費原則",
+            "category_cht":"建議"
+        },
+        "init" :
+        {
+            "gitbook_url": "https://g0v.github.io/data-levy-gitbook",
+            "category_num": 20,
+            "proposal_cht":"開放資料例外收費原則",
+            "category_cht":"討論"
+        }
+    },
+    "consumer-protection":
+    {
+        "init" : 
+        {
+            "gitbook_url": "https://g0v.github.io/consumer-protection-gitbook",
+            "category_num": 21,
+            "proposal_cht":"零售業網路定型化契約",
+            "category_cht":"討論"
+        }
+    },
+    "personal-data-protection":
+    {
+        "init" : 
+        {
+            "gitbook_url": "https://g0v.github.io/personal-data-protection-gitbook",
+            "category_num": 22,
+            "proposal_cht":"個人資料利用與去識別化",
+            "category_cht":"討論"
+        } 
+    }
+}

@@ -205,7 +205,7 @@ module.exports = {
                 "name" : "建議",
                 "gitbook_url": "https://g0v.github.io/data-levy-spec-gitbook",
                 "discourse_url": "https://talk.vtaiwan.tw",
-                "category" : "init",
+                "category" : "spec",
                 "start_date" : "May 1, 2015 00:00:00",
                 "end_date" : "May 31, 2015 23:59:59",
                 "category_num": 68

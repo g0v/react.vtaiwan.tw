@@ -1,6 +1,7 @@
 import React from 'react'
 import moment from 'moment'
 import Transmit from 'react-transmit'
+import request from 'superagent-bluebird-promise'
 import './Category.css'
 import './lexicon.css'
 import {Link} from 'react-router'
@@ -21,50 +22,87 @@ class Issue extends React.Component {
 
 class Category extends React.Component {
     static contextTypes = { router: React.PropTypes.func }
+    componentWillMount() { 
+        //console.log(this.props.params);
+        
+        var {proposalName, category} = this.props.params;
+        var metaData = categoryData[proposalName][category];
+
+        this.props.setQueryParams({
+            gitbookURL: metaData.gitbook_url,
+            categoryNum: metaData.category_num
+        }) 
+    }
+    componentWillReceiveProps(nextProps) {
+        var {proposalName, category} = this.props.params;
+        var {nextProposalName, nextCategory} = nextProps.params;
+        
+        if(!proposalName || !nextProposalName) return;
+        if((proposalName === nextProposalName) && (category === nextCategory)){
+           return;  
+        }
+        
+        var metaData = categoryData[nextProposalName][nextCategory];
+        this.props.setQueryParams({ 
+           gitbookURL: metaData.gitbook_url,
+           categoryNum: metaData.category_num
+        })
+    }
     render() {
-        var data = categoryData["crowdfunding-spec"]
-        var { router } = this.context
-        var base = router.getCurrentPath().replace(/\/\d+$/, '')
-        var {page, proposalName, category} = router.getCurrentParams()
+        const {gitbookURL, categoryNum, gitbook, talk, onChange} = this.props;
+
+        var {page, proposalName, category} = this.props.params;
         page = Number(page) || 1
-        var {title, content, children} = data[page - 1]
-        var proposal = title.replace(/：.*/, '')
+
+        if(!gitbook || !gitbook[page - 1])
+            return (<div></div>);
+        
+        var {title, content, children} = gitbook[page - 1];
+        var {proposal_cht, category_cht} = categoryData[proposalName][category];
+        
         return (
-            <div className="Category">
-                <div id="content--proposal">
-                    <div id="focus-discussion">
-                        <div className="q_content">
-<div className="wrapper">
-<div className="q_breadcrumbs"><span className="q_breadcrumbs_link" ng-click="go('proposals', true)">主題</span> &gt; <span className="q_breadcrumbs_link ng-binding" ng-click="go(currentProposal.title_eng, true)">{{ proposal }}</span></div>
-<div className="q_title">{{ title }}</div>
-<div className="focusDiscussion_title ng-binding"><span className="prompt">討論話題：</span></div>
-<a className="mobile-only" href="https://talk.vtaiwan.tw/t/topic/" target="_blank"></a>
-<div className="l_center"><a style={{background: "#3F9F9B"}} href="https://talk.vtaiwan.tw/t/topic/" target="_blank" ng-show="focusDiscussion" className="about_item_button md-whiteframe-z1 ng-hide">展開所有話題</a></div>
-</div>
-</div>
-</div>
-</div>
-<div className="wrapper" ng-show="!focusDiscussion">
-<div className="q_content" id="q_content">
-    <img style={{width: "60px", height: "60px", position: "absolute", right: "10px"}} src="https://www.vtaiwan.tw/images/proposer/spec.png" />
-<div className="q_breadcrumbs"><span className="q_breadcrumbs_link" ng-click="go('proposals', true)">主題</span>&nbsp;&gt;&nbsp;<span className="q_breadcrumbs_link ng-binding" ng-click="go(currentProposal.title_eng, true)">
-{{ proposal
- }}
-</span></div>
-<div className="q_title">{{ title }}</div>
-<div className="ng-binding" dangerouslySetInnerHTML={{ __html: content }} />
-{ (children || []).map((props) => <Issue {...props} />) }
-{ (page > 1) ? <Link className="navigation navigation--pre ng-hide" params={{ proposalName: proposalName, category: category, page: page-1 }} to="categoryPage">
-    <i className="fa fa-chevron-left"></i>
-</Link> : '' }
-{ (page < data.length) ? <Link className="navigation navigation--next" params={{ proposalName: proposalName, category: category, page: page+1 }} to="categoryPage">
-    <i className="fa fa-chevron-right"></i>
-</Link> : '' }
-</div>
-</div>
-</div>
+            <div>
+                <img style={{width: "60px", height: "60px", position: "absolute", right: "10px"}} src="https://www.vtaiwan.tw/images/proposer/spec.png" />
+                <div className="q_breadcrumbs">
+                    
+                    <Link className="q_breadcrumbs_link"
+                          to="proposal"
+                          params={{proposalName: proposalName}}>{proposal_cht}
+                    </Link>
+                    &nbsp;&gt;&nbsp;
+                    <Link className="q_breadcrumbs_link"
+                          to="category"
+                          params={{proposalName: proposalName, category: category}}>{category_cht}
+                    </Link>
+                    
+                </div>
+                <div className="q_title">{ title }</div>
+                <div dangerouslySetInnerHTML={{__html:  content }} />
+                { (children || []).map((props) => <Issue {...props}/>) }
+                
+                { (page > 1) ? <Link className="navigation navigation--pre ng-hide" params={{ proposalName: proposalName, category: category, page: page-1 }} to="categoryPage">
+                    <i className="fa fa-chevron-left"></i>
+                </Link> : '' }
+
+                { (page < gitbook.length) ? <Link className="navigation navigation--next" params={{ proposalName: proposalName, category: category, page: page+1 }} to="categoryPage">
+                    <i className="fa fa-chevron-right"></i>
+                </Link> : '' }
+
+            </div>
         )
     }
 }
 export default Transmit.createContainer(Category, {
+
+    queries: {
+        gitbook({gitbookURL}) {
+            if (!gitbookURL) return new Promise((cb)=>cb([]))
+            return request.get(gitbookURL + "/content.json").then((res) => res.body).catch(()=>[])
+        },
+        talk({categoryNum}) {
+            if (!categoryNum) return new Promise((cb)=>cb([])) 
+            return request.get("https://talk.vtaiwan.tw/c/"+categoryNum+"-category.json").then((res) => res.body).catch(()=>[])
+
+        }
+    }
 })

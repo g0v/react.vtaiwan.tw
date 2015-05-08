@@ -127,7 +127,8 @@ header {
   margin-top: 10px;
   margin-bottom: 5px;
 }
-.q_breadcrumbs_link {
+.q_breadcrumbs_link, .q_breadcrumbs_link:visited {
+  color: rgb(140,140,140);
   cursor: pointer;
 }
 .q_breadcrumbs_link:hover {
