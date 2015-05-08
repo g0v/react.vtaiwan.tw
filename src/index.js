@@ -1,6 +1,8 @@
 import React from 'react'
 import App from './App/App.jsx'
 import request from 'superagent-bluebird-promise'
+import Router, {Route} from 'react-router'
+import ProposalList from './ProposalList/ProposalList.jsx'
 
 import './normalize.css'
 import './index.css'
@@ -9,14 +11,14 @@ var scripts = document.getElementsByTagName("script");
 var src = scripts[scripts.length - 1].getAttribute("src");
 window.__webpack_public_path__ = src.substr(0, src.lastIndexOf("/") + 1);
 
+
+const routes = (
+  <Route handler={App} path="/">
+    <Route name="crowdfunding" handler={ProposalList} />
+  </Route>
+);
+
 var root = document.getElementById('root');
-function load (id) {
-    history.replaceState(null, null, '?'+encodeURIComponent(id))
-    React.render( <App id={id} onChange={(e) => load(e.target.value)} />, root );
-}
-if (/^\?([-\w]+)$/.test(location.search)) {
-    load(location.search.slice(1))
-}
-else {
-    load('')
-}
+Router.run(routes, Router.HashLocation, (Root) => {
+  React.render(<Root/>, root);
+});

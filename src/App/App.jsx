@@ -5,7 +5,8 @@ import request from 'superagent-bluebird-promise'
 import './App.css'
 
 import AppBar from '../AppBar/AppBar.jsx'
-import ProposalList from '../ProposalList/ProposalList.jsx'
+import NavBar from '../NavBar/NavBar.jsx'
+import {RouteHandler} from 'react-router'
 
 
 moment.locale(window.navigator.userLanguage || window.navigator.language)
@@ -23,13 +24,21 @@ class App extends React.Component {
     render() {
         const {id, revs, onChange} = this.props;
         var rev = revs.length ? this.state.rev : null;
-        
+        var data = [
+            { path: '/', label: '首頁' },
+            { label: '主題'},
+            { path: '/how', label: '如何發言' },
+            { path: '/tutorial', label: '使用手冊' },
+            { path: '/about', label: '關於' }
+        ];
+
         return (
             <div className="App">
+                <NavBar nav_list={data} />
                 <AppBar />
                 <div className="App-content">
                     <div className="App-wrapper">
-                        <ProposalList />
+                        <RouteHandler />
                     </div>
                 </div>
             </div>

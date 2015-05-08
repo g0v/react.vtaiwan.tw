@@ -38,6 +38,7 @@
     "bluebird": "^2.9.24",
     "moment": "^2.9.0",
     "react": "^0.13.1",
+    "react-router": "^0.13.3",
     "react-style": "^0.5.2",
     "react-transmit": "^2.5.0",
     "superagent-bluebird-promise": "^2.0.0"
