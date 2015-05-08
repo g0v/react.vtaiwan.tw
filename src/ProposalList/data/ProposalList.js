@@ -18,7 +18,9 @@ module.exports = {
     },
     {
         "title_cht": "電傳勞動",
-        "title_eng": "telework"
+        "title_eng": "telework",
+        "slides_url": "https://www.slideshare.net/vtaiwan/ss-47895897",
+        "slides_image": "https://image.slidesharecdn.com/lvgkd0ngquy8efb2toeq-signature-af0b0d05725e4fb9358e5a094c77833ec00bc80bea24622c6e81b7da2ff12e49-poli-150324054020-conversion-gate01/95/-1-638.jpg"
     },
     {
         "title_cht": "遠距健康照護",
@@ -38,5 +40,5 @@ module.exports = {
     }
     ]
 }
- 
+
 
