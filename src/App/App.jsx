@@ -7,6 +7,8 @@ import './App.css'
 import AppBar from '../AppBar/AppBar.jsx'
 import NavBar from '../NavBar/NavBar.jsx'
 import {RouteHandler} from 'react-router'
+import ProposalList from '../ProposalList/ProposalList.jsx'
+import Category from '../Category/Category.jsx'
 
 
 moment.locale(window.navigator.userLanguage || window.navigator.language)
