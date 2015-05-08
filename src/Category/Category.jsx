@@ -2,6 +2,7 @@ import React from 'react'
 import moment from 'moment'
 import Transmit from 'react-transmit'
 import './Category.css'
+import './lexicon.css'
 
 import categoryData from './data/Category'
 
