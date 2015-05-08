@@ -5,14 +5,15 @@ import Transmit from 'react-transmit'
 import './ProposalList.css'
 import {img} from 'react'
 
-import listData from './data/ProposalList'
+import proposalData from '../Proposal/data/Proposals'
 
 moment.locale(window.navigator.userLanguage || window.navigator.language)
 
 class ProposalList extends React.Component {
 
     render() {
-        var proposalList = listData.list.map((item,key)=>{
+      var listData = Object.keys(proposalData).map((k) => proposalData[k])
+        var proposalList = listData.map((item,key)=>{
             return (
                 <Link className="ProposalList-item"
                       key={key}

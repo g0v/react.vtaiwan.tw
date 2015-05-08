@@ -15,7 +15,7 @@ module.exports = {
                 "discourse_url": "https://talk.vtaiwan.tw",
                 "start_date" : "March 20, 2015 00:00:00",
                 "end_date" : "April 19, 2015 23:59:59",
-                "category_num": 59  
+                "category_num": 59
             },
             {
                 "name" : "建議",
@@ -23,7 +23,7 @@ module.exports = {
                 "discourse_url": "https://talk.vtaiwan.tw",
                 "start_date" : "March 17, 2015 00:00:00",
                 "end_date" : "April 17, 2015 23:59:59",
-                "category_num": 55 
+                "category_num": 55
             },
             {
                 "name" : "討論",
@@ -61,7 +61,7 @@ module.exports = {
                 "discourse_url": "https://talk.vtaiwan.tw",
                 "start_date" : "May 1, 2015 00:00:00",
                 "end_date" : "May 31, 2015 23:59:59",
-                "category_num": 36 
+                "category_num": 36
             },
             {
                 "name" : "建議",
@@ -126,7 +126,7 @@ module.exports = {
                 "start_date" : "May 1, 2015 00:00:00",
                 "end_date" : "May 31, 2015 23:59:59",
                 "category_num": 70
-            },           
+            },
             {
                 "name" : "討論",
                 "gitbook_url": "https://g0v.github.io/distant-education-gitbook",
@@ -146,6 +146,7 @@ module.exports = {
         "proposer_abbr_eng":"mol",
         "proposer_abbr_cht":"勞動部",
         "slides_url" : "//www.slideshare.net/slideshow/embed_code/key/1U6HEtWAlZPBni",
+        "slides_image": "https://image.slidesharecdn.com/lvgkd0ngquy8efb2toeq-signature-af0b0d05725e4fb9358e5a094c77833ec00bc80bea24622c6e81b7da2ff12e49-poli-150324054020-conversion-gate01/95/-1-638.jpg",
         "stages" : [
             {
                 "name" : "討論",
@@ -194,7 +195,7 @@ module.exports = {
                 "start_date" : "May 1, 2015 00:00:00",
                 "end_date" : "May 31, 2015 23:59:59",
                 "category_num": 68
-            }, 
+            },
             {
                 "name" : "討論",
                 "gitbook_url": "https://g0v.github.io/data-levy-gitbook",
@@ -246,5 +247,5 @@ module.exports = {
         ]
     }
 }
- 
+
 
