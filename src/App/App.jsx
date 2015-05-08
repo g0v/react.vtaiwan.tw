@@ -5,7 +5,7 @@ import request from 'superagent-bluebird-promise'
 import './App.css'
 
 import AppBar from '../AppBar/AppBar.jsx'
-import ProposalList from '../ProposalList/ProposalList.jsx'
+import {RouteHandler} from 'react-router'
 
 
 moment.locale(window.navigator.userLanguage || window.navigator.language)
@@ -23,13 +23,13 @@ class App extends React.Component {
     render() {
         const {id, revs, onChange} = this.props;
         var rev = revs.length ? this.state.rev : null;
-        
+
         return (
             <div className="App">
                 <AppBar />
                 <div className="App-content">
                     <div className="App-wrapper">
-                        <ProposalList />
+                        <RouteHandler />
                     </div>
                 </div>
             </div>
