@@ -10,12 +10,14 @@ import {RouteHandler} from 'react-router'
 import ProposalList from '../ProposalList/ProposalList.jsx'
 import Category from '../Category/Category.jsx'
 
-import {NavList} from './data/Nav'
+import Nav, {NavList} from './data/Nav'
+import categoryData from '../Category/data/Category'
 
 moment.locale(window.navigator.userLanguage || window.navigator.language)
 
 class App extends React.Component {
     static propTypes = { id: React.PropTypes.string }
+    static contextTypes = { router: React.PropTypes.func }
     constructor(props) { super(props)
         this.state = {
             rev: null,
@@ -38,10 +40,12 @@ class App extends React.Component {
     render() {
         const {id, revs, onChange} = this.props;
         var rev = revs.length ? this.state.rev : null;
+        var {router} = this.context;
+        var {proposalName, category} = router.getCurrentParams();
 
         return (
             <div className="App">
-                { this.state.showNavBar? <NavBar nav_list={NavList} /> : null }
+                { this.state.showNavBar? <NavBar nav_list={ (proposalName)? Nav[proposalName] : NavList } /> : null }
                 <AppBar handleNavBar={this.handleNavBar.bind(this)} />
                 <div className={ this.state.showNavBar? "App-content activeNavBar" : "App-content"} >
                     <div className="App-wrapper">

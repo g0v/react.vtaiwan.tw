@@ -1,6 +1,5 @@
 module.exports = {
   NavList: [
-    { path: '/', label: '首頁' },
     { label: '主題'},
     { path: '/crowdfunding', label: '群眾募資', icon: 'sfb.png', type: 'sub'},
     { path: '/closelyheld', label: '閉鎖型公司', icon: 'DOCMOEA.png', type: 'sub'},
@@ -14,5 +13,12 @@ module.exports = {
     { path: '/how', label: '如何發言' },
     { path: '/tutorial', label: '使用手冊' },
     { path: '/about', label: '關於' }
+  ],
+  crowdfunding: [
+    { path: '/', label: '首頁' },
+    { path: '/crowdfunding/crowdfunding-init', label: '討論' },
+    { path: '/crowdfunding/crowdfunding-spec/1', label: '建議' },
+    { path: '/crowdfunding/crowdfunding-ref1', label: '草案＃1' },
+    { path: '/crowdfunding/crowdfunding-act1', label: '定案' }
   ]
 };
