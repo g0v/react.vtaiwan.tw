@@ -7,6 +7,7 @@ module.exports = {
         "prefix_eng": "commerce",
         "proposer_abbr_cht":"金管會證期局",
         "proposer_abbr_eng":"sfb",
+        "slides_url" : "//www.slideshare.net/slideshow/embed_code/key/nnLTRbSBdcBaEB",
         "stages" : [
             {
                 "name" : "草案 #1",
@@ -42,6 +43,7 @@ module.exports = {
         "prefix_eng": "commerce",
         "proposer_abbr_cht":"經濟部商業司",
         "proposer_abbr_eng":"DOCMOEA",
+        "slides_url" : "//www.slideshare.net/slideshow/embed_code/key/MZTkYzdl9iAQnG",
         "stages" : [
             {
                 "name" : "定案",
@@ -87,6 +89,7 @@ module.exports = {
         "prefix_eng": "commerce",
         "proposer_abbr_eng":"MOFTA",
         "proposer_abbr_cht":"財政部賦稅署",
+        "slides_url" : "//www.slideshare.net/slideshow/embed_code/key/sDlboXNS29cuAa",
         "stages" : [
             {
                 "name" : "建議",
@@ -114,6 +117,7 @@ module.exports = {
         "prefix_eng": "lifestyle",
         "proposer_abbr_eng":"MOE",
         "proposer_abbr_cht":"教育部",
+        "slides_url" : "//www.slideshare.net/slideshow/embed_code/key/me61bWbV0kkc51",
         "stages" : [
             {
                 "name" : "建議",
@@ -141,6 +145,7 @@ module.exports = {
         "prefix_eng": "lifestyle",
         "proposer_abbr_eng":"mol",
         "proposer_abbr_cht":"勞動部",
+        "slides_url" : "//www.slideshare.net/slideshow/embed_code/key/1U6HEtWAlZPBni",
         "stages" : [
             {
                 "name" : "討論",
@@ -160,6 +165,7 @@ module.exports = {
         "prefix_eng": "lifestyle",
         "proposer_abbr_eng":"MOHW",
         "proposer_abbr_cht":"衛福部",
+        "slides_url" : "//www.slideshare.net/slideshow/embed_code/key/pri7V96yi8c0EZ",
         "stages" : [
             {
                 "name" : "討論",
@@ -179,6 +185,7 @@ module.exports = {
         "prefix_eng": "civic",
         "proposer_abbr_eng":"opendata_mis_ndc",
         "proposer_abbr_cht":"國發會",
+        "slides_url" : "//www.slideshare.net/slideshow/embed_code/key/79j3ODJ0589aIA",
         "stages" : [
             {
                 "name" : "建議",
@@ -206,6 +213,7 @@ module.exports = {
         "prefix_eng": "civic",
         "proposer_abbr_eng":"CPCEY",
         "proposer_abbr_cht":"消費者保護處",
+        "slides_url" : "//www.slideshare.net/slideshow/embed_code/key/GapmPL1Vjqkbii",
         "stages" : [
             {
                 "name" : "討論",
@@ -225,6 +233,7 @@ module.exports = {
         "prefix_eng": "civic",
         "proposer_abbr_eng":"CPCEY",
         "proposer_abbr_cht":"消費者保護處",
+        "slides_url" : "//www.slideshare.net/slideshow/embed_code/key/1MoTEZ16YhbjN4",
         "stages" : [
             {
                 "name" : "討論",

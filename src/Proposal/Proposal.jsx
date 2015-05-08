@@ -25,12 +25,18 @@ class Proposal extends React.Component {
                 </div>
             )
         })
+
         return (
 
             <div className="Proposal">
                 <div className="Proposal-intro">
                     <div className="Proposal-title">{data.prefix_cht}{data.title_cht}</div>
                     <div className="Proposal-proposer">@{data.proposer_abbr_cht}</div>
+                </div>
+                <div className="Proposal-slides">
+                    <iframe className="Proposal-iframe"
+                            src={data.slides_url}
+                            frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen> </iframe> 
                 </div>
                 <div className="Proposal-stages">{stages}</div>
             </div>
