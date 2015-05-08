@@ -10,10 +10,14 @@ import categoryData from './data/Category'
 
 class Issue extends React.Component {
     render() {
-        var {title, content} = this.props
+        var {title, content} = this.props;
+       
         return <div className="issue_item md-whiteframe-z1">
             <div className="issue_item_title">
-                <span className="prompt">討論話題：</span>{{ title }} <i className="fa fa-comments-o"></i><span className="issue_item_discuss_count ng-binding">5</span>
+                <span className="prompt">討論話題：</span>
+                <span className="q_text" dangerouslySetInnerHTML={{ __html: title }} />
+                <i className="fa fa-comments-o"></i>
+                <span className="issue_item_discuss_count ng-binding">5</span>
             </div>
             <div className="q_text ng-binding" dangerouslySetInnerHTML={{ __html: content }} />
         </div>
