@@ -220,12 +220,12 @@ export default Transmit.createContainer(Category, {
         },
         talk({categoryNum}) {
             if (!categoryNum) return new Promise((cb)=>cb([]))
-            return request.get("https://talk.vtaiwan.tw/c/"+categoryNum+"-category.json").then((res) => res.body).catch(()=>[])
+            return request.get("//talk.vtaiwan.tw/c/"+categoryNum+"-category.json").then((res) => res.body).catch(()=>[])
 
         },
         posts({postID}){
             if (!postID) return new Promise((cb)=>cb([]))
-            return request.get("https://talk.vtaiwan.tw/t/topic/"+postID+".json").then((res) => res.body).catch(()=>[])
+            return request.get("//talk.vtaiwan.tw/t/topic/"+postID+".json").then((res) => res.body).catch(()=>[])
         }
     }
 })
