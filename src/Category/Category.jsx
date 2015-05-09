@@ -19,7 +19,7 @@ class Issue extends React.Component {
             <div className="issue_item_title">
                 <span className="prompt">討論話題：</span>
                 <span className="q_text" dangerouslySetInnerHTML={{ __html: title }} />
-                <i className="fa fa-comments-o"></i>
+                <span className="Issue-titleIcon"><i className="fa fa-comments-o"></i></span>
                 <span className="issue_item_discuss_count">{post_count}</span>
             </div>
             <div className="q_text" dangerouslySetInnerHTML={{ __html: content }} />
@@ -31,7 +31,7 @@ class Category extends React.Component {
     static contextTypes = { router: React.PropTypes.func }
     
     constructor (props) { super(props)
-        this.state = { showDiscussion: false }
+        this.state = { showDiscussion: false, showFullDiscussion:false }
     }
 
     _toggleShowDiscussion (postID, event){
@@ -43,8 +43,15 @@ class Category extends React.Component {
            })           
         }
         this.setState({
-            showDiscussion: !this.state.showDiscussion
+            showDiscussion: !this.state.showDiscussion,
+            showFullDiscussion: false
         });
+    }
+
+    _toggleShowFullDiscussion(){
+        this.setState({
+            showFullDiscussion: !this.state.showFullDiscussion
+        })
     }
 
     componentWillMount() {
@@ -94,10 +101,20 @@ class Category extends React.Component {
         }
         // Add post_count, topic_id data to gitbook data
         var {title, content, children} = gitbook[page];
-        children.map((item,key)=>{
-            item.post_count = titleToPostCount[item.title].post_count;
-            item.id = titleToPostCount[item.title].id;
-        })
+        if(children){
+           children.map((item,key)=>{
+               if(titleToPostCount[item.title]){
+                  item.post_count = titleToPostCount[item.title].post_count || 0;
+                  item.id = titleToPostCount[item.title].id;
+
+               }else{
+                  item.post_count = 0;
+
+               }
+               
+               
+           })
+        }
 
         // Used in breadcrumbs
         // 目前的討論主題（遠距教育、群眾募資...等）以及階段（討論、草案、定案...等）
@@ -113,9 +130,15 @@ class Category extends React.Component {
             })
 
         var postsItem = "";
+        var bindToggleFullDiscussion = this._toggleShowFullDiscussion.bind(this,null);
+        var showFullDiscussion = this.state.showFullDiscussion;
         if(posts && posts.post_stream){
-            //console.log(posts.post_stream.posts)
-            postsItem = <Posts data={posts.post_stream.posts} />
+            //console.log(posts)
+            postsItem = <Posts data={posts.post_stream.posts} 
+                               id={posts.id} 
+                               title={posts.title}
+                               handleToggleFullDiscussion={bindToggleFullDiscussion}
+                               showFull={showFullDiscussion}/>
             
         }
 
