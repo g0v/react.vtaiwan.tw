@@ -12,14 +12,14 @@ class Issue extends React.Component {
     render() {
         var {title, content} = this.props;
 
-        return <div className="issue_item md-whiteframe-z1">
+        return <div className="issue_item">
             <div className="issue_item_title">
                 <span className="prompt">討論話題：</span>
                 <span className="q_text" dangerouslySetInnerHTML={{ __html: title }} />
                 <i className="fa fa-comments-o"></i>
-                <span className="issue_item_discuss_count ng-binding">5</span>
+                <span className="issue_item_discuss_count">5</span>
             </div>
-            <div className="q_text ng-binding" dangerouslySetInnerHTML={{ __html: content }} />
+            <div className="q_text" dangerouslySetInnerHTML={{ __html: content }} />
         </div>
     }
 }
@@ -65,33 +65,33 @@ class Category extends React.Component {
         var {proposal_cht, category_cht} = categoryData[proposalName][category];
 
         return (
-            <div>
-                <img style={{width: "60px", height: "60px", position: "absolute", right: "10px"}} src="https://www.vtaiwan.tw/images/proposer/spec.png" />
-                <div className="q_breadcrumbs">
-
-                    <Link className="q_breadcrumbs_link"
+            <div className="Category">
+                <img className="Category-icon" 
+                     src="https://www.vtaiwan.tw/images/proposer/spec.png" />
+                
+                <div className="Category-breadcrumbs">
+                    <Link className="Category-breadcrumbsLink"
                           to="proposal"
                           params={{proposalName: proposalName}}>{proposal_cht}
                     </Link>
                     &nbsp;&gt;&nbsp;
-                    <Link className="q_breadcrumbs_link"
+                    <Link className="Category-breadcrumbsLink"
                           to="category"
                           params={{proposalName: proposalName, category: category}}>{category_cht}
                     </Link>
-
                 </div>
-                <div className="q_title">{ title }</div>
+                <div className="Category-title">{ title }</div>
                 <div dangerouslySetInnerHTML={{__html:  content }} />
                 { (children || []).map((props) => <Issue {...props}/>) }
 
-                { (page > 1) ? <Link className="navigation navigation--pre ng-hide" params={{ proposalName: proposalName, category: category, page: page-1 }} to="categoryPage">
+                { (page > 1) ? <Link className="Category-navigation Category-navigationPre" params={{ proposalName: proposalName, category: category, page: page-1 }} to="categoryPage">
                     <i className="fa fa-chevron-left"></i>
                 </Link>
-                : (page === 1) ? <Link className="navigation navigation--pre ng-hide" params={{ proposalName: proposalName, category: category }} to="category">
+                : (page === 1) ? <Link className="Category-navigation Category-navigationPre" params={{ proposalName: proposalName, category: category }} to="category">
                     <i className="fa fa-chevron-left"></i>
                 </Link> : ''
                 }
-                { (page < (gitbook.length - 1)) ? <Link className="navigation navigation--next" params={{ proposalName: proposalName, category: category, page: page+1 }} to="categoryPage">
+                { (page < (gitbook.length - 1)) ? <Link className="Category-navigation Category-navigationNext" params={{ proposalName: proposalName, category: category, page: page+1 }} to="categoryPage">
                     <i className="fa fa-chevron-right"></i>
                 </Link> : '' }
 
