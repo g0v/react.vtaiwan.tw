@@ -3,12 +3,12 @@ import moment from 'moment'
 import Transmit from 'react-transmit'
 import './Proposal.css'
 
-import Proposals from './data/Proposals'
+import Proposals from './data/Proposals.json'
 import Stage from '../Stage/Stage.jsx'
 moment.locale(window.navigator.userLanguage || window.navigator.language)
 
 class Proposal extends React.Component {
-    
+
     render() {
 
         var data = Proposals[this.props.params.proposalName];
@@ -36,7 +36,7 @@ class Proposal extends React.Component {
                 <div className="Proposal-slides">
                     <iframe className="Proposal-iframe"
                             src={data.slides_url}
-                            frameBorder="0" marginWidth="0" marginHeight="0" scrolling="no" allowFullScreen> </iframe> 
+                            frameBorder="0" marginWidth="0" marginHeight="0" scrolling="no" allowFullScreen> </iframe>
                 </div>
                 <div className="Proposal-stages">{stages}</div>
             </div>
@@ -44,7 +44,7 @@ class Proposal extends React.Component {
     }
 }
 export default Transmit.createContainer(Proposal, {
-    
+
 })
 
 

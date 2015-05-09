@@ -32,13 +32,17 @@ module.exports = {
         include: path.join(__dirname, 'src'),
         exclude: /node_modules/
       },
-      { 
+      {
         test: /\.css$/,
-        loader: 'style-loader!css-loader' 
+        loader: 'style-loader!css-loader'
       },
-      { 
-        test: /\.(png|jpg|gif)$/, 
-        loader: 'url-loader?limit=8192' 
+      {
+        test: /\.(png|jpg|gif)$/,
+        loader: 'url-loader?limit=8192'
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
       }
     ]
   }

@@ -5,7 +5,7 @@ import Transmit from 'react-transmit'
 import './ProposalList.css'
 import {img} from 'react'
 
-import proposalData from '../Proposal/data/Proposals'
+import proposalData from '../Proposal/data/Proposals.json'
 
 moment.locale(window.navigator.userLanguage || window.navigator.language)
 
