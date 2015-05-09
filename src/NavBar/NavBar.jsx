@@ -9,7 +9,7 @@ moment.locale(window.navigator.userLanguage || window.navigator.language)
 class NavBar extends React.Component {
 
     render() {
-        var NavList = this.props.nav_list.map(( {label, type, icon, path, title}:item) => {
+        var NavList = (this.props.nav_list || []).map(( {label, type, icon, path, title}:item) => {
             var styleClass = (type === 'title')? 'NavBar-item--title': 'NavBar-item';
             if(type === 'sub') {
                 return (

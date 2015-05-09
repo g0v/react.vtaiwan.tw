@@ -56,12 +56,12 @@ class Category extends React.Component {
         const {gitbookURL, categoryNum, gitbook, talk, onChange} = this.props;
 
         var {page, proposalName, category} = this.props.params;
-        page = Number(page) || 1
+        page = Number(page) || 0
 
-        if(!gitbook || !gitbook[page - 1])
+        if(!gitbook || !gitbook[page])
             return (<div></div>);
 
-        var {title, content, children} = gitbook[page - 1];
+        var {title, content, children} = gitbook[page];
         var {proposal_cht, category_cht} = categoryData[proposalName][category];
 
         return (
@@ -86,9 +86,12 @@ class Category extends React.Component {
 
                 { (page > 1) ? <Link className="navigation navigation--pre ng-hide" params={{ proposalName: proposalName, category: category, page: page-1 }} to="categoryPage">
                     <i className="fa fa-chevron-left"></i>
-                </Link> : '' }
-
-                { (page < gitbook.length) ? <Link className="navigation navigation--next" params={{ proposalName: proposalName, category: category, page: page+1 }} to="categoryPage">
+                </Link>
+                : (page === 1) ? <Link className="navigation navigation--pre ng-hide" params={{ proposalName: proposalName, category: category }} to="category">
+                    <i className="fa fa-chevron-left"></i>
+                </Link> : ''
+                }
+                { (page < (gitbook.length - 1)) ? <Link className="navigation navigation--next" params={{ proposalName: proposalName, category: category, page: page+1 }} to="categoryPage">
                     <i className="fa fa-chevron-right"></i>
                 </Link> : '' }
 
