@@ -10,14 +10,14 @@ import categoryData from './data/Category'
 
 class Issue extends React.Component {
     render() {
-        var {title, content} = this.props;
+        var {title, content, post_count} = this.props;
 
         return <div className="issue_item">
             <div className="issue_item_title">
                 <span className="prompt">討論話題：</span>
                 <span className="q_text" dangerouslySetInnerHTML={{ __html: title }} />
                 <i className="fa fa-comments-o"></i>
-                <span className="issue_item_discuss_count">5</span>
+                <span className="issue_item_discuss_count">{post_count}</span>
             </div>
             <div className="q_text" dangerouslySetInnerHTML={{ __html: content }} />
         </div>
@@ -26,6 +26,12 @@ class Issue extends React.Component {
 
 class Category extends React.Component {
     static contextTypes = { router: React.PropTypes.func }
+    
+    constructor (props) { super(props)
+        this.state = { titleToPostcount:{} }
+    }
+
+
     componentWillMount() {
         // console.log(this.props.params);
 
@@ -54,14 +60,29 @@ class Category extends React.Component {
     }
     render() {
         const {gitbookURL, categoryNum, gitbook, talk, onChange} = this.props;
+        
 
         var {page, proposalName, category} = this.props.params;
         page = Number(page) || 0
 
+        // Get post_coount from talk.vtaiwan json
+        var titleToPostCount = {}
+        if(talk && talk.topic_list){
+            talk.topic_list.topics.map((value)=>{
+                titleToPostCount[value.fancy_title] = value.posts_count;
+
+            })
+        }
+
         if(!gitbook || !gitbook[page])
             return (<div></div>);
 
+        // Add post_count data in gitbook data
         var {title, content, children} = gitbook[page];
+        children.map((item,key)=>{
+            item.post_count = titleToPostCount[item.title];
+        })
+
         var {proposal_cht, category_cht} = categoryData[proposalName][category];
 
         return (
