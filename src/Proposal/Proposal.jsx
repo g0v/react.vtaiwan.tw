@@ -35,7 +35,7 @@ class Proposal extends React.Component {
                 </div>
                 <div className="Proposal-slides">
                     <iframe className="Proposal-iframe"
-                            src={data.slides_url}
+                            src={data.slides_embed_url}
                             frameBorder="0" marginWidth="0" marginHeight="0" scrolling="no" allowFullScreen> </iframe>
                 </div>
                 <div className="Proposal-stages">{stages}</div>
