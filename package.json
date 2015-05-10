@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "build": "env NODE_ENV=production webpack build -content-base build/"
+    "build": "env NODE_ENV=production webpack build -content-base build/",
+    "update": "babel-node script/update-proposal-slides.js"
   },
   "repository": {
     "type": "git",
