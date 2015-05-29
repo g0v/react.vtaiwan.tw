@@ -39,3 +39,6 @@
   font-size: 20px;
   color: #353736;
 }
+.AppBar-siteLogoText::first-letter {
+    margin-right: 1px;
+}
