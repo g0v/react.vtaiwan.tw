@@ -5,26 +5,24 @@ import Transmit from 'react-transmit'
 import request from 'superagent-bluebird-promise'
 import './Stage.css'
 
-moment.locale(window.navigator.userLanguage || window.navigator.language)
-
 class Stage extends React.Component {
-    
+
     static propTypes = { gitbookURL: React.PropTypes.string }
     constructor(props) { super(props)
-        this.state = { 
+        this.state = {
             gitbook: null ,
             talk: null
         }
     }
     componentWillMount() { this.props.setQueryParams(this.props) }
     componentWillReceiveProps(nextProps) {
-         if ( (nextProps.gitbookURL === this.props.gitbookURL) || 
+         if ( (nextProps.gitbookURL === this.props.gitbookURL) ||
               (nextProps.categoryNum === this.props.categoryNum) ){
 
-            return;  
+            return;
          }
-            
-         this.props.setQueryParams({ 
+
+         this.props.setQueryParams({
             gitbookURL: nextProps.gitbookURL,
             categoryNum: nextProps.categoryNum
          })
@@ -32,11 +30,11 @@ class Stage extends React.Component {
     render() {
         const {gitbookURL, categoryNum, gitbook, talk, onChange} = this.props;
         var {data} = this.props;
-        
+
         // gitbook 為 gitbook 的內容
         // 每個 stage 顯示的 preview text 為 gitbook[0].content 底下的 blockquote 部分
         var previewHTML = "";
-        
+
         if(gitbook[0]){
             previewHTML = gitbook[0].content.split('</blockquote>')[0].split('<blockquote>')[1];
         }
@@ -44,7 +42,7 @@ class Stage extends React.Component {
         var start = moment(new Date(data.start_date));
         var end = moment(new Date(data.end_date));
         var now = moment();
-        
+
         var isDue = (now.unix() > end.unix());
         var timeLeft = 0;
         var style = { "width" : "100%" }
@@ -70,11 +68,11 @@ class Stage extends React.Component {
                 <div className="Stage-barBackground">
                     <div className="Stage-startDate">{start.format('MM/DD')}</div>
                     <div className="Stage-endDate">{end.format('MM/DD')}</div>
-                    <div className="Stage-barProgress" 
+                    <div className="Stage-barProgress"
                          style={style}></div>
                 </div>
                 );
-            
+
             //如果還沒結束，顯示「剩下天數」
             leftTimeItem = <div className="Stage-stat">本階段還有<div className="Stage-statHighlight">{timeLeft} 天</div></div>;
         }
@@ -92,16 +90,15 @@ class Stage extends React.Component {
                 });
             }
         }
-        
         let icon = require('../NavBar/images/' + data.category.replace(/\d+$/, '')  + '.png');
         return (
-            <Link className="Stage" 
-                  to="category" 
+            <Link className="Stage"
+                  to="category"
                   key={data.category}
                   params={{proposalName:this.props.proposalName, category:data.category}}>
                     <img style={{"float": "right"}} className="NavBar-subItemIcon" src={icon} />
                 <div className="Stage-header">
-                    <div className="Stage-title">{data.name}</div>    
+                    <div className="Stage-title">{data.name}</div>
                 </div>
                 <div className="Stage-content">
                     <div dangerouslySetInnerHTML={{__html:  previewHTML }} />
@@ -124,7 +121,7 @@ export default Transmit.createContainer(Stage, {
             return request.get(gitbookURL + "/content.json").then((res) => res.body).catch(()=>[])
         },
         talk({categoryNum}) {
-            if (!categoryNum) return new Promise((cb)=>cb([])) 
+            if (!categoryNum) return new Promise((cb)=>cb([]))
             return request.get("https://talk.vtaiwan.tw/c/"+categoryNum+"-category.json").then((res) => res.body).catch(()=>[])
 
         }

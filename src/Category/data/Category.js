@@ -141,7 +141,7 @@ module.exports = {
         {
             "gitbook_url": "https://g0v.github.io/personal-data-protection-gitbook",
             "category_num": 22,
-            "proposal_cht":"個人資料利用與去識別化",
+            "proposal_cht":"個資利用與去識別化",
             "category_cht":"討論"
         } 
     }

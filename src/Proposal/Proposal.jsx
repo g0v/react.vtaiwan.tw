@@ -5,7 +5,6 @@ import './Proposal.css'
 
 import Proposals from './data/Proposals.json'
 import Stage from '../Stage/Stage.jsx'
-moment.locale(window.navigator.userLanguage || window.navigator.language)
 
 class Proposal extends React.Component {
     componentWillMount() {
@@ -16,8 +15,8 @@ class Proposal extends React.Component {
             const {proposalName} = nextProps.params
             const {title_cht, stages} = nextProps.data
             this.props.setNavList([
-                { path: '/', label: '首頁' },
-                { path: '/'+proposalName, label: title_cht, type: 'title' },
+                { path: '/', label: '首頁', type: 'title' },
+                { path: '/'+proposalName, label: title_cht, type: 'section' },
             ].concat(stages.map(({category, name})=>{ return {
                 path: '/'+proposalName+'/'+category,
                 label: name,
@@ -30,7 +29,6 @@ class Proposal extends React.Component {
     }
     render() {
         const {data} = this.props
-
         var stages = data.stages.map((item, key)=>{
             var start_date = moment(new Date(item.start_date)).format('YYYY-MM-DD');
             return (
