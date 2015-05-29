@@ -16,9 +16,28 @@
 	width: 100%;
 	margin: 0 auto;
 }
-@media screen and (min-width: 1000px){
-  .App-wrapper {
-    width: 1000px;
+
+@media screen and (min-width: 1200px){
+  .App-content {
+      margin-top: 30px;
+      padding-top: 10px;
+      background: #fff;
+      padding-left: 120px;
+      padding-right: 120px;
+  }
+  .App-content.activeNavBar {
+      z-index: 1;
+      /*
+      margin-left: 0;
+      -webkit-transform: translate3d(250px,0,0);
+      -moz-transform: translate3d(250px,0,0);
+      -ms-transform: translate3d(250px,0,0);
+      transform: translate3d(250px,0,0);*/
+     
+      width: calc(100% - 250px);
+      padding-left: 60px;
+      padding-right: 60px;
 
   }
 }
+

@@ -122,8 +122,11 @@
       overflow-x: auto;
       overflow-y: scroll;
       padding-right: 20px;
-      
-     
+  }
+}
+@media screen and (min-width: 800px){
+  .Category-categoryList {
+      width: 800px;
   }
 }
 .Category-icon {
@@ -192,12 +195,21 @@
 @media screen and (min-width: 1200px){
   .Category-navigation {
     position: fixed;
+    z-index: 1;
     top: 0vh;
     padding-top: 40vh;
     width: 100px;
+    min-height: 100vh;
     height: 100%;
     background: #eee;
   }
+  .App-content.activeNavBar .Category-navigation {
+    width: 50px;
+  }
+  .App-content.activeNavBar .Category-navigationPre {
+    left: 250px;
+  }
+
 }
 
 .Issue-titleIcon {
