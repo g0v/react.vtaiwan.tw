@@ -43,7 +43,7 @@ class App extends React.Component {
         var {router} = this.context;
         var {proposalName, category} = router.getCurrentParams();
         var nav_list = (proposalName)? Nav[proposalName]: NavList;
-        if(category) nav_list = Nav[category];
+        if(category) nav_list = Nav[proposalName + '/' + category];
 
         return (
             <div className="App">

@@ -31,7 +31,7 @@ class Category extends React.Component {
     static contextTypes = { router: React.PropTypes.func }
     
     constructor (props) { super(props)
-        this.state = { showDiscussion: false, showFullDiscussion:false }
+        this.state = { showDiscussion: !!this.props.params.postID, showFullDiscussion:false }
     }
 
     _toggleShowDiscussion (postID, event){
@@ -57,16 +57,17 @@ class Category extends React.Component {
     componentWillMount() {
         // console.log(this.props.params);
 
-        var {proposalName, category} = this.props.params;
+        var {proposalName, category, postID} = this.props.params;
         var metaData = categoryData[proposalName][category];
 
         this.props.setQueryParams({
             gitbookURL: metaData.gitbook_url,
-            categoryNum: metaData.category_num
+            categoryNum: metaData.category_num,
+            postID: postID
         })
     }
     componentWillReceiveProps(nextProps) {
-        var {proposalName, category} = this.props.params;
+        var {proposalName, category, postID} = this.props.params;
         var {nextProposalName, nextCategory} = nextProps.params;
 
         if(!proposalName || !nextProposalName) return;
@@ -77,12 +78,13 @@ class Category extends React.Component {
         var metaData = categoryData[nextProposalName][nextCategory];
         this.props.setQueryParams({
            gitbookURL: metaData.gitbook_url,
-           categoryNum: metaData.category_num
+           categoryNum: metaData.category_num,
+           postID: postID
         })
     }
     render() {
         const {gitbookURL, categoryNum, gitbook, talk, posts, onChange} = this.props;
-        var {page, proposalName, category} = this.props.params;
+        var {page, proposalName, category, postID} = this.props.params;
         page = Number(page) || 0
 
         if(!gitbook || !gitbook[page])

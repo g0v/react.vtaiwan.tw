@@ -13,7 +13,7 @@ class NavBar extends React.Component {
             var styleClass = (type === 'title')? 'NavBar-item--title': 'NavBar-item';
             if(type === 'sub') {
                 return (
-                    <Link to={path} className="NavBar-subItem">
+                    <Link key={path} to={path} className="NavBar-subItem">
                         <img className="NavBar-subItemIcon" src={require(`./images/${icon}`)} />
                         <span className="title_cht">{label}</span>
                     </Link>

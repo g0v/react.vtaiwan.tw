@@ -18,18 +18,18 @@ module.exports = {
     { path: '/', label: '首頁' },
     { label: '群眾募資', type: 'title' },
     { path: '/crowdfunding/init', label: '討論', icon: 'sfb.png', type: 'sub' },
-    { path: '/crowdfunding/spec/1', label: '建議', icon: 'sfb.png', type: 'sub' },
-    { path: '/crowdfunding/ref1', label: '草案＃1', icon: 'sfb.png', type: 'sub' },
+    { path: '/crowdfunding/spec', label: '建議', icon: 'sfb.png', type: 'sub' },
+    { path: '/crowdfunding/ref1', label: '草案 #1', icon: 'sfb.png', type: 'sub' },
     { path: '/crowdfunding/act1', label: '定案', icon: 'sfb.png', type: 'sub' }
   ],
-  spec: [
+  "crowdfunding/spec": [
     { path: '/crowdfunding', label: '群眾募資' },
     { label: '建議', type: 'title' },
-    { path: '/crowdfunding/spec/1', label: '股權式群募：具體建議' },
+    { path: '/crowdfunding/spec', label: '股權式群募：具體建議' },
     { path: '/crowdfunding/spec/1', label: '需求與建議' },
-    { path: '/crowdfunding/spec/2', label: '開放民間股權群募平台', icon: 'sfb.png', type: 'sub'},
-    { path: '/crowdfunding/spec/2', label: '對提案募資者的規範', icon: 'sfb.png', type: 'sub' },
-    { path: '/crowdfunding/spec/2', label: '對投資者的規範', icon: 'sfb.png', type: 'sub'},
-    { path: '/crowdfunding/spec/2', label: '其他網路金融模式', icon: 'sfb.png', type: 'sub'}
+    { path: '/crowdfunding/spec/1/358', label: '開放民間股權群募平台', icon: 'sfb.png', type: 'sub'},
+    { path: '/crowdfunding/spec/1/359', label: '對提案募資者的規範', icon: 'sfb.png', type: 'sub' },
+    { path: '/crowdfunding/spec/1/360', label: '對投資者的規範', icon: 'sfb.png', type: 'sub'},
+    { path: '/crowdfunding/spec/1/361', label: '其他網路金融模式', icon: 'sfb.png', type: 'sub'}
   ]
 };
