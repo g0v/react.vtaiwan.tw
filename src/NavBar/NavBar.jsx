@@ -14,12 +14,13 @@ class NavBar extends React.Component {
             if(type === 'sub') {
                 return (
                     <Link key={key} to={path} className="NavBar-subItem">
-                        <img className="NavBar-subItemIcon" src={require(`./images/${icon}`)} />
+                        { icon ? <img className="NavBar-subItemIcon" src={require(`./images/${icon}`)} /> : '' }
                         <span className="title_cht">{label}</span>
                     </Link>
                 );
             }
-            return <Link key={key} to={path || '/'} className={styleClass} >{label}</Link>;
+            return <Link key={key} to={path || '/'} className={styleClass} >
+                { icon ? <img className="NavBar-subItemIcon" src={require(`./images/${icon}`)} /> : '' }{label}</Link>;
         });
 
         return (

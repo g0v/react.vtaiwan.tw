@@ -104,25 +104,24 @@ class Category extends React.Component {
         var nextPage = nextProps.params.page;
 
         if (nextProps.gitbook.length) {
+            const {topic_list} = nextProps.talk || {};
             const {proposal_cht, category_cht} = categoryData[proposalName][category]
             const icon = category.replace(/\d+$/, '') + '.png'
-            console.log(nextProps.gitbook);
             this.props.setNavList([
                 { path: '/'+proposalName, label: proposal_cht },
-            ].concat(nextProps.gitbook.map(({title}, pageID)=>{ return (pageID === 0)
-                ? { path: '/'+proposalName+'/'+category, label: category_cht, type: 'title' }
-                : { path: '/'+proposalName+'/'+category+'/'+pageID, label: title.replace(/<[^>]*>/g, ''), type: 'sub', icon }
-            })))
-            /*
-    { path: '/crowdfunding', label: '群眾募資' },
-    { label: '建議', type: 'title' },
-    { path: '/crowdfunding/spec', label: '股權式群募：具體建議' },
-    { path: '/crowdfunding/spec/1', label: '需求與建議' },
-    { path: '/crowdfunding/spec/1/358', label: '開放民間股權群募平台', icon: 'spec.png', type: 'sub'},
-    { path: '/crowdfunding/spec/1/359', label: '對提案募資者的規範', icon: 'spec.png', type: 'sub' },
-    { path: '/crowdfunding/spec/1/360', label: '對投資者的規範', icon: 'spec.png', type: 'sub'},
-    { path: '/crowdfunding/spec/1/361', label: '其他網路金融模式', icon: 'spec.png', type: 'sub'}
-    */
+            ].concat(nextProps.gitbook.map(({title, children}, pageID)=>
+                (pageID === 0)
+                    ? [{ path: '/'+proposalName+'/'+category, label: category_cht, icon, type: 'sub' }]
+                    : [{ path: '/'+proposalName+'/'+category+'/'+pageID, label: title.replace(/<[^>]*>/g, ''), type: 'title' }].concat((topic_list && topic_list.topics) ? children.map(({title})=>{
+                        const label = title.replace(/<[^>]*>/g, '')
+                        const {id} = topic_list.topics.filter(
+                            ({fancy_title})=>fancy_title === label
+                        )[0] || {}
+                        let path = '/'+proposalName+'/'+category+'/'+pageID;
+                        if (id) { path += ('/'+id) }
+                        return { path, label, type: 'sub' }
+                    }) : []
+            )).reduce((a,b)=>a.concat(b))))
         }
        
         if(!proposalName || !nextProposalName) return;
