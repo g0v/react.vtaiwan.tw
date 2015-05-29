@@ -856,9 +856,8 @@ a.nav_item_sidebar--sub:hover {
   text-align: center;
 }
 .Stage-content {
-  overflow: hidden;
-  _overflow:visible;
-  zoom:1;
+  overflow: visible;
+  zoom: 1;
   padding-left: 5px;
 }
 .Stage-index-number {

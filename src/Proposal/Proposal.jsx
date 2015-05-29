@@ -8,10 +8,30 @@ import Stage from '../Stage/Stage.jsx'
 moment.locale(window.navigator.userLanguage || window.navigator.language)
 
 class Proposal extends React.Component {
-
+    componentWillMount() {
+        this.props.setQueryParams(this.props.params)
+    }
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.data.stages.length) {
+            const {proposalName} = nextProps.params
+            const {title_cht, stages} = nextProps.data
+            this.props.setNavList([
+                { path: '/', label: '首頁' },
+                { path: '/'+proposalName, label: title_cht, type: 'title' },
+            ].concat(stages.map(({category, name})=>{ return {
+                path: '/'+proposalName+'/'+category,
+                label: name,
+                icon: category.replace(/\d+$/,'')+'.png',
+                type: 'sub',
+            } })))
+            nextProps.setNavList = ()=>{}
+        }
+        if (nextProps.params.proposalName == this.props.params.proposalName) return
+        this.props.setQueryParams(nextProps)
+    }
     render() {
+        const {data} = this.props
 
-        var data = Proposals[this.props.params.proposalName];
         var stages = data.stages.map((item, key)=>{
             var start_date = moment(new Date(item.start_date)).format('YYYY-MM-DD');
             return (
@@ -44,7 +64,12 @@ class Proposal extends React.Component {
     }
 }
 export default Transmit.createContainer(Proposal, {
-
+    queries: {
+        data({proposalName}) {
+            if (!proposalName) return new Promise((cb)=>cb({stages:[]}))
+            return new Promise((cb)=>cb(Proposals[proposalName]))
+        }
+    }
 })
 
 

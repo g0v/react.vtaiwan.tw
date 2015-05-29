@@ -2,28 +2,64 @@
 	color: rgb(53,55,54);
 	text-decoration: none;
 	padding: 20px;
-	display: block;
+  margin: 10px;
+	display: flex;
+  flex-direction: column;
 	text-align: center;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.26);
+  background: #fff;
 }
 .ProposalList-item:hover {
-  background: rgb(220,220,220);
+  color: #3F9F9B;
 }
 .ProposalList {
   display: flex;
   max-width: 100%;
   flex-wrap: wrap;
 }
+.ProposalList-title {
+  display: block;
+  width: 100%;
+	color: rgb(53,55,54);
+  margin: 10px;
+  line-height: 1.8em;
+  border-bottom: 1px solid #DCDCDC;
+}
+.ProposalList-stage-image {
+  width: 36px;
+  height: 36px;
+  margin-right: 10px;
+  position: relative;
+  top: 10px;
+}
 .ProposalList-item-image {
   width: 100%;
+  flex-grow: 1;
+}
+.ProposalList-item-info {
+  height: 40px;
+  padding: 12px 0px;
+  font-size: 16px;
+  flex-grow: 0;
+  text-align: left;
+}
+.ProposalList-item-title {
+  padding-right: 8px;
+}
+.ProposalList-item-proposer {
+  font-size: 12px;
+  color: #646464;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 @media screen and (min-width: 1000px){
   .ProposalList-item {
-    width: 33%;
+    width: 31%;
   }
 }
 @media screen and (max-width: 999px){
   .ProposalList-item {
-    width: 50%;
+    width: 45%;
   }
 }
 @media screen and (max-width: 449px){

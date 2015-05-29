@@ -53,11 +53,11 @@ class Stage extends React.Component {
 
         if(isDue){
             //如果已經結束，顯示「本階段已結束 x/xx - o/oo」
-            leftTimeItem = <div className="Stage-stat">已結束<div className="Stage-statHighlight">{start.format('MM/DD')}-{end.format('MM/DD')}</div></div>;
+            leftTimeItem = <div className="Stage-stat">已結束<div className="Stage-statHighlight">{start.format('M/D')} ~ {end.format('M/D')}</div></div>;
 
         }else{
             //如果此階段還沒截止，計算剩下的天數
-            timeLeft = end.from(now, true).toString().split('天')[0];
+            timeLeft = end.from(now, true).toString().replace(/\D.*/, '');
 
             //計算進度
             var total = end.diff(start);
@@ -93,10 +93,13 @@ class Stage extends React.Component {
             }
         }
         
+        let icon = require('../NavBar/images/' + data.category.replace(/\d+$/, '')  + '.png');
         return (
             <Link className="Stage" 
                   to="category" 
+                  key={data.category}
                   params={{proposalName:this.props.proposalName, category:data.category}}>
+                    <img style={{"float": "right"}} className="NavBar-subItemIcon" src={icon} />
                 <div className="Stage-header">
                     <div className="Stage-title">{data.name}</div>    
                 </div>
