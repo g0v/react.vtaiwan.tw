@@ -54,7 +54,7 @@ class Post extends React.Component {
         return (
         	<div className="Posts">
         	    <div className="Posts-title">
-        	    	<span className="prompt">討論話題：</span>{title}
+        	    	<span className="prompt"></span>{title}
         	    	<span className="Posts-titleIcon"><i className="fa fa-comments-o"></i></span>
         	    	{data.length}
         	    </div>

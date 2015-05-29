@@ -17,7 +17,7 @@ class Issue extends React.Component {
         <div className="issue_item"
              onClick={clickHandler}>
             <div className="issue_item_title">
-                <span className="prompt">討論話題：</span>
+                <span className="prompt"></span>
                 <span className="q_text" dangerouslySetInnerHTML={{ __html: title }} />
                 <span className="Issue-titleIcon"><i className="fa fa-comments-o"></i></span>
                 <span className="issue_item_discuss_count">{post_count}</span>
