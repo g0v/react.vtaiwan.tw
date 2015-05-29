@@ -23,7 +23,12 @@ const routes = (
 
 if(typeof document !== 'undefined') {
   var root = document.getElementById('root');
-  Router.run(routes, Router.HistoryLocation, (Root) => {
+  const locationHandler = (
+      (document.body.getAttribute("id") === 'development')
+          ? Router.HashLocation
+          : Router.HistoryLocation
+  )
+  Router.run(routes, locationHandler, (Root) => {
     React.render(<Root/>, root);
   });
 }
@@ -43,7 +48,7 @@ module.exports = function render(locals, callback) {
               <link href="/styles.css" rel="stylesheet">
               <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
             </head>
-            <body>
+            <body id='production'>
               <div id="root">${reactString}</div>
             </body>
             <script src="/bundle.js"></script>
