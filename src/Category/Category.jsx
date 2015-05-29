@@ -17,7 +17,7 @@ class Issue extends React.Component {
         <div className="issue_item"
              onClick={clickHandler}>
             <div className="issue_item_title">
-                <span className="prompt">討論話題：</span>
+                <span className="prompt"></span>
                 <span className="q_text" dangerouslySetInnerHTML={{ __html: title }} />
                 <span className="Issue-titleIcon"><i className="fa fa-comments-o"></i></span>
                 <span className="issue_item_discuss_count">{post_count}</span>
@@ -103,6 +103,26 @@ class Category extends React.Component {
         var nextCategory = nextProps.params.category;
         var nextPage = nextProps.params.page;
 
+        if (nextProps.gitbook.length) {
+            const {topic_list} = nextProps.talk || {};
+            const {proposal_cht, category_cht} = categoryData[proposalName][category]
+            const icon = category.replace(/\d+$/, '') + '.png'
+            this.props.setNavList([
+                { path: '/'+proposalName, label: proposal_cht },
+            ].concat(nextProps.gitbook.map(({title, children}, pageID)=>
+                (pageID === 0)
+                    ? [{ path: '/'+proposalName+'/'+category, label: category_cht, icon, type: 'sub' }]
+                    : [{ path: '/'+proposalName+'/'+category+'/'+pageID, label: title.replace(/<[^>]*>/g, ''), type: 'title' }].concat((topic_list && topic_list.topics) ? children.map(({title})=>{
+                        const label = title.replace(/<[^>]*>/g, '')
+                        const {id} = topic_list.topics.filter(
+                            ({fancy_title})=>fancy_title === label
+                        )[0] || {}
+                        let path = '/'+proposalName+'/'+category+'/'+pageID;
+                        if (id) { path += ('/'+id) }
+                        return { path, label, type: 'sub' }
+                    }) : []
+            )).reduce((a,b)=>a.concat(b))))
+        }
        
         if(!proposalName || !nextProposalName) return;
         if((proposalName === nextProposalName) && (category === nextCategory)  && (page === nextPage) ){
@@ -240,13 +260,13 @@ class Category extends React.Component {
                 "is-hidden" : showDiscussion
             })
        
+        const icon = require('../NavBar/images/' + category.replace(/\d+$/, '')  + '.png');
         return (
             <div className="Category">
                 
                 
                 <div className={categoryListClasses}>
-                    <img className="Category-icon" 
-                         src="https://www.vtaiwan.tw/images/proposer/spec.png" />
+                    <img className="Category-icon" src={icon} />
                     
                     <div className="Category-breadcrumbs">
                         <Link className="Category-breadcrumbsLink"
@@ -259,7 +279,7 @@ class Category extends React.Component {
                               params={{proposalName: proposalName, category: category}}>{category_cht}
                         </Link>
                     </div>
-                    <div className="Category-title">{ title }</div>
+                    <div className="Category-title" dangerouslySetInnerHTML={{__html: title }}></div>
                     <div dangerouslySetInnerHTML={{__html:  content }} />
                     {issueItems}
     
