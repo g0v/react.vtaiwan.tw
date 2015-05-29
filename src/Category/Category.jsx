@@ -152,9 +152,9 @@ class Category extends React.Component {
 
         // Get post_coount, topic_id from talk.vtaiwan json
         var titleToPostCount = {}
-        if(talk && talk.topic_list){
-            
-            talk.topic_list.topics.map((value)=>{
+
+        if(talk && talk.topics){
+            talk.topics.map((value)=>{
                 titleToPostCount[value.fancy_title] = { 
                     id: value.id,
                     post_count: value.posts_count 
@@ -308,7 +308,38 @@ export default Transmit.createContainer(Category, {
         },
         talk({categoryNum}) {
             if (!categoryNum) return new Promise((cb)=>cb([]))
-            return request.get("//talk.vtaiwan.tw/c/"+categoryNum+"-category.json").then((res) => res.body).catch(()=>[])
+            
+            var result = {};
+            var baseURL = "//talk.vtaiwan.tw/c/"+categoryNum+"-category.json";
+
+            return new Promise((resolve, reject)=>{ 
+
+                function getJSON(baseURL,url){
+
+                    request.get(url).then((res)=>{
+                        if(!result.topics){
+                            result.topics = res.body.topic_list.topics;
+                        }else{
+                            res.body.topic_list.topics.map((value,key)=>{
+                                result.topics.push(value);
+                            })
+                        }
+                        //if there is next page
+                        var more_topics_url = res.body.topic_list.more_topics_url;
+                        if(more_topics_url){
+                            // [example] /c/crowdfunding-ref1/l/latest?category_id=59&page=1 
+                            var nextPage = more_topics_url.split("page=")[1];
+                            var nextURL = baseURL+"?page="+nextPage;
+                            return getJSON(baseURL, nextURL);
+                        }else{
+                            resolve(result);
+                        }
+                    });
+
+                }
+                getJSON(baseURL,baseURL);
+
+            });
 
         },
         posts({postID}){
