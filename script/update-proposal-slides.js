@@ -15,4 +15,4 @@ co(function* () {
       })
     })
   fs.writeFileSync(proposalDataFile, JSON.stringify(data, null, 2))
-}).catch((err) => console.log(err))
+}).catch(console.log)
