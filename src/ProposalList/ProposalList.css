@@ -17,6 +17,21 @@
   max-width: 100%;
   flex-wrap: wrap;
 }
+.ProposalList-title {
+  display: block;
+  width: 100%;
+	color: rgb(53,55,54);
+  margin: 10px;
+  line-height: 1.8em;
+  border-bottom: 1px solid #DCDCDC;
+}
+.ProposalList-stage-image {
+  width: 36px;
+  height: 36px;
+  margin-right: 10px;
+  position: relative;
+  top: 10px;
+}
 .ProposalList-item-image {
   width: 100%;
   flex-grow: 1;
