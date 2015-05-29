@@ -35,6 +35,11 @@ class App extends React.Component {
     handleNavBar () {
         this.setState({ showNavBar: !this.state.showNavBar });
     }
+    setNavList(navList) {
+        const prevNavList = this.state.navList
+        if (JSON.stringify(navList) === JSON.stringify(prevNavList)) { return }
+        this.setState({navList, prevNavList})
+    }
     render() {
         var {router} = this.context;
         var {proposalName, category} = router.getCurrentParams();
@@ -47,7 +52,7 @@ class App extends React.Component {
                 <AppBar handleNavBar={this.handleNavBar.bind(this)} />
                 <div className={ this.state.showNavBar? "App-content activeNavBar" : "App-content"} >
                     <div className="App-wrapper">
-                        <RouteHandler setNavList={(navList)=>{this.setState({navList})}} />
+                    <RouteHandler setNavList={this.setNavList.bind(this)} />
                     </div>
                 </div>
             </div>

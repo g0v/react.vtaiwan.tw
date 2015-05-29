@@ -24,7 +24,6 @@ class Proposal extends React.Component {
                 icon: category.replace(/\d+$/,'')+'.png',
                 type: 'sub',
             } })))
-            nextProps.setNavList = ()=>{}
         }
         if (nextProps.params.proposalName == this.props.params.proposalName) return
         this.props.setQueryParams(nextProps)
