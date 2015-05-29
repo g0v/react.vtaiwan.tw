@@ -32,7 +32,7 @@ class ProposalBoard extends React.Component {
         nextProps.proposalList.filter(({stages})=>
             new RegExp("^" + stage).test(stages[0].category)
         ).map(({title_eng, title_cht, proposer_abbr_eng})=>{ return {
-            path: '/'+title_eng,
+            path: '/'+title_eng+'/',
             label: title_cht,
             icon: proposer_abbr_eng + '.png',
             type: 'sub',

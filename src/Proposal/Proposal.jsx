@@ -16,9 +16,9 @@ class Proposal extends React.Component {
             const {title_cht, stages} = nextProps.data
             this.props.setNavList([
                 { path: '/', label: '首頁', type: 'title' },
-                { path: '/'+proposalName, label: title_cht, type: 'section' },
+                { path: '/'+proposalName+'/', label: title_cht, type: 'section' },
             ].concat(stages.map(({category, name})=>{ return {
-                path: '/'+proposalName+'/'+category,
+                path: '/'+proposalName+'/'+category+'/',
                 label: name,
                 icon: category.replace(/\d+$/,'')+'.png',
                 type: 'sub',

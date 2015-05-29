@@ -17,7 +17,7 @@ const routes = (
     <Route name="proposal"  path="/:proposalName/" handler={Proposal} />
     <Route name="category"  path="/:proposalName/:category/" handler={Category} />
     <Route name="categoryPage"  path="/:proposalName/:category/:page/" handler={Category} />
-    <Route name="categoryPagePost"  path="/:proposalName/:category/:page/:postID" handler={Category} />
+    <Route name="categoryPagePost"  path="/:proposalName/:category/:page/:postID/" handler={Category} />
   </Route>
 );
 
