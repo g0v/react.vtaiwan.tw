@@ -15,7 +15,7 @@ class ProposalList extends React.Component {
     var listData = Object.keys(proposalData).map((k) => proposalData[k])
     var proposalList = listData
     if (this.props.stage) {
-      proposalList = proposalList.filter((item,key) => item.stages[0].category.match(new RegExp(`^${this.props.stage}\d*`)) !== null)
+        proposalList = proposalList.filter((item,key) => item.stages[0].category.startsWith(this.props.stage))
     }
     if (proposalList.length === 0) return <section className="ProposalList"></section>
     proposalList = proposalList.map((item,key)=>{
