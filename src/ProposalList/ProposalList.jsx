@@ -3,7 +3,7 @@ import { Link } from "react-router"
 import moment from 'moment'
 import Transmit from 'react-transmit'
 import './ProposalList.css'
-import {img} from 'react'
+import {img, figure} from 'react'
 
 import proposalData from '../Proposal/data/Proposals.json'
 
@@ -21,8 +21,13 @@ class ProposalList extends React.Component {
                       params={{proposalName: item.title_eng}}>
                     <img className="ProposalList-item-image"
                       src={item.slides_image}/>
-                    <div className="ProposalList-item-title">
-                      {item.title_cht}
+                    <div className="ProposalList-item-info">
+                      <span className="ProposalList-item-title">
+                        {item.title_cht}
+                      </span>
+                      <span className="ProposalList-item-proposer">
+                        @{item.proposer_abbr_cht}
+                      </span>
                     </div>
                 </Link>
             )
