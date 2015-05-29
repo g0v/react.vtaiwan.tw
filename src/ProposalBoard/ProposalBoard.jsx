@@ -12,8 +12,7 @@ const Stages = [
     {stage: 'act', title: "定案"},
 ]
 class ProposalBoard extends React.Component {
-  render () {
-    return (
+  render () { return (
         <div className="ProposalBoard">
             <br />
             <br />
@@ -23,27 +22,37 @@ class ProposalBoard extends React.Component {
         {
             Stages.map(({stage, title}) => <ProposalList title={title} stage={stage} />)
         }</div>
-    )
-  }
+  ) }
   componentWillMount() {
-    const proposalList = Object.keys(proposalData).map((k) => proposalData[k])
+    this.props.setQueryParams({})
+  }
+  componentWillReceiveProps(nextProps) {
+    if (!nextProps.proposalList) { return; }
     const items = Stages.map(({stage, title})=>[{ label: title }].concat(
-        proposalList.filter(({stages})=>{
+        nextProps.proposalList.filter(({stages})=>
             new RegExp("^" + stage).test(stages[0].category)
-        }).map(({title_eng, title_cht, proposer_abbr_eng})=>{ return {
+        ).map(({title_eng, title_cht, proposer_abbr_eng})=>{ return {
             path: '/'+title_eng,
             label: title_cht,
             icon: proposer_abbr_eng + '.png',
             type: 'sub',
         } })
     )).reduce(((a,b)=>a.concat(b)),[]);
-    // this.props.setNavList(items.concat([
-    //     { path: '/about', label: '關於', type: 'section' },
-    //     { path: '/how', label: '如何發言', type: 'sub' },
-    //     { path: '/tutorial', label: '使用手冊', type: 'sub' },
-    //     { path: '/', type: 'sub'} // dummy
-    // ]))
+    this.props.setNavList(items.concat([
+         { path: '/about', label: '關於', type: 'section' },
+         { path: '/how', label: '如何發言', type: 'sub' },
+         { path: '/tutorial', label: '使用手冊', type: 'sub' },
+         { path: '/', type: 'sub'} // dummy
+    ]))
   }
 }
 
-export default Transmit.createContainer(ProposalBoard, {})
+export default Transmit.createContainer(ProposalBoard, {
+    queries: {
+        proposalList() {
+            return new Promise((cb)=>cb(
+                Object.keys(proposalData).map((k) => proposalData[k])
+            ))
+        }
+    }
+})
