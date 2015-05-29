@@ -34,7 +34,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader'
+        loader: 'style-loader!css-loader!postcss-loader'
       },
       {
         test: /\.(png|jpg|gif)$/,
@@ -45,5 +45,8 @@ module.exports = {
         loader: 'json-loader'
       }
     ]
-  }
+  },
+  postcss: [
+    require('autoprefixer-core')
+  ]
 };

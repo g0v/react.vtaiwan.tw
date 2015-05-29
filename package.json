@@ -23,8 +23,10 @@
   },
   "homepage": "https://github.com/g0v/react.vtaiwan.tw",
   "devDependencies": {
+    "autoprefixer-core": "^5.2.0",
     "css-loader": "^0.11.0",
     "file-loader": "^0.8.1",
+    "postcss-loader": "^0.4.3",
     "react-hot-loader": "^1.2.2",
     "style-loader": "^0.11.0",
     "url-loader": "^0.5.5",
