@@ -14,7 +14,13 @@ const Stages = [
 class ProposalBoard extends React.Component {
   render () {
     return (
-        <div className="ProposalBoard">{
+        <div className="ProposalBoard">
+            <br />
+            <br />
+            <p>在數位化生活的時代，要怎樣利用網路無遠弗屆的特性，創造更多的想像空間？</p>
+            <p>我們希望能完整討論相關問題，進而為每項提案徵集工作小組，形成法規草案。</p>
+            <p>作為公眾參與政策形成與法令訂定過程透明化的一次實驗，各項議題會分四個階段進行。</p>
+        {
             Stages.map(({stage, title}) => <ProposalList title={title} stage={stage} />)
         }</div>
     )
