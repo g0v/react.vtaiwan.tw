@@ -1,5 +1,4 @@
 import React from 'react'
-import moment from 'moment'
 import Transmit from 'react-transmit'
 import request from 'superagent-bluebird-promise'
 import './Category.css'
@@ -29,19 +28,18 @@ class Issue extends React.Component {
 
 class Category extends React.Component {
     static contextTypes = { router: React.PropTypes.func }
-    
+
     constructor (props) { super(props)
         this.state = { showDiscussion: !!this.props.params.postID, showFullDiscussion:false }
     }
 
-    _toggleShowDiscussion (postID, event){//mobile
-        
-        window.scrollTo(500, 0);
+    _toggleShowDiscussion (postID, event){
+        if(typeof window !== 'undefined') window.scrollTo(500, 0);
 
         if(postID){
            this.props.setQueryParams({
               postID: postID
-           })           
+           })
         }
 
         this.setState({
@@ -51,18 +49,18 @@ class Category extends React.Component {
     }
 
     _toggleShowDiscussionWeb (postID, event){
-        
+
         window.scrollTo(500, 0);
-        
+
         var discussion = document.getElementsByClassName("Category-discussion");
         discussion.scrollTop;
 
         if(postID){
            this.props.setQueryParams({
               postID: postID
-           })           
+           })
         }
-        
+
         if(!this.state.showDiscussion){
             this.setState({
                 showDiscussion: true
@@ -123,7 +121,7 @@ class Category extends React.Component {
                     }) : []
             )).reduce((a,b)=>a.concat(b))))
         }
-       
+
         if(!proposalName || !nextProposalName) return;
         if((proposalName === nextProposalName) && (category === nextCategory)  && (page === nextPage) ){
            return;
@@ -140,7 +138,7 @@ class Category extends React.Component {
            categoryNum: metaData.category_num,
            postID: postID
         })
-        
+
     }
     render() {
         const {gitbookURL, categoryNum, gitbook, talk, posts, onChange} = this.props;
@@ -153,13 +151,13 @@ class Category extends React.Component {
         // Get post_coount, topic_id from talk.vtaiwan json
         var titleToPostCount = {}
         if(talk && talk.topic_list){
-            
+
             talk.topic_list.topics.map((value)=>{
-                titleToPostCount[value.fancy_title] = { 
+                titleToPostCount[value.fancy_title] = {
                     id: value.id,
-                    post_count: value.posts_count 
+                    post_count: value.posts_count
                 };
-            })   
+            })
         }
         // Add post_count, topic_id data to gitbook data
         var {title, content, children} = gitbook[page];
@@ -173,8 +171,8 @@ class Category extends React.Component {
                   item.post_count = 0;
 
                }
-               
-               
+
+
            })
         }
 
@@ -194,30 +192,28 @@ class Category extends React.Component {
         var postsItem = "";
         var bindToggleFullDiscussion = this._toggleShowFullDiscussion.bind(this,null);
         var showFullDiscussion = this.state.showFullDiscussion;
-
         var loadingImg = require("./images/loading.gif");
         var loadingItem = <img className="Category-loadingImg" src={loadingImg} />;
 
         if(posts){
 
             if(posts.post_stream){
-                postsItem = <Posts data={posts.post_stream.posts} 
-                               id={posts.id} 
+                postsItem = <Posts data={posts.post_stream.posts}
+                               id={posts.id}
                                title={posts.title}
                                handleToggleFullDiscussion={bindToggleFullDiscussion}
                                showFull={showFullDiscussion}/>
-            
-                loadingItem = "";   
-                            
+
+                loadingItem = "";
+
             }else{
 
                 loadingItem = "沒有討論";
             }
-            
         }
 
 
-     
+
         var discussionContentMobile =(
             <div className={discussionClasses}>
                 <div className="Category-discussionNav">
@@ -245,29 +241,27 @@ class Category extends React.Component {
         var issueClickHandler = (window.innerWidth > 600) ? this._toggleShowDiscussionWeb : this._toggleShowDiscussion;
 
         var issueItems = (children || []).map((props, key) => {
-            
             return (
-                <Issue {...props} 
+                <Issue {...props}
                        clickHandler={issueClickHandler.bind(this, props.id)}
                        key={key}/>
             )
         });
 
-       
+
         var categoryListClasses = classNames(
             {
                 "Category-categoryList" : true,
                 "is-hidden" : showDiscussion
             })
-       
         const icon = require('../NavBar/images/' + category.replace(/\d+$/, '')  + '.png');
         return (
             <div className="Category">
-                
-                
+
+
                 <div className={categoryListClasses}>
                     <img className="Category-icon" src={icon} />
-                    
+
                     <div className="Category-breadcrumbs">
                         <Link className="Category-breadcrumbsLink"
                               to="proposal"
@@ -282,7 +276,7 @@ class Category extends React.Component {
                     <div className="Category-title" dangerouslySetInnerHTML={{__html: title }}></div>
                     <div dangerouslySetInnerHTML={{__html:  content }} />
                     {issueItems}
-    
+
                     { (page > 1) ? <Link className="Category-navigation Category-navigationPre" params={{ proposalName: proposalName, category: category, page: page-1 }} to="categoryPage">
                         <i className="fa fa-chevron-left"></i>
                     </Link>

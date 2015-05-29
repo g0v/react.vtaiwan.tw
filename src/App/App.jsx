@@ -1,5 +1,4 @@
 import React from 'react'
-import moment from 'moment'
 import Transmit from 'react-transmit'
 import request from 'superagent-bluebird-promise'
 import './App.css'
@@ -7,13 +6,9 @@ import './App.css'
 import AppBar from '../AppBar/AppBar.jsx'
 import NavBar from '../NavBar/NavBar.jsx'
 import {RouteHandler} from 'react-router'
-import ProposalList from '../ProposalList/ProposalList.jsx'
-import Category from '../Category/Category.jsx'
 
 import Nav, {NavList} from './data/Nav'
 import categoryData from '../Category/data/Category'
-
-moment.locale(window.navigator.userLanguage || window.navigator.language)
 
 class App extends React.Component {
     static propTypes = { id: React.PropTypes.string }
@@ -25,8 +20,7 @@ class App extends React.Component {
         }
     }
     componentWillMount() {
-        this.props.setQueryParams(this.props)
-        if( window.screen.availWidth >= 600) {
+        if(typeof window !== 'undefined' && window.screen.availWidth >= 600) {
             this.setState({ showNavBar: true });
         }
     }
@@ -58,11 +52,6 @@ class App extends React.Component {
     }
 }
 
-
 export default Transmit.createContainer(App, {
     queries: {}
 })
-
-
-
-

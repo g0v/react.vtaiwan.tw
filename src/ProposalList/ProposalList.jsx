@@ -1,13 +1,10 @@
 import React from 'react'
 import { Link } from "react-router"
-import moment from 'moment'
 import Transmit from 'react-transmit'
 import './ProposalList.css'
 import {img, figure} from 'react'
 
 import proposalData from '../Proposal/data/Proposals.json'
-
-moment.locale(window.navigator.userLanguage || window.navigator.language)
 
 class ProposalList extends React.Component {
 
@@ -15,7 +12,8 @@ class ProposalList extends React.Component {
     var listData = Object.keys(proposalData).map((k) => proposalData[k])
     var proposalList = listData
     if (this.props.stage) {
-        proposalList = proposalList.filter((item,key) => item.stages[0].category.startsWith(this.props.stage))
+        proposalList = proposalList.filter((item,key) => {
+          new RegExp("^" + this.props.stage).test(item.stages[0].category)})
     }
     if (proposalList.length === 0) return <section className="ProposalList"></section>
     proposalList = proposalList.map((item,key)=>{

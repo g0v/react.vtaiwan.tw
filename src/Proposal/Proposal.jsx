@@ -5,7 +5,6 @@ import './Proposal.css'
 
 import Proposals from './data/Proposals.json'
 import Stage from '../Stage/Stage.jsx'
-moment.locale(window.navigator.userLanguage || window.navigator.language)
 
 class Proposal extends React.Component {
     componentWillMount() {
@@ -30,7 +29,6 @@ class Proposal extends React.Component {
     }
     render() {
         const {data} = this.props
-
         var stages = data.stages.map((item, key)=>{
             var start_date = moment(new Date(item.start_date)).format('YYYY-MM-DD');
             return (

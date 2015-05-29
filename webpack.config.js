@@ -1,10 +1,17 @@
 var path = require('path');
 var webpack = require('webpack');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
 var plugins = [];
 var entries = [ './src/index' ];
 var loaders = [ 'babel?stage=0' ];
+var paths = require('./paths');
+
 if (/production/.test(process.env.NODE_ENV)) {
-    plugins = [ new webpack.optimize.UglifyJsPlugin() ];
+    plugins = [
+    new ExtractTextPlugin("styles.css"),
+    new StaticSiteGeneratorPlugin('bundle.js', paths),
+    new webpack.optimize.UglifyJsPlugin()];
 }
 else {
     plugins = [ new webpack.HotModuleReplacementPlugin(), new webpack.NoErrorsPlugin() ];
@@ -18,7 +25,8 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'bundle.js',
-    publicPath: '/build/'
+    publicPath: '/build/',
+    libraryTarget: 'umd'
   },
   plugins: plugins,
   resolve: {
@@ -34,7 +42,9 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader!postcss-loader'
+        loader: (/production/.test(process.env.NODE_ENV))?
+          ExtractTextPlugin.extract('style-loader','css-loader') :
+          'style-loader!css-loader!postcss-loader'
       },
       {
         test: /\.(png|jpg|gif)$/,

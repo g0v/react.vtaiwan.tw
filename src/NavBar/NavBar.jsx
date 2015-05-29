@@ -1,10 +1,7 @@
 import React from 'react'
-import moment from 'moment'
 import Transmit from 'react-transmit'
 import {Link} from 'react-router'
 import './NavBar.css'
-
-moment.locale(window.navigator.userLanguage || window.navigator.language)
 
 class NavBar extends React.Component {
 

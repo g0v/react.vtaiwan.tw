@@ -4,17 +4,15 @@ import Transmit from 'react-transmit'
 import classNames from 'classnames'
 import './Posts.css'
 
-moment.locale(window.navigator.userLanguage || window.navigator.language)
-
 class Post extends React.Component {
-	
+
     render() {
         var {data, id, title, handleToggleFullDiscussion, showFull} = this.props;
-       
+
         var posts = data.map((p,key)=>{
         	// ng-class="{'post_item_last':$last && ((currentDiscussion.posts).length) > 3 && !expand}"
         	var date = moment(p.created_at).format('YYYY-MM-DD');
-        	
+
         	var expandButton = (showFull===false && data.length > 3 && key===0) ? (
         	    <div className="post_item_intermediate"
         	    	 onClick={handleToggleFullDiscussion}>
@@ -23,7 +21,7 @@ class Post extends React.Component {
             ):"";
 
             if(showFull===false && data.length > 3 && key>=2) return;
-            
+
             var postClasses = classNames({
             	"post_item" : true,
             	"post_item_first" : showFull===false && data.length > 3 && key === 0,
@@ -61,8 +59,8 @@ class Post extends React.Component {
 
                 {posts}
 
-                <a className="mobile-only" 
-                   href={talkURL} 
+                <a className="mobile-only"
+                   href={talkURL}
                    target="_blank">
                  	<div className="toggle_reply_button">
                  		<i className="fa fa-reply"></i>
@@ -72,7 +70,7 @@ class Post extends React.Component {
                 <a className="Posts-joinTalkButton"
                    href={talkURL}
                    target="_blank">我要留言</a>
-               
+
             </div>
 
         )
