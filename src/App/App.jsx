@@ -43,12 +43,10 @@ class App extends React.Component {
     render() {
         var {router} = this.context;
         var {proposalName, category} = router.getCurrentParams();
-        var nav_list = this.state.navList || ((proposalName)? Nav[proposalName]: NavList);
-        if(category) nav_list = Nav[proposalName + '/' + category];
 
         return (
             <div className="App">
-                { this.state.showNavBar? <NavBar nav_list={ nav_list } /> : null }
+                { this.state.showNavBar? <NavBar nav_list={ this.state.navList } /> : null }
                 <AppBar handleNavBar={this.handleNavBar.bind(this)} />
                 <div className={ this.state.showNavBar? "App-content activeNavBar" : "App-content"} >
                     <div className="App-wrapper">
