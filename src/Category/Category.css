@@ -1,5 +1,6 @@
 .Category {
   margin: 5px;
+
 }
 @media screen and (min-width: 600px){
   .Category {
@@ -57,7 +58,7 @@
 }
 .Category-discussionNavClose {
   position: absolute;
-  top: 0;
+  top: 5px;
   right: 0;
   cursor: pointer;
   font-size: 20px;
@@ -96,10 +97,11 @@
 }
 .Category-categoryList {
   text-align: left;
-  padding: 5px 0px;
+  padding: 30px 0px;
   position: relative;
   line-height: 1.6;
   height: auto;
+
 }
 .Category-categoryList.is-hidden {
   display: none;  
