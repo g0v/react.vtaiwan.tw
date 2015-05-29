@@ -38,7 +38,7 @@ class Post extends React.Component {
             var avatarURL = "//talk.vtaiwan.tw//" + avatar_template;
 
             return (
-                <div className={postClasses}>
+                <div className={postClasses} key={key}>
                 	<img className="post_item_img" src={avatarURL} />
                 	<div className="post_item_info">
                   		<div className="post_item_author" >{p.username}</div>

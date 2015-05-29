@@ -1,6 +1,12 @@
 .Category {
   margin: 5px;
 }
+@media screen and (min-width: 600px){
+  .Category {
+      display: flex;
+  }
+
+}
 
 .Category-discussion {
   z-index: 500;
@@ -8,12 +14,11 @@
   position: absolute;
   text-align: center;
 
-  -moz-transition: .2s;
-  -ms-transition: .2s;
-  -webkit-transition: .2s;
-  transition: .2s;
-  transition-duration: .2s;
-
+  -moz-transition: right 1s ease-out;
+  -ms-transition: right 1s ease-out;
+  -webkit-transition: right 1s ease-out;
+  transition: right 1s ease-out;
+ 
   /* [transition-property] [transition-duration] [transition-timing-function] [transition-delay] */
 
   overflow: scroll;
@@ -34,6 +39,38 @@
   padding: 70px 0 50px 0;
   
 }
+@media screen and (min-width: 600px){
+  .Category-discussion{
+      z-index: 0;
+  
+  }
+  .Category-discussion.is-show{
+      z-index: 0;
+      padding: 70px 20px;
+      min-height: 0;
+      flex: 1;
+      position: relative;
+      height: 100vh;
+      box-shadow: -2px 1px 4px 0 rgba(0,0,0,0.14),2px 1px 4px 0 rgba(0,0,0,0.14)
+
+  }
+}
+.Category-discussionNavClose {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  font-size: 20px;
+  color: white;
+  padding-top: 13px;
+  height: 50px;
+  width: 50px;
+  background: rgb(252,84,39);
+}
+.Category-loadingImg {
+  
+}
+
 .Category-discussionNav {
   position: fixed;
   top: 0;
@@ -67,6 +104,25 @@
 .Category-categoryList.is-hidden {
   display: none;  
 
+}
+@media screen and (min-width: 600px){
+  .Category-categoryList {
+      margin: 0 auto;
+      -moz-transition: width 5s ease-in-out;
+      -ms-transition: width 5s ease-in-out;
+      -webkit-transition: width 5s ease-in-out;
+      transition: width 5s ease-in-out;
+  }
+  .Category-categoryList.is-hidden {
+      flex: 1; 
+      display: block;
+      height: 100vh;
+      overflow-x: auto;
+      overflow-y: scroll;
+      padding-right: 20px;
+      
+     
+  }
 }
 .Category-icon {
   width: 60px;
@@ -840,6 +896,12 @@ a.nav_item_sidebar--sub:hover {
   position: relative;
   border: 1px solid rgb(220,220,220);
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+
+}
+@media screen and (min-width: 600px){
+  .issue_item {
+      box-shadow: none;
+  }
 
 }
 .issue_item:hover {

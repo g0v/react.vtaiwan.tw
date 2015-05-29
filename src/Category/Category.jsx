@@ -34,7 +34,8 @@ class Category extends React.Component {
         this.state = { showDiscussion: !!this.props.params.postID, showFullDiscussion:false }
     }
 
-    _toggleShowDiscussion (postID, event){
+    _toggleShowDiscussion (postID, event){//mobile
+        
         window.scrollTo(500, 0);
 
         if(postID){
@@ -42,9 +43,39 @@ class Category extends React.Component {
               postID: postID
            })           
         }
+
         this.setState({
             showDiscussion: !this.state.showDiscussion,
             showFullDiscussion: false
+        });
+    }
+
+    _toggleShowDiscussionWeb (postID, event){
+        
+        window.scrollTo(500, 0);
+        
+        var discussion = document.getElementsByClassName("Category-discussion");
+        discussion.scrollTop;
+
+        if(postID){
+           this.props.setQueryParams({
+              postID: postID
+           })           
+        }
+        
+        if(!this.state.showDiscussion){
+            this.setState({
+                showDiscussion: true
+            });
+        }
+        this.setState({
+            showFullDiscussion: false
+        });
+    }
+
+     _hideDiscussion(){
+        this.setState({
+            showDiscussion: false
         });
     }
 
@@ -67,13 +98,21 @@ class Category extends React.Component {
         })
     }
     componentWillReceiveProps(nextProps) {
-        var {proposalName, category, postID} = this.props.params;
-        var {nextProposalName, nextCategory} = nextProps.params;
+        var {proposalName, category, postID, page} = this.props.params;
+        var nextProposalName = nextProps.params.proposalName;
+        var nextCategory = nextProps.params.category;
+        var nextPage = nextProps.params.page;
 
+       
         if(!proposalName || !nextProposalName) return;
-        if((proposalName === nextProposalName) && (category === nextCategory)){
+        if((proposalName === nextProposalName) && (category === nextCategory)  && (page === nextPage) ){
            return;
         }
+
+        //When changing page, always hide the discussion
+        this.setState({
+            showDiscussion: false
+        });
 
         var metaData = categoryData[nextProposalName][nextCategory];
         this.props.setQueryParams({
@@ -81,6 +120,7 @@ class Category extends React.Component {
            categoryNum: metaData.category_num,
            postID: postID
         })
+        
     }
     render() {
         const {gitbookURL, categoryNum, gitbook, talk, posts, onChange} = this.props;
@@ -134,37 +174,61 @@ class Category extends React.Component {
         var postsItem = "";
         var bindToggleFullDiscussion = this._toggleShowFullDiscussion.bind(this,null);
         var showFullDiscussion = this.state.showFullDiscussion;
-        if(posts && posts.post_stream){
-            //console.log(posts)
-            postsItem = <Posts data={posts.post_stream.posts} 
+
+        var loadingImg = require("./images/loading.gif");
+        var loadingItem = <img className="Category-loadingImg" src={loadingImg} />;
+
+        if(posts){
+
+            if(posts.post_stream){
+                postsItem = <Posts data={posts.post_stream.posts} 
                                id={posts.id} 
                                title={posts.title}
                                handleToggleFullDiscussion={bindToggleFullDiscussion}
                                showFull={showFullDiscussion}/>
             
+                loadingItem = "";   
+                            
+            }else{
+
+                loadingItem = "沒有討論";
+            }
+            
         }
 
-        var bindToggleDiscussion = this._toggleShowDiscussion.bind(this, null);
-        var discussionContent =(
+
+     
+        var discussionContentMobile =(
             <div className={discussionClasses}>
                 <div className="Category-discussionNav">
                     <div className="Category-discussionNavToggle"
-                         onClick={bindToggleDiscussion}>
+                         onClick={this._toggleShowDiscussion.bind(this, null)}>
                         <i className="fa fa-chevron-left"></i>
                     </div>
                 </div>
                 {postsItem}
+
             </div>
         );
+        var discussionContentWeb =(
+            <div className={discussionClasses}>
+                <div className="Category-discussionNavClose"
+                     onClick={this._hideDiscussion.bind(this, null)}><i className="fa fa-remove"></i></div>
+                {postsItem}
+                {loadingItem}
+            </div>
+        );
+        var discussionContent = (window.innerWidth > 600) ? discussionContentWeb : discussionContentMobile;
 
         // 討論話題列表
         // { (children || []).map((props) => <Issue {...props}/>) }
+        var issueClickHandler = (window.innerWidth > 600) ? this._toggleShowDiscussionWeb : this._toggleShowDiscussion;
+
         var issueItems = (children || []).map((props, key) => {
             
-            var bindToggleDiscussion = this._toggleShowDiscussion.bind(this, props.id);
             return (
                 <Issue {...props} 
-                       clickHandler={bindToggleDiscussion}
+                       clickHandler={issueClickHandler.bind(this, props.id)}
                        key={key}/>
             )
         });
@@ -178,7 +242,7 @@ class Category extends React.Component {
        
         return (
             <div className="Category">
-                {discussionContent}
+                
                 
                 <div className={categoryListClasses}>
                     <img className="Category-icon" 
@@ -210,6 +274,8 @@ class Category extends React.Component {
                         <i className="fa fa-chevron-right"></i>
                     </Link> : '' }
                 </div>
+
+                {discussionContent}
             </div>);
     }
 }
