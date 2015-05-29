@@ -108,11 +108,11 @@ class Category extends React.Component {
             const {proposal_cht, category_cht} = categoryData[proposalName][category]
             const icon = category.replace(/\d+$/, '') + '.png'
             this.props.setNavList([
-                { path: '/'+proposalName, label: proposal_cht },
+                { path: '/'+proposalName, label: proposal_cht, type: 'title' },
             ].concat(nextProps.gitbook.map(({title, children}, pageID)=>
                 (pageID === 0)
                     ? [{ path: '/'+proposalName+'/'+category, label: category_cht, icon, type: 'sub' }]
-                    : [{ path: '/'+proposalName+'/'+category+'/'+pageID, label: title.replace(/<[^>]*>/g, ''), type: 'title' }].concat((topic_list && topic_list.topics) ? children.map(({title})=>{
+                    : [{ path: '/'+proposalName+'/'+category+'/'+pageID, label: title.replace(/<[^>]*>/g, ''), type: 'section' }].concat((topic_list && topic_list.topics) ? children.map(({title})=>{
                         const label = title.replace(/<[^>]*>/g, '')
                         const {id} = topic_list.topics.filter(
                             ({fancy_title})=>fancy_title === label
