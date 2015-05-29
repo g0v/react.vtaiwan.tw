@@ -13,7 +13,7 @@ if (/production/.test(process.env.NODE_ENV)) {
     new StaticSiteGeneratorPlugin('bundle.js', paths),
     new webpack.optimize.UglifyJsPlugin()];
 }
-else {
+else if (!/staging/.test(process.env.NODE_ENV)) {
     plugins = [ new webpack.HotModuleReplacementPlugin(), new webpack.NoErrorsPlugin() ];
     entries.push('webpack-dev-server/client?http://localhost:3000', 'webpack/hot/only-dev-server');
     loaders.unshift('react-hot');
