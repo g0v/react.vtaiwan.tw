@@ -19,7 +19,7 @@ class ProposalBoard extends React.Component {
         }</div>
     )
   }
-  componentWillReceiveProps(nextProps) {
+  componentWillMount() {
     const proposalList = Object.keys(proposalData).map((k) => proposalData[k])
     const items = Stages.map(({stage, title})=>[{ label: title }].concat(
         proposalList.filter(({stages})=>
@@ -36,7 +36,6 @@ class ProposalBoard extends React.Component {
         { path: '/tutorial', label: '使用手冊' },
         { path: '/about', label: '關於' }
     ]))
-    nextProps.setNavList = ()=>{}
   }
 }
 
