@@ -20,8 +20,8 @@ class App extends React.Component {
     static contextTypes = { router: React.PropTypes.func }
     constructor(props) { super(props)
         this.state = {
-            rev: null,
-            showNavBar: false
+            showNavBar: false,
+            navList: []
         }
     }
     componentWillMount() {
@@ -31,18 +31,14 @@ class App extends React.Component {
         }
     }
     componentWillReceiveProps(nextProps) {
-        if (nextProps.id == this.props.id) return
-        this.props.setQueryParams({ id: nextProps.id })
     }
     handleNavBar () {
         this.setState({ showNavBar: !this.state.showNavBar });
     }
     render() {
-        const {id, revs, onChange} = this.props;
-        var rev = revs.length ? this.state.rev : null;
         var {router} = this.context;
         var {proposalName, category} = router.getCurrentParams();
-        var nav_list = (proposalName)? Nav[proposalName]: NavList;
+        var nav_list = this.state.navList || ((proposalName)? Nav[proposalName]: NavList);
         if(category) nav_list = Nav[proposalName + '/' + category];
 
         return (
@@ -51,7 +47,7 @@ class App extends React.Component {
                 <AppBar handleNavBar={this.handleNavBar.bind(this)} />
                 <div className={ this.state.showNavBar? "App-content activeNavBar" : "App-content"} >
                     <div className="App-wrapper">
-                        <RouteHandler />
+                        <RouteHandler setNavList={(navList)=>{this.setState({navList})}} />
                     </div>
                 </div>
             </div>
@@ -60,14 +56,8 @@ class App extends React.Component {
 }
 
 
-const LogURL = 'https://vtaiwan.tw/log'
 export default Transmit.createContainer(App, {
-    queries: {
-        revs({id}) {
-            if (!id) return new Promise((cb)=>cb([]))
-            return request.get(LogURL + id).then((res) => res.body).catch(()=>[])
-        }
-    }
+    queries: {}
 })
 
 

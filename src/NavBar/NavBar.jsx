@@ -9,17 +9,17 @@ moment.locale(window.navigator.userLanguage || window.navigator.language)
 class NavBar extends React.Component {
 
     render() {
-        var NavList = (this.props.nav_list || []).map(( {label, type, icon, path, title}:item) => {
+        var NavList = (this.props.nav_list || []).map(( {label, type, icon, path, title}:item, key) => {
             var styleClass = (type === 'title')? 'NavBar-item--title': 'NavBar-item';
             if(type === 'sub') {
                 return (
-                    <Link key={path} to={path} className="NavBar-subItem">
+                    <Link key={key} to={path} className="NavBar-subItem">
                         <img className="NavBar-subItemIcon" src={require(`./images/${icon}`)} />
                         <span className="title_cht">{label}</span>
                     </Link>
                 );
             }
-            return <Link to={path || '/'} className={styleClass} >{label}</Link>;
+            return <Link key={key} to={path || '/'} className={styleClass} >{label}</Link>;
         });
 
         return (
