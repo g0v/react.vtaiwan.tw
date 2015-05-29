@@ -32,9 +32,10 @@ class ProposalBoard extends React.Component {
         } })
     )).reduce(((a,b)=>a.concat(b)),[]);
     this.props.setNavList(items.concat([
-        { path: '/how', label: '如何發言' },
-        { path: '/tutorial', label: '使用手冊' },
-        { path: '/about', label: '關於' }
+        { path: '/about', label: '關於', type: 'section' },
+        { path: '/how', label: '如何發言', type: 'sub' },
+        { path: '/tutorial', label: '使用手冊', type: 'sub' },
+        { path: '/', type: 'sub'} // dummy
     ]))
   }
 }
