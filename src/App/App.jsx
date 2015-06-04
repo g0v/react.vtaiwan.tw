@@ -15,12 +15,12 @@ class App extends React.Component {
     static contextTypes = { router: React.PropTypes.func }
     constructor(props) { super(props)
         this.state = {
-            showNavBar: false,
+            showNavBar: true,
             navList: null
         }
     }
     componentWillMount() {
-        if(typeof window !== 'undefined' && window.screen.availWidth >= 600) {
+        if(typeof window !== 'undefined' && window.screen.availWidth < 600) {
             this.setState({ showNavBar: true });
         }
     }

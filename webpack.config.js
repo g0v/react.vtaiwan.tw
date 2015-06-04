@@ -10,7 +10,7 @@ var paths = require('./paths');
 if (/production/.test(process.env.NODE_ENV)) {
     plugins = [
     new ExtractTextPlugin("styles.css"),
-    new StaticSiteGeneratorPlugin('bundle.js', paths),
+    new StaticSiteGeneratorPlugin('bundle.js', []),
     new webpack.optimize.UglifyJsPlugin()];
 }
 else if (!/staging/.test(process.env.NODE_ENV)) {
