@@ -326,6 +326,7 @@ export default Transmit.createContainer(Category, {
                             // [example] /c/crowdfunding-ref1/l/latest?category_id=59&page=1
                             var nextPage = more_topics_url.split("page=")[1];
                             var nextURL = baseURL+"?page="+nextPage;
+                            if (nextURL === url) { return resolve(result) }
                             return getJSON(baseURL, nextURL);
                         }else{
                             resolve(result);
