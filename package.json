@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "build": "env NODE_ENV=production webpack build -content-base build/",
-    "update": "babel-node script/update-proposal-slides.js"
+    "update": "babel-node script/update-proposal-slides.js",
+    "static": "env NODE_ENV=production babel-node script/gen-static.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   "homepage": "https://github.com/g0v/react.vtaiwan.tw",
   "devDependencies": {
     "autoprefixer-core": "^5.2.0",
+    "caching-fetch": "^1.0.8",
     "css-loader": "^0.11.0",
     "extract-text-webpack-plugin": "^0.8.1",
     "file-loader": "^0.8.1",
