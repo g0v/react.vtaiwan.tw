@@ -2,12 +2,17 @@
 "use strict"
 const fs = require('fs')
 const Browser = require('zombie')
-const paths = require('./paths')
-Browser.localhost('localhost', 3000)
-let done = 0
-paths.forEach((p) => {
-  const browser = new Browser()
-  browser.visit('/', ()=>{
+const paths = ['/']
+Browser.localhost('localhost', 3000);
+const seen = {}
+processNext()
+function processNext() {
+    const p = paths.shift()
+    if (!p) { process.exit() }
+    if (seen[p]) { return processNext() }
+    seen[p] = true
+    const browser = new Browser()
+    browser.visit('/', ()=>{
     try { fs.mkdirSync("build/" + p) } catch (e) {}
     let output =(
         `<!DOCTYPE html>
@@ -21,14 +26,18 @@ paths.forEach((p) => {
             </head>
             <body id='production'>${browser.document.body.innerHTML.replace(
                /<script[^>]*>.*?<\/script>/ig, ''
-            ).replace(
-               /\/build\//g, '/'
-            )}</body>
+            ).replace(/href="#/, 'href="#')}</body>
             <script src="/bundle.js"></script>
           </html>`
     );
-    fs.writeFile("build/" + p + "/index.html", output, ()=>{
-      if (++done == paths.length) { process.exit() }
+    const outputFile = "build/" + p + "/index.html"
+    fs.writeFile(outputFile, output, ()=>{
+      console.log(`==>>> ${ outputFile.replace(/\/\/+/g, '/') }`)
+      while (/href="#?(\/[^/."][^."]+)"/.test(output)) {
+          output = output.replace(/href="#?(\/[^/."][^."]+)"/, '')
+          paths.push(console.log(RegExp.$1))
+      }
+      processNext()
     })
   })
-})
+}
