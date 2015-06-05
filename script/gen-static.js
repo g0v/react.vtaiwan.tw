@@ -5,7 +5,7 @@ const Browser = require('zombie')
 const child_process = require('child_process')
 const paths = process.argv.slice(2)
 Browser.localhost('localhost', 3000);
-const browser = new Browser()
+const browser = new Browser({ waitDuration: '10s' })
 processNext()
 function processNext() {
     const p = paths.shift() || '/'
@@ -51,7 +51,6 @@ function processNext() {
           })
           cmd.on('close', () => {
             waitFor--
-            console.log(waitFor)
             if (waitFor <= 0) { process.exit() }
           })
       }

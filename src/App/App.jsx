@@ -38,7 +38,7 @@ class App extends React.Component {
     render() {
         var {router} = this.context;
         var {proposalName, category} = router.getCurrentParams();
-        var coverImg = require("./images/cover_small.jpg");
+        // var coverImg = require("./images/cover_small.jpg");
         return (
             <div className="App">
                 <NavBar nav_list={ this.state.navList }  
