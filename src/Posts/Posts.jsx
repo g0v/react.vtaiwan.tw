@@ -20,12 +20,12 @@ class Post extends React.Component {
                 </div>
             ):"";
 
-            if(showFull===false && data.length > 3 && key>=2) return;
+            if(showFull===false && data.length > 3 && (key>=1 && key !== data.length-1)) return;
 
             var postClasses = classNames({
             	"post_item" : true,
             	"post_item_first" : showFull===false && data.length > 3 && key === 0,
-            	"post_item_last" : showFull===false && data.length > 3 && key ===1
+            	"post_item_last" : showFull===false && data.length > 3 && key === data.length-1
             });
 
 
