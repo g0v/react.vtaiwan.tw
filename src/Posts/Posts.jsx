@@ -41,7 +41,7 @@ class Post extends React.Component {
                 	<div className="post_item_info">
                   		<div className="post_item_author" >{p.username}</div>
                   		<div className="post_item_date" >{date}</div>
-                  		<div className="post_item_text" dangerouslySetInnerHTML={{ __html: p.cooked }} />
+                  		<div className="post_item_text" dangerouslySetInnerHTML={{ __html: p.cooked.replace(/href="\//g, 'target="_blank" href="https://talk.vtaiwan.tw/') }} />
       	        	</div>
       	        	{expandButton}
       	        </div>
