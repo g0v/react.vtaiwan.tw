@@ -12,7 +12,7 @@ function processNext() {
     if (seen[p]) { return processNext() }
     seen[p] = true
     const browser = new Browser()
-    browser.visit('/', ()=>{
+    browser.visit(p, ()=>{
     try { fs.mkdirSync("build/" + p) } catch (e) {}
     let output =(
         `<!DOCTYPE html>
@@ -26,7 +26,7 @@ function processNext() {
             </head>
             <body id='production'>${browser.document.body.innerHTML.replace(
                /<script[^>]*>.*?<\/script>/ig, ''
-            ).replace(/href="#/, 'href="#')}</body>
+            )}</body>
             <script src="/bundle.js"></script>
           </html>`
     );
@@ -34,8 +34,8 @@ function processNext() {
     fs.writeFile(outputFile, output, ()=>{
       console.log(`==>>> ${ outputFile.replace(/\/\/+/g, '/') }`)
       while (/href="#?(\/[^/."][^."]+)"/.test(output)) {
-          output = output.replace(/href="#?(\/[^/."][^."]+)"/, '')
-          paths.push(console.log(RegExp.$1))
+          output = output.replace(/href="(\/[^/."][^."]+)"/, '')
+          paths.push(RegExp.$1)
       }
       processNext()
     })

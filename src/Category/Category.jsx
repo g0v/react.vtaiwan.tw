@@ -1,6 +1,6 @@
 import React from 'react'
 import Transmit from 'react-transmit'
-import request from 'superagent-bluebird-promise'
+import request from '../utils/request'
 import './Category.css'
 import './lexicon.css'
 import {Link} from 'react-router'
@@ -154,7 +154,7 @@ class Category extends React.Component {
 
         if(talk && talk.topics){
             talk.topics.map((value)=>{
-                titleToPostCount[value.fancy_title] = { 
+                titleToPostCount[value.fancy_title] = {
                     id: value.id,
                     post_count: value.posts_count
                 };
@@ -299,30 +299,31 @@ export default Transmit.createContainer(Category, {
     queries: {
         gitbook({gitbookURL}) {
             if (!gitbookURL) return new Promise((cb)=>cb([]))
-            return request.get(gitbookURL + "/content.json").then((res) => res.body).catch(()=>[])
+            return request.get(gitbookURL + "/content.json").then((res) => res).catch(()=>[])
         },
         talk({categoryNum}) {
             if (!categoryNum) return new Promise((cb)=>cb([]))
-            
+
             var result = {};
             var baseURL = "//talk.vtaiwan.tw/c/"+categoryNum+"-category.json";
 
-            return new Promise((resolve, reject)=>{ 
+            return new Promise((resolve, reject)=>{
 
                 function getJSON(baseURL,url){
 
                     request.get(url).then((res)=>{
+
                         if(!result.topics){
-                            result.topics = res.body.topic_list.topics;
+                            result.topics = res.topic_list.topics;
                         }else{
-                            res.body.topic_list.topics.map((value,key)=>{
+                            res.topic_list.topics.map((value,key)=>{
                                 result.topics.push(value);
                             })
                         }
                         //if there is next page
-                        var more_topics_url = res.body.topic_list.more_topics_url;
+                        var more_topics_url = res.topic_list.more_topics_url;
                         if(more_topics_url){
-                            // [example] /c/crowdfunding-ref1/l/latest?category_id=59&page=1 
+                            // [example] /c/crowdfunding-ref1/l/latest?category_id=59&page=1
                             var nextPage = more_topics_url.split("page=")[1];
                             var nextURL = baseURL+"?page="+nextPage;
                             return getJSON(baseURL, nextURL);
@@ -339,38 +340,34 @@ export default Transmit.createContainer(Category, {
         },
         posts({postID}){
             if (!postID) return new Promise((cb)=>cb([]))
-            
+
             //posts.post_stream.posts
             var result = {};
             var url = "//talk.vtaiwan.tw/t/topic/"+postID+".json";
 
-            return new Promise((resolve, reject)=>{ 
+            return new Promise((resolve, reject)=>{
                 request.get(url).then((res)=>{
-               
-                    if(res.status <= 200){
-                        var data = res.body;
-                      
-                        if (data.posts_count <= 20) {
-                           resolve(data);
-                      
-                        }else{
-                            for (var i = 2; i <= parseInt(data.posts_count/20)+1; i++) {
-                                request.get('https://talk.vtaiwan.tw/t/topic/'+postID+'.json?page=' + i)
-                                       .then((response)=>{
-                                            var pageData = response.body;
-                                            data.post_stream.posts = data.post_stream.posts.concat(pageData.post_stream.posts);
-                                            if (data.post_stream.posts.length === data.posts_count) {
-                                              data.post_stream.posts.sort(function (a, b) {
-                                                return +a.id - +b.id;
-                                            });
-                                              
-                                            resolve(data);
-                                        }
-                                });
-                            }
+                    var data = res;
+                    if (data.posts_count <= 20) {
+                       resolve(data);
 
-                        }  
-                    }  
+                    }else{
+                        for (var i = 2; i <= parseInt(data.posts_count/20)+1; i++) {
+                            request.get('https://talk.vtaiwan.tw/t/topic/'+postID+'.json?page=' + i)
+                                   .then((response)=>{
+                                        var pageData = response.body;
+                                        data.post_stream.posts = data.post_stream.posts.concat(pageData.post_stream.posts);
+                                        if (data.post_stream.posts.length === data.posts_count) {
+                                          data.post_stream.posts.sort(function (a, b) {
+                                            return +a.id - +b.id;
+                                        });
+
+                                        resolve(data);
+                                    }
+                            });
+                        }
+
+                    }
                 });
             });
         }

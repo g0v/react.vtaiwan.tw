@@ -1,6 +1,5 @@
 import React from 'react'
 import Transmit from 'react-transmit'
-import request from 'superagent-bluebird-promise'
 import {Link} from 'react-router'
 import './AppBar.css'
 

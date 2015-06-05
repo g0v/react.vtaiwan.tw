@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from "react-router"
 import moment from 'moment'
 import Transmit from 'react-transmit'
-import request from 'superagent-bluebird-promise'
+import request from '../utils/request'
 import './Stage.css'
 
 class Stage extends React.Component {
@@ -118,11 +118,11 @@ export default Transmit.createContainer(Stage, {
     queries: {
         gitbook({gitbookURL}) {
             if (!gitbookURL) return new Promise((cb)=>cb([]))
-            return request.get(gitbookURL + "/content.json").then((res) => res.body).catch(()=>[])
+            return request.get(gitbookURL + "/content.json").then((res) => res).catch(()=>[])
         },
         talk({categoryNum}) {
             if (!categoryNum) return new Promise((cb)=>cb([]))
-            return request.get("https://talk.vtaiwan.tw/c/"+categoryNum+"-category.json").then((res) => res.body).catch(()=>[])
+            return request.get("https://talk.vtaiwan.tw/c/"+categoryNum+"-category.json").then((res) => res).catch(()=>[])
 
         }
     }
