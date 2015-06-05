@@ -3,11 +3,13 @@
 
 # 開發
 
-需要安裝 [__nodejs__](https://nodejs.org/download/)。安裝好後，開啟 Terminal 視窗按下列步驟執行指令。
+需要安裝 [__iojs__](https://iojs.org/zh-tw/)。安裝好後，開啟 Terminal 視窗按下列步驟執行指令。
 
 1. `$ npm install`
 2. `$ npm start`
 3. 開啟瀏覽器鍵入 `http://localhost:3000`
+
+(Node.js 0.10.x+ 也可用來開發，但部署時仍建議使用 iojs。)
 
 # 部署
 
