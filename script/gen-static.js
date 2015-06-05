@@ -12,7 +12,7 @@ function processNext() {
     if (seen[p]) { return processNext() }
     seen[p] = true
     const browser = new Browser()
-    browser.visit('/', ()=>{
+    browser.visit(p, ()=>{
     try { fs.mkdirSync("build/" + p) } catch (e) {}
     let output =(
         `<!DOCTYPE html>
