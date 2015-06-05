@@ -9,14 +9,19 @@
 
 }
 .App-content.activeNavBar {
-  margin-left: 255px;
-  will-change: margin-left;
+  position: fixed;
+  z-index: 0;
 }
 .App-wrapper {
 	width: 100%;
 	margin: 0 auto;
 }
-
+@media screen and (min-width: 600px){
+  .App-content.activeNavBar {
+      margin-left: 255px;
+      will-change: margin-left;
+  }
+}
 @media screen and (min-width: 1200px){
   .App-content {
       margin-top: 30px;
@@ -26,6 +31,7 @@
       padding-right: 120px;
   }
   .App-content.activeNavBar {
+      
       z-index: 1;
       /*
       margin-left: 0;

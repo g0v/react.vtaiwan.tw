@@ -40,7 +40,9 @@ class App extends React.Component {
 
         return (
             <div className="App">
-                { this.state.showNavBar? <NavBar nav_list={ this.state.navList } /> : null }
+                <NavBar nav_list={ this.state.navList }  
+                        handleNavBar={this.handleNavBar.bind(this)}
+                        showNavBar={this.state.showNavBar}/>
                 <AppBar handleNavBar={this.handleNavBar.bind(this)} />
                 <div className={ this.state.showNavBar? "App-content activeNavBar" : "App-content"} >
                     <div className="App-wrapper">

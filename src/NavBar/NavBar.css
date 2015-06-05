@@ -1,10 +1,24 @@
-@media screen and (min-width: 600px) {
-  .NavBar {
-    width: 250px;
-  }
-}
-
 .NavBar {
+  width: 100%;
+}
+.NavBar-shadowLayer {
+  width: 100%;
+  height: 100vh;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  will-change: background;
+}
+.NavBar-shadowLayer.is-show {
+  background: rgba(255,255,255,0.8);
+  transition: background .1s ease-in-out;
+ 
+}
+.NavBar-main {
+  left: -100%;
+  overflow: hidden;
+
   box-shadow: 0 2px 5px 0 hsla(0, 0%, 0%, 0.26);
   background: hsl(150, 2%, 21%);
   overflow: scroll;
@@ -12,9 +26,31 @@
   position: fixed;
   text-align: center;
   padding-right: 0;
-  left: 0;
+  
   top: 50px;
+  width: calc(100% - 80px);
   height: calc(100% - 50px);
+  will-change: left;
+  
+}
+.NavBar-main.is-show {
+  left: 0;
+
+  transition: left .1s ease-in-out;
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.4);
+
+}
+
+@media screen and (min-width: 600px) {
+  .NavBar {
+    width: auto;
+  }
+  .NavBar-main {
+    width: 250px;
+  }
+  .NavBar-shadowLayer.is-show {
+    display: none;
+  }
 }
 
 .NavBar-item {
