@@ -1,12 +1,19 @@
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var config = require('./webpack.config');
+var path = require('path');
 
-new WebpackDevServer(webpack(config), {
+var server = new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
   hot: true,
   historyApiFallback: true
-}).listen(3000, 'localhost', function (err, result) {
+});
+
+server.use('/', function(req, res){
+  res.sendFile(path.join(__dirname+'/index.html'));
+});
+
+server.listen(3000, 'localhost', function (err, result) {
   if (err) {
     console.log(err);
   }

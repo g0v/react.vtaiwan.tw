@@ -23,12 +23,8 @@ const routes = (
 
 if(typeof document !== 'undefined') {
   var root = document.getElementById('root');
-  const locationHandler = (
-      (document.body.getAttribute("id") === 'development')
-          ? Router.HashLocation
-          : Router.HistoryLocation
-  )
-  Router.run(routes, locationHandler, (Root) => {
+
+  Router.run(routes, Router.HistoryLocation, (Root) => {
     React.render(<Root/>, root);
   });
 }
