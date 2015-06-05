@@ -7,7 +7,8 @@
     "start": "node server.js",
     "build": "npm run static",
     "update": "babel-node script/update-proposal-slides.js",
-    "static": "rm -rf build/* ; env NODE_ENV=production webpack build -content-base build/ ; babel-node script/gen-static.js /"
+    "static": "rm -rf build/* ; env NODE_ENV=production webpack build -content-base build/ ; babel-node script/gen-static.js /",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "css-loader": "^0.11.0",
     "extract-text-webpack-plugin": "^0.8.1",
     "file-loader": "^0.8.1",
+    "gh-pages": "^0.3.0",
     "html-loader": "^0.3.0",
     "postcss-loader": "^0.4.3",
     "react-hot-loader": "^1.2.2",
