@@ -14,8 +14,9 @@ class App extends React.Component {
     static propTypes = { id: React.PropTypes.string }
     static contextTypes = { router: React.PropTypes.func }
     constructor(props) { super(props)
+        var showNavBar = window.innerWidth < 600 ? false:true;
         this.state = {
-            showNavBar: true,
+            showNavBar: showNavBar,
             navList: null
         }
     }
