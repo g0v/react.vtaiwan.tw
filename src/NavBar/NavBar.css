@@ -40,6 +40,12 @@
   cursor: pointer;
   font-weight: 700;
 }
+.NavBar-backIcon {
+  display: inline-block;
+  width: 24px;
+  padding-right: 2px;
+  text-align: center;
+}
 .NavBar-subItem {
   display: block;
   padding: 12px 12px 12px 20px;

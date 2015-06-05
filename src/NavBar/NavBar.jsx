@@ -16,6 +16,10 @@ class NavBar extends React.Component {
                     </Link>
                 );
             }
+            if(type === 'title'){
+                return <Link key={key} to={path || '/'} className={styleClass} >
+                <span className="NavBar-backIcon"><i className="fa fa-chevron-left"></i></span> {label}</Link>;
+            }
             return <Link key={key} to={path || '/'} className={styleClass} >
                 { icon ? <img className="NavBar-subItemIcon" src={require(`./images/${icon}`)} /> : '' }{label}</Link>;
         });
