@@ -1,21 +1,20 @@
 @media screen and (min-width: 600px) {
   .NavBar {
     width: 250px;
-    top: 50px;
-    height: 100%;
   }
 }
 
 .NavBar {
   box-shadow: 0 2px 5px 0 hsla(0, 0%, 0%, 0.26);
   background: hsl(150, 2%, 21%);
-  height: 100%;
   overflow: scroll;
   z-index: 30;
   position: fixed;
   text-align: center;
   padding-right: 0;
   left: 0;
+  top: 50px;
+  height: calc(100% - 50px);
 }
 
 .NavBar-item {
