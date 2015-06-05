@@ -2,7 +2,6 @@ import React from 'react'
 import Promise from 'bluebird'
 import Transmit from "react-transmit";
 import App from './App/App.jsx'
-import request from 'superagent-bluebird-promise'
 import Router, {Route} from 'react-router'
 import ProposalBoard from './ProposalBoard/ProposalBoard.jsx'
 import Proposal from './Proposal/Proposal.jsx'

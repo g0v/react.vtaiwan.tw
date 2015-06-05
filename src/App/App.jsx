@@ -1,6 +1,5 @@
 import React from 'react'
 import Transmit from 'react-transmit'
-import request from 'superagent-bluebird-promise'
 import './App.css'
 
 import AppBar from '../AppBar/AppBar.jsx'
