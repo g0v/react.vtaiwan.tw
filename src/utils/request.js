@@ -1,18 +1,22 @@
 import Request from 'immutable-request'
 import Url from 'url'
+import Promise from 'bluebird'
 
 export default {
   get(url) {
-//    if (global.fs && fs.existsSync(`cache/${ encodeURI(url) }.json`)) {
-//    }
-    const {protocol, host, pathname} = Url.parse(url)
-    return requestFrom(`${protocol}//${host}`).GET(pathname)
-//   .then((rv)=>{
-//        if (global.fs) {
-//            fs.writeFileSync(`cache/${ encodeURI(url) }.json`)...)
-//        }
-//        return rv
-//    });
+    return new Promise((resolve)=> {
+      if (window.localStorage && window.localStorage.getItem(encodeURI(url))) {
+        return resolve(JSON.parse(window.localStorage.getItem(encodeURI(url))))
+      }
+      const {protocol, host, pathname} = Url.parse(url)
+      return requestFrom(`${protocol}//${host}`).GET(pathname)
+        .then((rv)=>{
+          if (window.localStorage) {
+            window.localStorage.setItem(encodeURI(url), JSON.stringify(rv))
+          }
+          return resolve(rv)
+        })
+    })
   }
 }
 
