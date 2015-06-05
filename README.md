@@ -7,9 +7,7 @@
 
 1. `$ npm install`
 2. `$ npm start`
-3. open browser to connect http://localhost:3000
-
-
+3. 開啟瀏覽器鍵入 `http://localhost:3000`
 
 # 部署
 
@@ -18,6 +16,21 @@
 1. `$ npm run static`
 2. `$ npm run deploy`
 
+# 貢獻方式
+
+如果您對我們的專案有興趣或者找到錯誤，歡迎您一起幫忙修正，讓專案變得更好。請按照下列步驟進行。
+
+1. 將 repo fork 到個人帳號下。
+2. 切換到 dev branch。
+3. 按照開發一節，建立開發環境並且修正錯誤。
+4. 將修正好的commit 推到個人帳號下的 repo。
+5. 建立一個新的 pull request，等待審核和 merge。
+
+如果 merge 成功，恭喜您成為我們的一份子：）
+
+# 貢獻者
+
+請見[貢獻者名單](https://github.com/g0v/react.vtaiwan.tw/graphs/contributors)
 
 # 授權
 
