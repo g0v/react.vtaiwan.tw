@@ -11,6 +11,20 @@
   position: fixed;
   z-index: 0;
 }
+.App-intro {
+  padding: 20px;
+  padding-top: 120px;
+  line-height: 1.6;
+}
+
+@media screen and (min-width: 680px){
+  .App-intro {
+      width: 680px;
+      margin: 0 auto;
+      line-height: 1.6;
+  }
+}
+
 .App-wrapper {
 	width: 100%;
 	margin: 0 auto;

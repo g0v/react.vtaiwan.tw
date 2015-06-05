@@ -39,13 +39,24 @@ class App extends React.Component {
     render() {
         var {router} = this.context;
         var {proposalName, category} = router.getCurrentParams();
-
+        var coverImg = require("./images/cover_small.jpg");
         return (
             <div className="App">
                 <NavBar nav_list={ this.state.navList }  
                         handleNavBar={this.handleNavBar.bind(this)}
                         showNavBar={this.state.showNavBar}/>
                 <AppBar handleNavBar={this.handleNavBar.bind(this)} />
+
+                <div className="App-cover">
+                    
+                    <div className="App-intro">
+                        <p>在數位化生活的時代，要怎樣利用網路無遠弗屆的特性，創造更多的想像空間？</p>
+                        <p>我們希望能完整討論相關問題，進而為每項提案徵集工作小組，形成法規草案。</p>
+                        <p>作為公眾參與政策形成與法令訂定過程透明化的一次實驗，各項議題會分四個階段進行。</p>
+                    </div>
+
+        
+                </div>
                 <div className={ this.state.showNavBar? "App-content activeNavBar" : "App-content"} >
                     <div className="App-wrapper">
                     <RouteHandler setNavList={this.setNavList.bind(this)} />
