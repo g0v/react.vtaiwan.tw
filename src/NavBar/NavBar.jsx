@@ -32,8 +32,12 @@ class NavBar extends React.Component {
                 return <Link key={key} to={path || '/'} className={styleClass} >
                 <span className="NavBar-backIcon"><i className="fa fa-chevron-left"></i></span> {label}</Link>;
             }
-            return <Link key={key} to={path || '/'} className={styleClass} onClick={this._onListItemClicked.bind(this)}>
+            if (path) {
+                return <Link key={key} to={path || '/'} className={styleClass} onClick={this._onListItemClicked.bind(this)}>
                 { icon ? <img className="NavBar-subItemIcon" src={require(`./images/${icon}`)} /> : '' }{label}</Link>;
+            }
+            return <a key={key} className={styleClass} style={{cursor: 'default', height: '36px', padding: '6px', background: '#666' }}>
+                { icon ? <img className="NavBar-subItemIcon" src={require(`./images/${icon}`)} /> : '' }{label}</a>;
         });
 
         var mainClasses = classNames({
