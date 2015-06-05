@@ -13,7 +13,7 @@ class App extends React.Component {
     static propTypes = { id: React.PropTypes.string }
     static contextTypes = { router: React.PropTypes.func }
     constructor(props) { super(props)
-        var showNavBar = window.innerWidth < 600 ? false:true;
+        var showNavBar = true; //window.innerWidth < 600 ? false:true;
 
         this.state = {
             showNavBar: showNavBar,
@@ -21,8 +21,8 @@ class App extends React.Component {
         }
     }
     componentWillMount() {
-        if(typeof window !== 'undefined' && window.screen.availWidth > 600) {
-            this.setState({ showNavBar: true });
+        if(typeof window !== 'undefined' && window.screen.availWidth <= 600) {
+            this.setState({ showNavBar: false });
         }
     }
     componentWillReceiveProps(nextProps) {
@@ -41,7 +41,7 @@ class App extends React.Component {
         // var coverImg = require("./images/cover_small.jpg");
         return (
             <div className="App">
-                <NavBar nav_list={ this.state.navList }  
+                <NavBar nav_list={ this.state.navList }
                         handleNavBar={this.handleNavBar.bind(this)}
                         showNavBar={this.state.showNavBar}/>
                 <AppBar handleNavBar={this.handleNavBar.bind(this)} />
