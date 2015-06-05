@@ -1,9 +1,0 @@
-node_modules
-.*.swp
-*.swp
-build/
-.DS_Store
-._.DS_Store
-*~
-*.orig
-*.rej
