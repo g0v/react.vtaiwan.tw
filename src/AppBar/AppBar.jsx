@@ -9,13 +9,18 @@ class AppBar extends React.Component {
     render() {
 
         var imgURL = require("./images/AppBar-logo.png");
+        var toggleIcon = window.innerWidth > 600 ? (
+                <span className="fa-stack">
+                    <i className="fa fa-bars fa-stack-1x" />
+                </span>) : (
+                <span className="fa-stack">
+                    <i className="fa fa-circle fa-stack-2x" />
+                    <i className="fa fa-bars fa-stack-1x fa-inverse" />
+                </span>);
         return (
             <div className="AppBar">
                 <div className="AppBar-navCtrl" onClick={this.props.handleNavBar}>
-                    <span className="fa-stack">
-                        <i className="fa fa-circle fa-stack-2x" />
-                        <i className="fa fa-bars fa-stack-1x fa-inverse" />
-                    </span>
+                    {toggleIcon}
                 </div>
                 <Link to="/">
                     <div className="AppBar-siteLogo">
