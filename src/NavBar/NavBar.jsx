@@ -1,3 +1,4 @@
+"use strict"
 import React from 'react'
 import Transmit from 'react-transmit'
 import {Link} from 'react-router'
@@ -11,15 +12,10 @@ class NavBar extends React.Component {
         if(window.innerWidth < 600){
             this.props.handleNavBar();
         }
-        
-
     }
     render() {
-
-        
-
-        var NavList = (this.props.nav_list || []).map(( {label, type, icon, path, title}:item, key) => {
-            var styleClass = (type === 'title')? 'NavBar-item--title': 'NavBar-item';
+        const NavList = (this.props.nav_list || []).map(( {label, type, icon, path, title}, key) => {
+            const styleClass = (type === 'title') ? 'NavBar-item--title' : 'NavBar-item'
             if(type === 'sub') {
                 return (
                     <Link key={key} to={path} className="NavBar-subItem" onClick={this._onListItemClicked.bind(this)}>
@@ -40,15 +36,15 @@ class NavBar extends React.Component {
                 { icon ? <img className="NavBar-subItemIcon" src={require(`./images/${icon}`)} /> : '' }{label}</a>;
         });
 
-        var mainClasses = classNames({
-            "NavBar-main" : true,
-            "is-show" : this.props.showNavBar
+        const mainClasses = classNames({
+            "NavBar-main": true,
+            "is-show": this.props.showNavBar
         })
-        var shadowClasses = classNames({
-            "NavBar-shadowLayer" : true,
-            "is-show" : this.props.showNavBar
+        const shadowClasses = classNames({
+            "NavBar-shadowLayer": true,
+            "is-show": this.props.showNavBar
         })
-       
+
         return (
             <div className="NavBar">
                 <div className={shadowClasses}
@@ -56,7 +52,7 @@ class NavBar extends React.Component {
                 <div className={mainClasses}>
                     {NavList}
                 </div>
-                
+
             </div>
         )
     }

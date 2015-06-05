@@ -1,0 +1,19 @@
+{
+  "env": {
+    "node": true,
+    "browser": true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "no-unused-vars": "local",
+    "quotes": false,
+    "semi": false,
+    "camelcase": false,
+    "no-empty": false,
+    "no-loop-func": false,
+    "no-multi-spaces": false,
+    "comma-dangle": false,
+    "no-underscore-dangle": false,
+    "new-cap": false
+  }
+}

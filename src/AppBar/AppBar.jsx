@@ -1,3 +1,4 @@
+"use strict"
 import React from 'react'
 import Transmit from 'react-transmit'
 import {Link} from 'react-router'
@@ -34,7 +35,3 @@ class AppBar extends React.Component {
 }
 
 export default Transmit.createContainer(AppBar, {})
-
-
-
-

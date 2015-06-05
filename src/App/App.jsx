@@ -1,3 +1,4 @@
+"use strict"
 import React from 'react'
 import Transmit from 'react-transmit'
 import './App.css'
@@ -45,7 +46,7 @@ class App extends React.Component {
                         handleNavBar={this.handleNavBar.bind(this)}
                         showNavBar={this.state.showNavBar}/>
                 <AppBar handleNavBar={this.handleNavBar.bind(this)} />
-                <div className={ this.state.showNavBar? "App-content activeNavBar" : "App-content"} >
+                <div className={ this.state.showNavBar ? "App-content activeNavBar" : "App-content"} >
                     <div className="App-wrapper">
                     <RouteHandler setNavList={this.setNavList.bind(this)} />
                     </div>

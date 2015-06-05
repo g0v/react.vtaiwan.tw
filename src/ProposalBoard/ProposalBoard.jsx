@@ -1,3 +1,4 @@
+"use strict"
 import React from 'react'
 import {Link} from 'react-router'
 import Transmit from 'react-transmit'
@@ -21,10 +22,8 @@ class ProposalBoard extends React.Component {
                         <p>作為公眾參與政策形成與法令訂定過程透明化的一次實驗，各項議題會分四個階段進行。</p>
                     </div>
                 </div>
-        <div className="ProposalBoard">
-        {   
+        <div className="ProposalBoard">{
             Stages.map(({stage, title}) => <ProposalList title={title} stage={stage} />)
-
         }</div>
         </div>
   ) }
@@ -37,12 +36,12 @@ class ProposalBoard extends React.Component {
         nextProps.proposalList.filter(({stages})=>
             new RegExp("^" + stage).test(stages[0].category)
         ).map(({title_eng, title_cht, proposer_abbr_eng})=>{ return {
-            path: '/'+title_eng+'/',
+            path: `/${title_eng}/`,
             label: title_cht,
             icon: proposer_abbr_eng + '.png',
             type: 'sub',
         } })
-    )).reduce(((a,b)=>a.concat(b)),[]);
+    )).reduce(((a, b)=>a.concat(b)), [])
     this.props.setNavList(items.concat([
          { path: '/about/', label: '關於本站', type: 'section' },
          { path: '/how/', label: '如何發言', type: 'sub' },
