@@ -1,5 +1,9 @@
 #!/usr/bin/env babel-node
 "use strict"
+if (!parseInt(process.versions.node[0])) {
+    throw "Note: This script is incompatible with Node.js 0.*.*"
+}
+
 const fs = require('fs')
 const Browser = require('zombie')
 const child_process = require('child_process')
@@ -8,7 +12,7 @@ Browser.localhost('localhost', 3000);
 
 const browser = new Browser({ waitDuration: '10s' })
 const path = paths.shift() || '/'
-try { fs.mkdirSync("build/" + path) } finally {}
+try { fs.mkdirSync("build/" + path) } catch (e) {}
 const outputFile = "build/" + path + "/index.html"
 fs.writeFileSync(outputFile, `<body>Error: Building ${path} failed!`)
 
@@ -46,9 +50,9 @@ browser.visit(path, ()=>{
             })
             cmd.on('close', () => {
                 waitFor--
-                if (waitFor <= 0) { throw "done" }
+                if (waitFor <= 0) { process.exit() }
             })
         }
-        if (!waitFor) { throw "done" }
+        if (!waitFor) { process.exit() }
     })
 })

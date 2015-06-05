@@ -19,7 +19,7 @@ class Proposal extends React.Component {
                 { path: '/', label: '首頁', type: 'title' },
                 { label: title_cht, type: 'section' },
             ].concat(stages.map(({category, name})=>{ return {
-                path: `/${proposalName}/${category}`,
+                path: `/${proposalName}/${category}/`,
                 label: name,
                 icon: category.replace(/\d*$/, '.png'),
                 type: 'sub',
