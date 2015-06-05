@@ -33,8 +33,8 @@
       -moz-transform: translate3d(250px,0,0);
       -ms-transform: translate3d(250px,0,0);
       transform: translate3d(250px,0,0);*/
-     
-      width: calc(100% - 250px);
+
+      /*width: calc(100% - 250px);*/
       padding-left: 60px;
       padding-right: 60px;
 

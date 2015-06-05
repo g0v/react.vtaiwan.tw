@@ -347,7 +347,7 @@ export default Transmit.createContainer(Category, {
             return new Promise((resolve, reject)=>{ 
                 request.get(url).then((res)=>{
                
-                    if(res.status <== 200){
+                    if(res.status <= 200){
                         var data = res.body;
                       
                         if (data.posts_count <= 20) {
