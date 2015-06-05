@@ -2,18 +2,19 @@
 "use strict"
 const fs = require('fs')
 const Browser = require('zombie')
-const paths = ['/']
+const child_process = require('child_process')
+const paths = process.argv.slice(2)
 Browser.localhost('localhost', 3000);
-const seen = {}
+const browser = new Browser()
 processNext()
 function processNext() {
-    const p = paths.shift()
+    const p = paths.shift() || '/'
     if (!p) { process.exit() }
-    if (seen[p]) { return processNext() }
-    seen[p] = true
-    const browser = new Browser()
-    browser.visit(p, ()=>{
     try { fs.mkdirSync("build/" + p) } catch (e) {}
+    const outputFile = "build/" + p + "/index.html"
+//    if (fs.existsSync(outputFile)) { process.exit() }
+    fs.writeFileSync(outputFile, '<WIP/>')
+    browser.visit(p, ()=>{
     let output =(
         `<!DOCTYPE html>
           <html>
@@ -30,14 +31,31 @@ function processNext() {
             <script src="/bundle.js"></script>
           </html>`
     );
-    const outputFile = "build/" + p + "/index.html"
     fs.writeFile(outputFile, output, ()=>{
-      console.log(`==>>> ${ outputFile.replace(/\/\/+/g, '/') }`)
+      // console.log(`==>>> ${ outputFile.replace(/\/\/+/g, '/') }`)
+      const seen = {}
+      let waitFor = 0
       while (/href="#?(\/[^/."][^."]+)"/.test(output)) {
           output = output.replace(/href="(\/[^/."][^."]+)"/, '')
-          paths.push(RegExp.$1)
+          const p = RegExp.$1
+          if (seen[p]) { continue }
+          if (fs.existsSync("build/" + p + "/index.html")) { continue }
+          seen[p] = true
+          waitFor++
+          console.log(p)
+          const cmd = child_process.spawn("babel-node", ["script/gen-static.js", p])
+          cmd.stdout.on('data', (data) => {
+              if (data && !/WDS|HMR|DevTools/.test(data)) {
+                  console.log(('> ' + data).replace(/\n/g, ''))
+              }
+          })
+          cmd.on('close', () => {
+            waitFor--
+            console.log(waitFor)
+            if (waitFor <= 0) { process.exit() }
+          })
       }
-      processNext()
+      if (!waitFor) { process.exit() }
     })
   })
 }

@@ -7,7 +7,7 @@
     "start": "node server.js",
     "build": "env NODE_ENV=production webpack build -content-base build/",
     "update": "babel-node script/update-proposal-slides.js",
-    "static": "env NODE_ENV=production babel-node script/gen-static.js"
+    "static": "rm -rf build/* ; npm run build ; babel-node script/gen-static.js /"
   },
   "repository": {
     "type": "git",
