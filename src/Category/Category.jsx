@@ -209,7 +209,7 @@ class Category extends React.Component {
 
             }else{
 
-                loadingItem = "沒有討論";
+//                loadingItem = "沒有討論";
             }
         }
 
