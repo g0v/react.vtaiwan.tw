@@ -3,8 +3,16 @@ import Url from 'url'
 
 export default {
   get(url) {
+//    if (global.fs && fs.existsSync(`cache/${ encodeURI(url) }.json`)) {
+//    }
     const {protocol, host, pathname} = Url.parse(url)
-    return requestFrom(`${protocol}//${host}`).GET(pathname);
+    return requestFrom(`${protocol}//${host}`).GET(pathname)
+//   .then((rv)=>{
+//        if (global.fs) {
+//            fs.writeFileSync(`cache/${ encodeURI(url) }.json`)...)
+//        }
+//        return rv
+//    });
   }
 }
 
