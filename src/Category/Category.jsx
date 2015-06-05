@@ -352,12 +352,12 @@ export default Transmit.createContainer(Category, {
                        resolve(data);
 
                     }else{
-                        for (var i = 2; i <= parseInt(data.posts_count/20)+1; i++) {
+                        for (let i = 2; i <= parseInt(data.posts_count/20)+1; i++) {
                             request.get('https://talk.vtaiwan.tw/t/topic/'+postID+'.json?page=' + i)
                                    .then((response)=>{
-                                        var pageData = response.body;
+                                        let pageData = response
                                         data.post_stream.posts = data.post_stream.posts.concat(pageData.post_stream.posts);
-                                        if (data.post_stream.posts.length === data.posts_count) {
+                                        if (data.post_stream.posts.length >= data.posts_count) {
                                           data.post_stream.posts.sort(function (a, b) {
                                             return +a.id - +b.id;
                                         });
