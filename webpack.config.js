@@ -42,7 +42,7 @@ module.exports = {
       {
         test: /\.css$/,
         loader: (/production/.test(process.env.NODE_ENV)) ?
-          ExtractTextPlugin.extract('style-loader', 'css-loader') :
+          ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader') :
           'style-loader!css-loader!postcss-loader'
       },
       {
