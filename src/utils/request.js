@@ -15,12 +15,13 @@ function requestFrom(domain) {
 
 export default {
     get(url) { return new Promise((resolve)=> {
-        if (window.localStorage && window.localStorage.getItem(encodeURI(url))) {
-            return resolve(JSON.parse(window.localStorage.getItem(encodeURI(url))))
+        if ((typeof window !== 'undefined')) {
+            const item = window.localStorage.getItem(encodeURI(url))
+            if (item) { return resolve(JSON.parse(item)) }
         }
         const {protocol, host, pathname} = Url.parse(url)
         return requestFrom(`${protocol}//${host}`).GET(pathname).then((rv)=>{
-            if (window.localStorage) {
+            if ((typeof window !== 'undefined')) {
                 window.localStorage.setItem(encodeURI(url), JSON.stringify(rv))
             }
             return resolve(rv)
