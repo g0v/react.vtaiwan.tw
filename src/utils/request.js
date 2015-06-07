@@ -3,7 +3,7 @@ import Request from 'immutable-request'
 import Url from 'url'
 import Promise from 'bluebird'
 
-if ((typeof window !== 'undefined') || !(window.Promise)) {
+if ((typeof window !== 'undefined') && !(window.Promise)) {
     window.Promise = Promise
 }
 
