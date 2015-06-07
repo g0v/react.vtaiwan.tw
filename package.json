@@ -7,7 +7,7 @@
     "start": "node server.js",
     "build": "npm run static",
     "update": "./node_modules/immutable-request/node_modules/.bin/babel-node script/update-proposal-slides.js",
-    "static": "rm -rf build/* ; env NODE_ENV=production webpack build -content-base build/ ; ./node_modules/immutable-request/node_modules/.bin/babel-node script/gen-static.js /; echo static.vtaiwan.tw > build/CNAME",
+    "static": "rm -rf build/* ; env NODE_ENV=production webpack build -content-base build/ ; ./node_modules/immutable-request/node_modules/.bin/babel-node script/gen-static.js /; echo vtaiwan.tw > build/CNAME",
     "deploy": "gh-pages -d build"
   },
   "repository": {

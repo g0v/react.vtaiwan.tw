@@ -1,4 +1,5 @@
 "use strict"
+import request from './utils/request'
 import React from 'react'
 import App from './App/App.jsx'
 import Router, {Route} from 'react-router'

@@ -3,6 +3,10 @@ import Request from 'immutable-request'
 import Url from 'url'
 import Promise from 'bluebird'
 
+if ((typeof window !== 'undefined') || !(window.Promise)) {
+    window.Promise = Promise
+}
+
 const domainToRequest = {}
 function requestFrom(domain) {
     domainToRequest[domain] = domainToRequest[domain] || new Request.Requester(domain, {
