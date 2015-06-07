@@ -25,9 +25,8 @@ const stageIntro = {
     ],
     "act": [
         "在工作組開始進行討論一個月後，提案方決定是否繼續提出多次修正版草案。",
-        "若是，則繼續聚會。",
-        "若已收斂成定案，則由編輯群作為本階段（定案）的內容公佈。",
-        "工作組的討論區持續保留，以追蹤定案送交立法院或頒佈後的執行狀況"
+        "若是，則繼續聚會。若已收斂成定案，則由編輯群作為本階段（定案）的內容公佈。",
+        "工作組的討論區持續保留，以追蹤定案送交立法院或頒佈後的執行狀況。"
     ]
 }
 
@@ -43,8 +42,11 @@ class ProposalList extends React.Component {
             <Link to="proposal" key={key}
                 params={{proposalName: item.title_eng}}
                 className="ProposalList-item">
+                <div className="ProposalList-item-outer">
+                <div className="ProposalList-item-inner">
+                <div className="ProposalList-item-innermost">
                 <img className="ProposalList-item-image"
-                    src={item.slides_image} />
+                    src={item.slides_image} /></div></div></div>
                 <div className="ProposalList-item-info">
                     <span className="ProposalList-item-title">
                         {item.title_cht}
