@@ -1,6 +1,23 @@
 module.exports = {
+    "infosecurity":
+    {
+        "init" : 
+        {
+            "gitbook_url": "https://g0v.github.io/infosecurity-gitbook",
+            "category_num": 88,
+            "proposal_cht":"資安管理",
+            "category_cht":"討論"
+        }
+    },
     "crowdfunding":
     {
+        "act1" : 
+        {
+            "gitbook_url": "https://g0v.github.io/crowdfunding-ref1-gitbook",
+            "category_num": 59,
+            "proposal_cht":"群眾募資",
+            "category_cht":"定案"
+        },
         "ref1" : 
         {
             "gitbook_url": "https://g0v.github.io/crowdfunding-ref1-gitbook",
