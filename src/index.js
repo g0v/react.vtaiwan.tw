@@ -1,6 +1,6 @@
+"use strict"
+import request from './utils/request'
 import React from 'react'
-import Promise from 'bluebird'
-import Transmit from "react-transmit";
 import App from './App/App.jsx'
 import Router, {Route} from 'react-router'
 import ProposalBoard from './ProposalBoard/ProposalBoard.jsx'
@@ -25,38 +25,8 @@ const routes = (
 );
 
 if(typeof document !== 'undefined') {
-  var root = document.getElementById('root');
-
+  const root = document.getElementById('root');
   Router.run(routes, Router.HistoryLocation, (Root) => {
     React.render(<Root/>, root);
   });
 }
-global.Promise = Promise
-module.exports = function render(locals, callback) {
-  Router.run(routes, locals.path, function(Handler) {
-    // callback(null, React.renderToString(<Handler/>));
-
-    Transmit.renderToString(Handler).then(({reactString, reactData})=>{
-      let output =(
-        `<!DOCTYPE html>
-          <html>
-            <head>
-              <meta charset="utf-8" />
-              <title>react.vtaiwan.tw</title>
-              <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-              <link href="/styles.css" rel="stylesheet">
-              <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-            </head>
-            <body id='production'>
-              <div id="root">${reactString}</div>
-            </body>
-            <script src="/bundle.js"></script>
-          </html>`
-      );
-      callback(null, output);
-    }).catch((error)=> {
-      console.log(error.stack);
-    })
-
-  });
-};

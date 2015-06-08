@@ -1,3 +1,4 @@
+"use strict"
 import React from 'react'
 import moment from 'moment'
 import Transmit from 'react-transmit'
@@ -18,13 +19,13 @@ class Proposal extends React.Component {
                 { path: '/', label: '首頁', type: 'title' },
                 { label: title_cht, type: 'section' },
             ].concat(stages.map(({category, name})=>{ return {
-                path: '/'+proposalName+'/'+category+'/',
+                path: `/${proposalName}/${category}/`,
                 label: name,
-                icon: category.replace(/\d+$/,'')+'.png',
+                icon: category.replace(/\d*$/, '.png'),
                 type: 'sub',
             } })))
         }
-        if (nextProps.params.proposalName == this.props.params.proposalName) return
+        if (nextProps.params.proposalName === this.props.params.proposalName) { return }
         this.props.setQueryParams(nextProps)
     }
     render() {
@@ -63,10 +64,8 @@ class Proposal extends React.Component {
 export default Transmit.createContainer(Proposal, {
     queries: {
         data({proposalName}) {
-            if (!proposalName) return new Promise((cb)=>cb({stages:[]}))
+            if (!proposalName) { return new Promise((cb)=>cb({stages: []})) }
             return new Promise((cb)=>cb(Proposals[proposalName]))
         }
     }
 })
-
-

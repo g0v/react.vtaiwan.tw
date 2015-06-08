@@ -5,7 +5,6 @@ var StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
 var plugins = [];
 var entries = [ './src/index' ];
 var loaders = [ 'babel?stage=0' ];
-var paths = require('./paths');
 
 if (/production/.test(process.env.NODE_ENV)) {
     plugins = [
@@ -42,8 +41,8 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: (/production/.test(process.env.NODE_ENV))?
-          ExtractTextPlugin.extract('style-loader','css-loader') :
+        loader: (/production/.test(process.env.NODE_ENV)) ?
+          ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader') :
           'style-loader!css-loader!postcss-loader'
       },
       {

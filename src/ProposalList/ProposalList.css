@@ -40,9 +40,25 @@
   position: relative;
   top: 10px;
 }
+.ProposalList-item-outer {
+}
+.ProposalList-item-inner {
+  width: 100%;
+  padding-bottom: 75%;
+  display: block;
+  background: black;
+  position: relative;
+}
+.ProposalList-item-innermost {
+  position: absolute;
+  display: block;
+  top: 0; bottom: 0; left: 0; right: 0;
+}
 .ProposalList-item-image {
   width: 100%;
-  flex-grow: 1;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0;
 }
 .ProposalList-item-info {
   height: 40px;

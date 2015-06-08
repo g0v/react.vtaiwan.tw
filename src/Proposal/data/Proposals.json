@@ -1,4 +1,26 @@
 {
+  "infosecurity": {
+    "title_cht": "資安管理",
+    "title_eng": "infosecurity",
+    "prefix_cht": "數位公民環境：",
+    "prefix_eng": "civic",
+    "proposer_abbr_cht": "資通安全辦公室",
+    "proposer_abbr_eng": "nnicst",
+    "slides_url": "http://www.slideshare.net/vtaiwan/16b2b137-394241f19e1057284354f976",
+    "stages": [
+      {
+        "name": "討論",
+        "gitbook_url": "https://g0v.github.io/infosecurity-gitbook",
+        "discourse_url": "https://talk.vtaiwan.tw",
+        "category": "init",
+        "start_date": "May 8, 2015 00:00:00",
+        "end_date": "June 30, 2015 23:59:59",
+        "category_num": 88
+      }
+    ],
+    "slides_image": "//image.slidesharecdn.com/atosoi9ttvagigmgyrqr-signature-f8f78ef82b163ff091ab727c6ffe4671893ebd067f6a2ae263ddea11f18b2c1d-poli-150607174048-lva1-app6892/95/-1-1024.jpg",
+    "slides_embed_url": "//www.slideshare.net/slideshow/embed_code/key/d6QtYX8uAsEsLT"
+  },
   "crowdfunding": {
     "title_cht": "群眾募資",
     "title_eng": "crowdfunding",
@@ -9,10 +31,10 @@
     "slides_url": "http://www.slideshare.net/vtaiwan/ss-46213074",
     "stages": [
       {
-        "name": "草案 #1",
+        "name": "定案",
         "gitbook_url": "https://g0v.github.io/crowdfunding-ref1-gitbook",
         "discourse_url": "https://talk.vtaiwan.tw",
-        "category": "ref1",
+        "category": "act1",
         "start_date": "March 20, 2015 00:00:00",
         "end_date": "April 19, 2015 23:59:59",
         "category_num": 59
@@ -105,7 +127,7 @@
         "discourse_url": "https://talk.vtaiwan.tw",
         "category": "spec",
         "start_date": "March 17, 2015 00:00:00",
-        "end_date": "May 31, 2015 23:59:59",
+        "end_date": "June 30, 2015 23:59:59",
         "category_num": 53
       },
       {
@@ -136,7 +158,7 @@
         "discourse_url": "https://talk.vtaiwan.tw",
         "category": "spec",
         "start_date": "May 1, 2015 00:00:00",
-        "end_date": "May 31, 2015 23:59:59",
+        "end_date": "June 30, 2015 23:59:59",
         "category_num": 70
       },
       {
@@ -168,7 +190,7 @@
         "discourse_url": "https://talk.vtaiwan.tw",
         "category": "init",
         "start_date": "March 1, 2015 00:00:00",
-        "end_date": "May 31, 2015 23:59:59",
+        "end_date": "June 30, 2015 23:59:59",
         "category_num": 18
       }
     ],
@@ -189,7 +211,7 @@
         "discourse_url": "https://talk.vtaiwan.tw",
         "category": "init",
         "start_date": "March 1, 2015 00:00:00",
-        "end_date": "May 31, 2015 23:59:59",
+        "end_date": "June 30, 2015 23:59:59",
         "category_num": 19
       }
     ],
@@ -211,7 +233,7 @@
         "discourse_url": "https://talk.vtaiwan.tw",
         "category": "spec",
         "start_date": "May 1, 2015 00:00:00",
-        "end_date": "May 31, 2015 23:59:59",
+        "end_date": "June 30, 2015 23:59:59",
         "category_num": 68
       },
       {
@@ -242,7 +264,7 @@
         "discourse_url": "https://talk.vtaiwan.tw",
         "category": "init",
         "start_date": "March 1, 2015 00:00:00",
-        "end_date": "May 31, 2015 23:59:59",
+        "end_date": "June 30, 2015 23:59:59",
         "category_num": 21
       }
     ],
@@ -264,7 +286,7 @@
         "discourse_url": "https://talk.vtaiwan.tw",
         "category": "init",
         "start_date": "March 1, 2015 00:00:00",
-        "end_date": "May 31, 2015 23:59:59",
+        "end_date": "June 30, 2015 23:59:59",
         "category_num": 22
       }
     ],

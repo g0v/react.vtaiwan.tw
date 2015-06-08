@@ -1,3 +1,4 @@
+"use strict"
 import React from 'react'
 import Transmit from 'react-transmit'
 import './HTML.css'
