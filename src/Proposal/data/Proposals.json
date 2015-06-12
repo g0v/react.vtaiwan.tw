@@ -151,6 +151,40 @@
     "proposer_abbr_eng": "MOE",
     "proposer_abbr_cht": "教育部",
     "slides_url": "http://www.slideshare.net/vtaiwan/ss-46845072",
+    "links" : [
+        {
+            "title" : "工作組聚會：「遠距教育及開放資料」建議規格彙整",
+            "date": "April 25, 2015 14:00:00",
+            "links" : [
+                { 
+                    "title" : "共筆",
+                    "link" : "https://g0v.hackpad.com/vTaiwan--zjiELIjtDUc"
+                },
+                { 
+                    "title" : "重播",
+                    "link" : "https://livehouse.in/channel/vtaiwan/record/-Jnj9-4eG9dfh-D33RBK"
+                }
+            ]  
+       },
+       {
+            "title" : "諮詢會議：遠距教育及開放資料",
+            "date": "April 14, 2015 19:00:00",
+            "links" : [
+                { 
+                    "title" : "共筆",
+                    "link" : "https://hackpad.com/2015-04-14--JSea6WC3EdD"
+                },
+                { 
+                    "title" : "重播",
+                    "link" : "https://www.youtube.com/watch?v=DPNPZcfaQgs"
+                },
+                {
+                    "title" : "PDF",
+                    "link" : "http://www.vtaiwan.org.tw/model.aspx?no=245"
+                }
+            ]  
+       }
+    ],
     "stages": [
       {
         "name": "建議",

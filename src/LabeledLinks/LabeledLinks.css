@@ -1,0 +1,41 @@
+.LabeledLinks {
+	/*background: rgba(111,180,177,0.2);*/
+	border: 2px dotted rgba(111,180,177,0.7);
+	padding: 5px 10px 8px 8px;
+	max-width: 540px;
+	margin-top: -46px;
+	margin-left: 0px;	
+}
+@media screen and (min-width: 580px){
+	.LabeledLinks {
+		border: 4px dotted rgba(111,180,177,0.7);
+		padding: 10px 10px 8px 7px;
+	}
+}
+.LabeledLinks-title {
+	font-size: 18px;
+	font-weight: 600;
+	padding: 0px 5px 10px 92px;
+	vertical-align: top;
+
+}
+
+.LabeledLinks-item, .LabeledLinks-item:visited {
+	
+	text-decoration: none;
+	display: inline-block;
+	margin: 4px;
+	border-radius: 2px;
+	padding: 10px;
+	background: white;
+	color: rgb(111,180,177);
+	transition: background .3s;
+}
+.LabeledLinks-item:hover {
+	color: rgb(91,160,157);
+	background: rgba(111,180,177,0.2);
+	transition: background .3s;
+}
+.LabeledLinks-label {
+	margin: 6px;
+}
