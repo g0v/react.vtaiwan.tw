@@ -1,9 +1,9 @@
 .LabeledLinks {
 	/*background: rgba(111,180,177,0.2);*/
 	border: 2px dotted rgba(111,180,177,0.7);
-	padding: 5px 10px 8px 8px;
+	padding: 10px 10px 8px 8px;
 	max-width: 540px;
-	margin-top: -46px;
+	position: relative;
 	margin-left: 0px;	
 }
 @media screen and (min-width: 580px){
@@ -18,6 +18,21 @@
 	padding: 0px 5px 10px 92px;
 	vertical-align: top;
 
+}
+.LabeledLinks-date {
+	background: white;
+	position: absolute;
+	top: 8px;
+	left: -2px;
+	padding: 5px;
+	color: white;
+	background: #6FB4B1;
+
+}
+@media screen and (min-width: 580px){
+	.LabeledLinks-date {
+		left: -4px;
+	}
 }
 
 .LabeledLinks-item, .LabeledLinks-item:visited {

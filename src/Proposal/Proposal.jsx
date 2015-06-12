@@ -64,10 +64,9 @@ class Proposal extends React.Component {
                 )
 
             }else{//
-                var date = moment(new Date(item.date)).format('YYYY-MM-DD');
+                
                 content = (
-                    <div className="Proposal-stage">
-                        <div className="Proposal-stageDate">{date}</div>
+                    <div className="Proposal-link">
                         <LabeledLinks data={item} />
                     </div>
                 )

@@ -41,6 +41,12 @@
 	padding-top: 34px;
 	margin-top: 30px;
 }
+.Proposal-link {
+	position: relative;
+	padding-top: 20px;
+	
+
+}
 .Proposal-stageDate {
 	background: white;
 	position: absolute;

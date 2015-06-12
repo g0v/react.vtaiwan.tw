@@ -34,11 +34,11 @@ class LabeledLinks extends React.Component {
         		</a>
         	)
         })
-        
+        var date = moment(new Date(data.date)).format('YYYY-MM-DD');
         return (
 
             <div className="LabeledLinks">
-               
+               <div className="LabeledLinks-date">{date}</div>
                <div className="LabeledLinks-title">{data.title}</div>
                {linkItems}
             </div>
