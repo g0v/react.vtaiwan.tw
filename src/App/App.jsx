@@ -44,6 +44,7 @@ class App extends React.Component {
             <div className="App">
                 <NavBar nav_list={ this.state.navList }
                         handleNavBar={this.handleNavBar.bind(this)}
+                        activePath={router.getCurrentPath()}
                         showNavBar={this.state.showNavBar}/>
                 <AppBar handleNavBar={this.handleNavBar.bind(this)} />
                 <div className={ this.state.showNavBar ? "App-content activeNavBar" : "App-content"} >

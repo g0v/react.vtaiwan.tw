@@ -13,7 +13,17 @@ class NavBar extends React.Component {
             this.props.handleNavBar();
         }
     }
+    title(path) {
+        const section = path.split('/')[1] || undefined;
+        if (!section) {
+            return 'vTaiwan.tw';
+        }
+        const activeItem = (this.props.nav_list || []).filter(({type, path}) => type === 'section' || path === `/${section}/`)[0] || {};
+        console.log(this.props.nav_list);
+        return 'vTaiwan.tw' + (activeItem.label ? ` - ${activeItem.label}` : '');
+    }
     render() {
+        document.title = this.title(this.props.activePath);
         const NavList = (this.props.nav_list || []).map(( {label, type, icon, path, title}, key) => {
             const styleClass = (type === 'title') ? 'NavBar-item--title' : 'NavBar-item'
             if(type === 'sub') {
