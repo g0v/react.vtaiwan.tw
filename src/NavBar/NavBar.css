@@ -14,7 +14,7 @@
   width: 100%;
   background: rgba(255,255,255,0.8);
   transition: background .1s ease-in-out;
- 
+
 }
 .NavBar-main {
   left: -100%;
@@ -27,12 +27,12 @@
   position: fixed;
   text-align: center;
   padding-right: 0;
-  
+
   top: 50px;
   width: calc(100% - 80px);
   height: calc(100% - 50px);
   will-change: left;
-  
+
 }
 .NavBar-main.is-show {
   left: 0;
@@ -66,6 +66,14 @@
   text-align: left;
   cursor: pointer;
 }
+.NavBar-item:hover {
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(180, 43%, 21%);
+}
+.NavBar-item.active {
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(180, 43%, 17%);
+}
 .NavBar-item--title {
   display: block;
   padding: 12px;
@@ -76,6 +84,14 @@
   text-align: left;
   cursor: pointer;
   font-weight: 700;
+}
+.NavBar-item--title:hover {
+  color: hsl(150, 2%, 9%);
+  background: hsl(0, 0%, 77%);
+}
+.NavBar-item--title.active {
+  color: hsl(150, 2%, 10%);
+  background: hsl(0, 0%, 65%);
 }
 .NavBar-backIcon {
   display: inline-block;
@@ -93,6 +109,12 @@
   text-align: left;
   cursor: pointer;
   position: relative;
+}
+.NavBar-subItem:hover {
+  background: hsl(150, 2%, 15%);
+}
+.NavBar-subItem.active {
+  background: hsl(150, 2%, 7%);
 }
 .NavBar-subItemIcon {
   background: hsl(0, 100%, 100%);
