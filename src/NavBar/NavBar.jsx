@@ -20,16 +20,16 @@ class NavBar extends React.Component {
             return;
         }
         const activeItem = (this.props.nav_list || []).filter(({type, path}) => type === 'section' || path === `/${section}/`)[0] || {};
-        document.title = (activeItem.label ? `${activeItem.label} — ` : '') + 'vTaiwan.tw'
+        document.title = (activeItem.label ? `${activeItem.label} - ` : '') + 'vTaiwan.tw';
     }
     setOGImageMeta(image) {
         var meta = document.querySelector('meta[property="og:image"]');
         if (meta) {
-            meta.setAttribute('content', image);
+            meta.setAttribute('content', `https://vtaiwan.tw${image}`);
             return;
         }
         meta = document.createElement('meta');
-        meta.setAttribute('content', image);
+        meta.setAttribute('content', `https://vtaiwan.tw${image}`);
         meta.setAttribute('property', 'og:image');
         document.head.appendChild(meta);
     }
