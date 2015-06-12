@@ -4,6 +4,7 @@ import Transmit from 'react-transmit'
 import {Link} from 'react-router'
 import classNames from 'classnames'
 import './NavBar.css'
+import {NavList} from '../App/data/Nav'
 
 class NavBar extends React.Component {
     _onListItemClicked(){
@@ -13,17 +14,37 @@ class NavBar extends React.Component {
             this.props.handleNavBar();
         }
     }
-    title(path) {
-        const section = path.split('/')[1] || undefined;
+    setTitle(section) {
         if (!section) {
-            return 'vTaiwan.tw';
+            document.title = 'vTaiwan.tw';
+            return;
         }
         const activeItem = (this.props.nav_list || []).filter(({type, path}) => type === 'section' || path === `/${section}/`)[0] || {};
-        console.log(this.props.nav_list);
-        return 'vTaiwan.tw' + (activeItem.label ? ` - ${activeItem.label}` : '');
+        document.title = 'vTaiwan.tw' + (activeItem.label ? ` - ${activeItem.label}` : '');
+    }
+    setOGImageMeta(image) {
+        var meta = document.querySelector('meta[property="og:image"]');
+        if (meta) {
+            meta.setAttribute('content', image);
+            return;
+        }
+        meta = document.createElement('meta');
+        meta.setAttribute('content', image);
+        meta.setAttribute('property', 'og:image');
+        document.head.appendChild(meta);
+    }
+    setOGImage(section) {
+        const sectionInfo = NavList.filter(({icon, path}) => icon && path === `/${section}/`)[0] || {};
+        if (!sectionInfo.icon) {
+            this.setOGImageMeta(require('../AppBar/images/AppBar-logo.png'));
+        } else {
+            this.setOGImageMeta(require(`./images/${sectionInfo.icon}`));
+        }
     }
     render() {
-        document.title = this.title(this.props.activePath);
+        const section = this.props.activePath.split('/')[1] || undefined;
+        this.setTitle(section);
+        this.setOGImage(section);
         const NavList = (this.props.nav_list || []).map(( {label, type, icon, path, title}, key) => {
             const styleClass = (type === 'title') ? 'NavBar-item--title' : 'NavBar-item'
             if(type === 'sub') {
