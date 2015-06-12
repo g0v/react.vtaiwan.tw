@@ -20,7 +20,7 @@ class NavBar extends React.Component {
             return;
         }
         const activeItem = (this.props.nav_list || []).filter(({type, path}) => type === 'section' || path === `/${section}/`)[0] || {};
-        document.title = 'vTaiwan.tw' + (activeItem.label ? ` - ${activeItem.label}` : '');
+        document.title = (activeItem.label ? `${activeItem.label} — ` : '') + 'vTaiwan.tw'
     }
     setOGImageMeta(image) {
         var meta = document.querySelector('meta[property="og:image"]');
