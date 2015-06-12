@@ -1,7 +1,7 @@
 module.exports = {
     "infosecurity":
     {
-        "init" : 
+        "init" :
         {
             "gitbook_url": "https://g0v.github.io/infosecurity-gitbook",
             "category_num": 88,
@@ -11,28 +11,28 @@ module.exports = {
     },
     "crowdfunding":
     {
-        "act1" : 
+        "act1" :
         {
             "gitbook_url": "https://g0v.github.io/crowdfunding-ref1-gitbook",
             "category_num": 59,
             "proposal_cht":"群眾募資",
             "category_cht":"定案"
         },
-        "ref1" : 
+        "ref1" :
         {
             "gitbook_url": "https://g0v.github.io/crowdfunding-ref1-gitbook",
             "category_num": 59,
             "proposal_cht":"群眾募資",
             "category_cht":"草案 #1"
         },
-        "spec" : 
+        "spec" :
         {
             "gitbook_url": "https://g0v.github.io/crowdfunding-spec-gitbook",
             "category_num": 55,
             "proposal_cht":"群眾募資",
             "category_cht":"建議"
         },
-        "init" : 
+        "init" :
         {
             "gitbook_url": "https://g0v.github.io/crowdfunding-gitbook",
             "category_num": 6,
@@ -42,7 +42,7 @@ module.exports = {
     },
     "closelyheld":
     {
-        "act1" : 
+        "act1" :
         {
             "gitbook_url": "https://g0v.github.io/closelyheld-act1-gitbook",
             "category_num": 72,
@@ -73,14 +73,14 @@ module.exports = {
     },
     "etax":
     {
-        "spec": 
+        "spec":
         {
             "gitbook_url": "https://g0v.github.io/etax-spec-gitbook",
-            "category_num": 53,
+            "category_num": 57,
             "proposal_cht":"網路交易課稅",
             "category_cht":"建議"
         },
-        "init": 
+        "init":
         {
             "gitbook_url": "https://g0v.github.io/etax-gitbook",
             "category_num": 14,
@@ -117,7 +117,7 @@ module.exports = {
     },
     "telemedicine":
     {
-        "init" : 
+        "init" :
         {
             "gitbook_url": "https://g0v.github.io/telemedicine-gitbook",
             "category_num": 19,
@@ -127,7 +127,7 @@ module.exports = {
     },
     "data-levy":
     {
-        "spec" : 
+        "spec" :
         {
             "gitbook_url": "https://g0v.github.io/data-levy-spec-gitbook",
             "category_num": 68,
@@ -144,7 +144,7 @@ module.exports = {
     },
     "consumer-protection":
     {
-        "init" : 
+        "init" :
         {
             "gitbook_url": "https://g0v.github.io/consumer-protection-gitbook",
             "category_num": 21,
@@ -154,12 +154,12 @@ module.exports = {
     },
     "personal-data-protection":
     {
-        "init" : 
+        "init" :
         {
             "gitbook_url": "https://g0v.github.io/personal-data-protection-gitbook",
             "category_num": 22,
             "proposal_cht":"個資利用與去識別化",
             "category_cht":"討論"
-        } 
+        }
     }
 }

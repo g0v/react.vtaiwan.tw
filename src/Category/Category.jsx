@@ -93,6 +93,8 @@ class Category extends React.Component {
         this.props.setQueryParams({
             gitbookURL: metaData.gitbook_url,
             categoryNum: metaData.category_num,
+            proposalName: proposalName,
+            category: category,
             postID: postID
         })
     }
@@ -107,6 +109,7 @@ class Category extends React.Component {
             const {proposal_cht, category_cht} = categoryData[proposalName][category]
             const icon = category.replace(/\d+$/, '') + '.png'
             const base = `/${proposalName}/`
+
             this.props.setNavList([
                 { path: base, label: proposal_cht, type: 'title' },
             ].concat(nextProps.gitbook.map(({title, children}, pageID)=>
@@ -145,10 +148,17 @@ class Category extends React.Component {
         this.props.setQueryParams({
             gitbookURL: metaData.gitbook_url,
             categoryNum: metaData.category_num,
+            proposalName: nextProposalName,
+            category: nextCategory,
             postID: postID
         })
     }
+    _removeLexicon (text) {
+        const hint = /<span\ class=\"hint\"\ data-hint=\"(?:.+\n?)+\">(.+)<\/span>/;
+        return text.replace(hint, (matched, raw) => raw);
+    }
     render() {
+
         const {gitbookURL, categoryNum, gitbook, talk, posts, onChange} = this.props
         const {proposalName, category, postID} = this.props.params
         const page = Number(this.props.params.page) || 0
@@ -166,10 +176,11 @@ class Category extends React.Component {
                 };
             })
         }
-
         // Add post_count, topic_id data to gitbook data
         const {title, content, children} = gitbook[page]
         if (children){ children.forEach((item)=>{
+
+            item.title = this._removeLexicon(item.title);
             if (titleToPostCount[item.title]){
                 item.post_count = titleToPostCount[item.title].post_count || 0
                 item.id = titleToPostCount[item.title].id
@@ -306,11 +317,10 @@ export default Transmit.createContainer(Category, {
             if (!gitbookURL) { return new Promise((cb)=>cb([])) }
             return request.get(gitbookURL + "/content.json").then((res) => res).catch(()=>[])
         },
-        talk({categoryNum}) {
-            if (!categoryNum) { return new Promise((cb)=>cb([])) }
-            const result = {}
-            const baseURL = `//talk.vtaiwan.tw/c/${categoryNum}-category.json`
+        talk({proposalName, category, categoryNum}){
+            if(!categoryNum) {return new Promise((cb)=>cb([]))}
             return new Promise((resolve, reject)=>{
+                const result = {}
                 function getJSON(url){
                     request.get(url).then((res)=>{
                         if(!result.topics){
@@ -333,10 +343,20 @@ export default Transmit.createContainer(Category, {
                         }
                     })
                 }
-                getJSON(baseURL)
+                request.get('//talk.vtaiwan.tw/site.json').then((res)=>{
+                    res.categories
+                        .filter((c)=> c.parent_category_id === categoryNum)
+                        .map(({id, parent_category_id})=>{
+                            var slug = (category === 'init') ? proposalName : `${proposalName}-${category}`;
+                            if(proposalName === 'crowdfunding' && category ==='act1') slug = 'crowdfunding-ref1';
+                            const baseURL = (!parent_category_id)? `//talk.vtaiwan.tw/c/${id}-category.json`:`//talk.vtaiwan.tw/c/${slug}/${id}-category.json`;
+                            getJSON(baseURL)
+                        })
+                })
             })
         },
         posts({postID}){
+
             if (!postID) { return new Promise((cb)=>cb([])) }
             const result = {};
             const url = `//talk.vtaiwan.tw/t/topic/${postID}.json`
