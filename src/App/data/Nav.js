@@ -1,6 +1,8 @@
 module.exports = {
   NavList: [
     { label: '主題'},
+    { path: '/cyberbullying/', label: '網路霸凌', icon: 'MOJ-MOHW.png', type: 'sub'},
+    { path: '/infosecurity/', label: '資安管理', icon: 'nnicst.png', type: 'sub'},
     { path: '/crowdfunding/', label: '群眾募資', icon: 'sfb.png', type: 'sub'},
     { path: '/closelyheld/', label: '閉鎖型公司', icon: 'DOCMOEA.png', type: 'sub'},
     { path: '/etax/', label: '網路交易課稅', icon: 'MOFTA.png', type: 'sub'},
