@@ -18,7 +18,7 @@ fs.writeFileSync(outputFile, `<body>Error: Building ${path} failed!`)
 browser.visit(path, ()=>{
     let image = 'https://vtaiwan.tw/1ddd8d3c1e5ab44666b115976cee99c8.png'
     let meta = browser.document.querySelector('meta[property="og:image"]')
-    if (meta && meta.getAttribute('content')) { image = 'https://vtaiwan.tw' + meta.getAttribute('content') }
+    if (meta && meta.getAttribute('content')) { image = 'https://vtaiwan.tw' + meta.getAttribute('content').replace('https://vtaiwan.tw', '') }
     let output = `<!DOCTYPE html>
         <html>
         <head>
