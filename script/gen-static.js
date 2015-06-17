@@ -24,10 +24,10 @@ browser.visit(path, ()=>{
         <head>
         <meta charset="utf-8" />
         <title>${ browser.document.title }</title>
-<meta content="${ image }" property="og:image">
-<meta content="website" property="og:type">
-<link rel="icon" type="image/png" href="${ image }">
-<meta content="${ image }" name="twitter:image">
+        <meta content="${ image }" property="og:image">
+        <meta content="website" property="og:type">
+        <link rel="icon" type="image/png" href="${ image }">
+        <meta content="${ image }" name="twitter:image">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <link href="/styles.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">

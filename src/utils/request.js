@@ -3,8 +3,15 @@ import Request from 'immutable-request'
 import Url from 'url'
 import Promise from 'bluebird'
 
-if ((typeof window !== 'undefined') && !(window.Promise)) {
-    window.Promise = Promise
+if (typeof window !== 'undefined') {
+    const TIME_STAMP = ((location.port === 3000) ? Math.random() :
+        'Wed Jun 17 07:55:39 CST 2015'
+    )
+    if (!(window.Promise)) { window.Promise = Promise }
+    if (window.localStorage.getItem('TIME_STAMP') !== TIME_STAMP) {
+        window.localStorage.clear()
+        window.localStorage.setItem('TIME_STAMP', TIME_STAMP)
+    }
 }
 
 const domainToRequest = {}

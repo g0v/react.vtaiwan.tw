@@ -1,4 +1,26 @@
 {
+  "cyberbullying": {
+    "title_cht": "網路霸凌",
+    "title_eng": "cyberbullying",
+    "prefix_cht": "數位公民環境：",
+    "prefix_eng": "civic",
+    "proposer_abbr_cht": "法務部、衛福部",
+    "proposer_abbr_eng": "MOJ-MOHW",
+    "slides_url": "http://www.slideshare.net/vtaiwan/cyberbullying-49304122",
+    "stages": [
+      {
+        "name": "討論",
+        "gitbook_url": "https://g0v.github.io/cyberbullying-gitbook",
+        "discourse_url": "https://talk.vtaiwan.tw",
+        "category": "init",
+        "start_date": "June 16, 2015 00:00:00",
+        "end_date": "July 31, 2015 23:59:59",
+        "category_num": 92
+      }
+    ],
+    "slides_image": "//image.slidesharecdn.com/nrjvk4hrp2r6cv4mg7db-signature-045158dc41e3894e555259f1fbccc032e06e08510399385ed44413b3528cb98c-poli-150612082524-lva1-app6892/95/-1-1024.jpg",
+    "slides_embed_url": "//www.slideshare.net/slideshow/embed_code/key/bK7xMrO8x5cCoa"
+  },
   "infosecurity": {
     "title_cht": "資安管理",
     "title_eng": "infosecurity",
