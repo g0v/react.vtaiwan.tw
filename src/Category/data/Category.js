@@ -1,4 +1,14 @@
 module.exports = {
+    "cyberbullying":
+    {
+        "init" :
+        {
+            "gitbook_url": "https://g0v.github.io/cyberbullying-gitbook",
+            "category_num": 92,
+            "proposal_cht":"網路霸凌",
+            "category_cht":"討論"
+        }
+    },
     "infosecurity":
     {
         "init" : 
