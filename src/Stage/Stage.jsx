@@ -54,7 +54,7 @@ class Stage extends React.Component {
             leftTimeItem = <div className="Stage-stat">已結束<div className="Stage-statHighlight">{start.format('M/D')} ~ {end.format('M/D')}</div></div>;
         }else{
             //如果此階段還沒截止，計算剩下的天數
-            timeLeft = end.from(now, true).toString().replace(/\D.*/, '');
+            timeLeft = end.diff(now, 'days')
 
             //計算進度
             const total = end.diff(start)
