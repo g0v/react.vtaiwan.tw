@@ -1,4 +1,8 @@
 module.exports = {
+    "uberx":
+    {
+       
+    },
     "cyberbullying":
     {
         "init" :
