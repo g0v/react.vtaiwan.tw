@@ -7,6 +7,7 @@ import './Proposal.css'
 import Proposals from './data/Proposals.json'
 import Stage from '../Stage/Stage.jsx'
 import LabeledLinks from '../LabeledLinks/LabeledLinks.jsx'
+import ProgressBar from "../ProgressBar/ProgressBar.jsx"
 
 class Proposal extends React.Component {
     componentWillMount() {
@@ -67,7 +68,7 @@ class Proposal extends React.Component {
                 var start_date = moment(new Date(item.start_date)).format('YYYY-MM-DD');
                 content = (<div className="Proposal-polis">
                     <div className="Proposal-stageDate">{start_date}</div>
-                  
+                    <ProgressBar data={item}/>
                     <div className="polis" data-conversation_id={item.polis_id}></div>
                     
                 </div>)
