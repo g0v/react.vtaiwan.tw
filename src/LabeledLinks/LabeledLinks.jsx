@@ -15,6 +15,7 @@ class LabeledLinks extends React.Component {
         			icon = "fa fa-pencil"
         			break
         		case '重播':
+        		case '直播':
         			icon = "fa fa-youtube-play"
         			break
         		case 'PDF':
