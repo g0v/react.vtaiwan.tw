@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+        <meta charset="utf-8" />
+        <title>個資利用與去識別化 - vTaiwan.tw</title>
+        <meta content="https://vtaiwan.tw/aebf246866935a4555eecd35396b652f.png" property="og:image">
+        <meta content="website" property="og:type">
+        <link rel="icon" type="image/png" href="https://vtaiwan.tw/aebf246866935a4555eecd35396b652f.png">
+        <meta content="https://vtaiwan.tw/aebf246866935a4555eecd35396b652f.png" name="twitter:image">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link href="/styles.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        </head>
+        <body id='production'><div id="root"><div class="App" data-reactid=".0"><div class="NavBar" data-reactid=".0.0"><div class="NavBar-shadowLayer is-show" data-reactid=".0.0.0"></div><div class="NavBar-main is-show" data-reactid=".0.0.1"><a class="NavBar-item--title" href="/personal-data-protection/" data-reactid=".0.0.1.$0"><span class="NavBar-backIcon" data-reactid=".0.0.1.$0.0"><i class="fa fa-chevron-left" data-reactid=".0.0.1.$0.0.0"></i></span><span data-reactid=".0.0.1.$0.1"> </span><span data-reactid=".0.0.1.$0.2">個資利用與去識別化</span></a><a class="NavBar-subItem" href="/personal-data-protection/spec/" data-reactid=".0.0.1.$1"><img class="NavBar-subItemIcon" src="/30cb5de313098e8404bc6eaf37ec3a0d.png" data-reactid=".0.0.1.$1.0"><span class="title_cht" data-reactid=".0.0.1.$1.1">建議</span></a><a class="NavBar-item active" href="/personal-data-protection/spec/1/" data-reactid=".0.0.1.$2"><span data-reactid=".0.0.1.$2.0"></span><span data-reactid=".0.0.1.$2.1">需求與建議</span></a></div></div><div class="AppBar" data-reactid=".0.1"><div class="AppBar-navCtrl" data-reactid=".0.1.0"><span class="fa-stack" data-reactid=".0.1.0.0"><i class="fa fa-bars fa-stack-1x" data-reactid=".0.1.0.0.0"></i></span></div><a class="" href="/" data-reactid=".0.1.1"><div class="AppBar-siteLogo" data-reactid=".0.1.1.0"><img class="AppBar-siteLogoImg" src="/1ddd8d3c1e5ab44666b115976cee99c8.png" data-reactid=".0.1.1.0.0"><div class="AppBar-siteLogoText" data-reactid=".0.1.1.0.1">vTaiwan</div></div></a></div><div class="App-content activeNavBar" data-reactid=".0.2"><div class="App-wrapper" data-reactid=".0.2.0"><div data-reactid=".0.2.0.0" class="Category"><div class="Category-categoryList" data-reactid=".0.2.0.0.0"><img class="Category-icon" src="/30cb5de313098e8404bc6eaf37ec3a0d.png" data-reactid=".0.2.0.0.0.0"><div class="Category-breadcrumbs" data-reactid=".0.2.0.0.0.1"><a class="Category-breadcrumbsLink" href="/personal-data-protection/" data-reactid=".0.2.0.0.0.1.0">個資利用與去識別化</a><span data-reactid=".0.2.0.0.0.1.1">&nbsp;&gt;&nbsp;</span><a class="Category-breadcrumbsLink" href="/personal-data-protection/spec/" data-reactid=".0.2.0.0.0.1.2">建議</a></div><div class="Category-title" data-reactid=".0.2.0.0.0.2">需求與建議</div><div data-reactid=".0.2.0.0.0.3">
+<p>「個資<span class="hint" data-hint="指將蒐集之個人資料為處理以外之使用。">利用</span>與<span class="hint" data-hint="個資法第2條第1款定義之個人資料，除了姓名、出生年月日、身分證編號等資料之外，也包含其他「得以直接或間接方式識別該個人之資料」。「去識別化」即是將資料進行處理，使其不致落入上列的定義裡。">去識別化</span>」是針對政府為公共利益之必要，發佈統計資料、提供學術研究時，採用「<a href="https://en.wikipedia.org/wiki/Data_masking" target="_blank">遮除</a>、<a href="https://en.wikipedia.org/wiki/T-closeness" target="_blank">概略化</a>、<a href="https://en.wikipedia.org/wiki/Differential_privacy" target="_blank">亂數化</a>」等資訊技術，以充份保障<span class="hint" data-hint="指自然人之姓名、出生年月日、國民身分證統一編號、護照號碼、特徵、指紋、婚姻、家庭、教育、職業、病歷、醫療、基因、性生活、健康檢查、犯罪前科、聯絡方式、財務情況、社會活動及其他得以直接或間接方式識別該個人之資料。">個人資料</span>及隱私權、增進公眾互信的架構。實務上的建議，可簡列如下：</p>
+<ol>
+<li>機關儲存源資料時，可將識別符<a href="https://en.wikipedia.org/wiki/Tokenization_%28data_security%29" target="_blank">代碼化</a>以增進資訊安全。<ul>
+<li>此處「代碼化」必須為不可逆運算，但可<a href="https://en.wikipedia.org/wiki/Message_authentication_code" target="_blank">結合密鑰</a>為之。</li>
+<li>代碼化後之資料仍然含有有隱私與<span class="hint" data-hint="指自然人之姓名、出生年月日、國民身分證統一編號、護照號碼、特徵、指紋、婚姻、家庭、教育、職業、病歷、醫療、基因、性生活、健康檢查、犯罪前科、聯絡方式、財務情況、社會活動及其他得以直接或間接方式識別該個人之資料。">個人資料</span>，因此不應稱為「<span class="hint" data-hint="個資法第2條第1款定義之個人資料，除了姓名、出生年月日、身分證編號等資料之外，也包含其他「得以直接或間接方式識別該個人之資料」。「去識別化」即是將資料進行處理，使其不致落入上列的定義裡。">去識別化</span>資料」。</li>
+<li>機關應容許資料當事人申請註記為「排除特定目的外之<span class="hint" data-hint="指將蒐集之個人資料為處理以外之使用。">利用</span>」。</li>
+</ul>
+</li>
+<li>為統計取樣之必要，或向不特定公眾提供含任何個資之資料集時：<ul>
+<li>應以「任何人（含原資料持有人）皆無從識別」為判準，釋出<a href="https://en.wikipedia.org/wiki/Synthetic_data" target="_blank">合成資料</a>。</li>
+</ul>
+</li>
+<li>為學術研究之必要，向特定研究者提供含特種（敏感）個資之資料集時：<ul>
+<li>應以「資訊專家亦無從識別」為判準，按實際需求，採「資料最少原則」提供。</li>
+</ul>
+</li>
+<li>為學術研究之必要，向特定研究者提供無特種（敏感）個資之資料集時：<ul>
+<li>應以「有心侵入者無從識別」為判準，按實際需求，採「資料最少原則」提供。</li>
+</ul>
+</li>
+<li>機關可將代碼化後之資料，委託第三方機構執行下列事項：<ul>
+<li>將資料充份<span class="hint" data-hint="個資法第2條第1款定義之個人資料，除了姓名、出生年月日、身分證編號等資料之外，也包含其他「得以直接或間接方式識別該個人之資料」。「去識別化」即是將資料進行處理，使其不致落入上列的定義裡。">去識別化</span>處理後，向特定研究者揭露。</li>
+<li>製作「任何人（含原資料持有人）皆無從識別」之合成資料。</li>
+</ul>
+</li>
+<li>事後註記為「排除特定目的外之<span class="hint" data-hint="指將蒐集之個人資料為處理以外之使用。">利用</span>」者：<ul>
+<li>機關應結合密鑰計算其代碼，使第三方機構刪除相應資料。</li>
+</ul>
+</li>
+<li>機關不得將代碼化密鑰交予第三方機構。</li>
+<li>概略化、亂數化技術之參數值應由個案討論訂定。<ul>
+<li>下圖列出對應各專業層級的侵入者，可採用的<span class="hint" data-hint="個資法第2條第1款定義之個人資料，除了姓名、出生年月日、身分證編號等資料之外，也包含其他「得以直接或間接方式識別該個人之資料」。「去識別化」即是將資料進行處理，使其不致落入上列的定義裡。">去識別化</span>方法。</li>
+<li>多項方法可以施用於同一資料集，例如身分證字號採代碼化、ICD-9 值一律遮除、出生年月日概略化、最後再採取亂數化處理。</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://g0v.github.io/personal-data-protection-spec-gitbook/techniques.jpg" alt="2015/07/11 現行技術一覽"></p>
+</div><div class="issue_item" data-reactid=".0.2.0.0.0.4:$0"><div class="issue_item_title" data-reactid=".0.2.0.0.0.4:$0.0"><span class="prompt" data-reactid=".0.2.0.0.0.4:$0.0.0"></span><span class="q_text" data-reactid=".0.2.0.0.0.4:$0.0.1">建立去識別化標準</span><span class="Issue-titleIcon" data-reactid=".0.2.0.0.0.4:$0.0.2"><i class="fa fa-comments-o" data-reactid=".0.2.0.0.0.4:$0.0.2.0"></i></span><span class="issue_item_discuss_count" data-reactid=".0.2.0.0.0.4:$0.0.3">1</span></div><div class="q_text" data-reactid=".0.2.0.0.0.4:$0.1">
+<p>考量<span class="hint" data-hint="指自然人之姓名、出生年月日、國民身分證統一編號、護照號碼、特徵、指紋、婚姻、家庭、教育、職業、病歷、醫療、基因、性生活、健康檢查、犯罪前科、聯絡方式、財務情況、社會活動及其他得以直接或間接方式識別該個人之資料。">個人資料</span>與隱私保護，我們建議<span class="hint" data-hint="個資法第2條第1款定義之個人資料，除了姓名、出生年月日、身分證編號等資料之外，也包含其他「得以直接或間接方式識別該個人之資料」。「去識別化」即是將資料進行處理，使其不致落入上列的定義裡。">去識別化</span>採取以下的判準：</p>
+<ol>
+<li>個人行為紀錄，藉由連結其他資料集而能間接或直接識別當事人時，該紀錄即屬於個資。<ul>
+<li>除資料當事人擁有隱私權外，也應防止有心者藉由資料推導，使特定族群蒙受干擾。</li>
+<li>因此，個資法所稱研究、統計之必要，於<span class="hint" data-hint="個資法第2條第1款定義之個人資料，除了姓名、出生年月日、身分證編號等資料之外，也包含其他「得以直接或間接方式識別該個人之資料」。「去識別化」即是將資料進行處理，使其不致落入上列的定義裡。">去識別化</span>時，應採「資料最少原則」滿足之。</li>
+</ul>
+</li>
+<li>技術上任何可逆之編碼方式，不應稱為「代碼化」。<ul>
+<li>結合密鑰之不可逆編碼方式，可以稱為「代碼化」。</li>
+<li>代碼化處理後之資料仍可間接識別，因此不應稱為「<span class="hint" data-hint="個資法第2條第1款定義之個人資料，除了姓名、出生年月日、身分證編號等資料之外，也包含其他「得以直接或間接方式識別該個人之資料」。「去識別化」即是將資料進行處理，使其不致落入上列的定義裡。">去識別化</span>」。</li>
+</ul>
+</li>
+<li>供不特定人<span class="hint" data-hint="指將蒐集之個人資料為處理以外之使用。">利用</span>之開放資料，應依資訊含量，分級選擇<span class="hint" data-hint="個資法第2條第1款定義之個人資料，除了姓名、出生年月日、身分證編號等資料之外，也包含其他「得以直接或間接方式識別該個人之資料」。「去識別化」即是將資料進行處理，使其不致落入上列的定義裡。">去識別化</span>方式：<ul>
+<li>資料筆數不足以充份執行<span class="hint" data-hint="個資法第2條第1款定義之個人資料，除了姓名、出生年月日、身分證編號等資料之外，也包含其他「得以直接或間接方式識別該個人之資料」。「去識別化」即是將資料進行處理，使其不致落入上列的定義裡。">去識別化</span>運算者，考量重新識別之風險，應遮除所有直接、間接可識別欄位內容。</li>
+<li>資料筆數足以進行<span class="hint" data-hint="個資法第2條第1款定義之個人資料，除了姓名、出生年月日、身分證編號等資料之外，也包含其他「得以直接或間接方式識別該個人之資料」。「去識別化」即是將資料進行處理，使其不致落入上列的定義裡。">去識別化</span>運算者，可採樣建立「任何人（含原資料持有人）皆無從識別」之合成資料集，以供分析使用。</li>
+</ul>
+</li>
+<li>供特定學術研究者使用之資料，應依資訊含量，分級選擇<span class="hint" data-hint="個資法第2條第1款定義之個人資料，除了姓名、出生年月日、身分證編號等資料之外，也包含其他「得以直接或間接方式識別該個人之資料」。「去識別化」即是將資料進行處理，使其不致落入上列的定義裡。">去識別化</span>方式：<ul>
+<li>資料筆數不足以充份執行<span class="hint" data-hint="個資法第2條第1款定義之個人資料，除了姓名、出生年月日、身分證編號等資料之外，也包含其他「得以直接或間接方式識別該個人之資料」。「去識別化」即是將資料進行處理，使其不致落入上列的定義裡。">去識別化</span>運算者，以及特種敏感個資，應以「資訊專家亦無從識別」為判準提供。</li>
+<li>資料筆數足以進行充份亂數化或概略化運算、且為非特種敏感之個資，得以「有心侵入者無從識別」為判準提供。</li>
+</ul>
+</li>
+</ol>
+</div></div><div class="issue_item" data-reactid=".0.2.0.0.0.4:$1"><div class="issue_item_title" data-reactid=".0.2.0.0.0.4:$1.0"><span class="prompt" data-reactid=".0.2.0.0.0.4:$1.0.0"></span><span class="q_text" data-reactid=".0.2.0.0.0.4:$1.0.1">規範重新識別行為</span><span class="Issue-titleIcon" data-reactid=".0.2.0.0.0.4:$1.0.2"><i class="fa fa-comments-o" data-reactid=".0.2.0.0.0.4:$1.0.2.0"></i></span><span class="issue_item_discuss_count" data-reactid=".0.2.0.0.0.4:$1.0.3">2</span></div><div class="q_text" data-reactid=".0.2.0.0.0.4:$1.1">
+<p>我們認為應採取法律、技術雙重方式，降低重新識別之風險。</p>
+<ol>
+<li>法律上，可限制<span class="hint" data-hint="指將蒐集之個人資料為處理以外之使用。">利用</span>者不得進行原申請目的以外之行為：<ul>
+<li>連結未經申請之其他資料集、交予未經授權之第三方等行為，均可訂定罰則。</li>
+<li>對上列罰則，可訂定檢舉違反案件之獎勵辦法。</li>
+</ul>
+</li>
+<li>技術上，可採用 API 界面：<ul>
+<li>由申請者提出查詢、收受<span class="hint" data-hint="個資法第2條第1款定義之個人資料，除了姓名、出生年月日、身分證編號等資料之外，也包含其他「得以直接或間接方式識別該個人之資料」。「去識別化」即是將資料進行處理，使其不致落入上列的定義裡。">去識別化</span>後之結果，而非逕行交付資料集。</li>
+<li>循此方式留下之紀錄，亦可提供予後續研究者，作為驗證之用。</li>
+</ul>
+</li>
+<li><span class="hint" data-hint="指將蒐集之個人資料為處理以外之使用。">利用</span>條款應註明：<ul>
+<li>申明該資料集已被匿名化。</li>
+<li>禁止被授權人再識別任何個人。</li>
+<li>禁止被授權人<span class="hint" data-hint="指將蒐集之個人資料為處理以外之使用。">利用</span>該資料集，對特定個人採取任何行動或決定。</li>
+<li>應使被授權人負有義務，於其發現個人能或已經被再識別時，通知授權人。</li>
+</ul>
+</li>
+</ol>
+</div></div><div class="issue_item" data-reactid=".0.2.0.0.0.4:$2"><div class="issue_item_title" data-reactid=".0.2.0.0.0.4:$2.0"><span class="prompt" data-reactid=".0.2.0.0.0.4:$2.0.0"></span><span class="q_text" data-reactid=".0.2.0.0.0.4:$2.0.1">建立隱私風險評估機制</span><span class="Issue-titleIcon" data-reactid=".0.2.0.0.0.4:$2.0.2"><i class="fa fa-comments-o" data-reactid=".0.2.0.0.0.4:$2.0.2.0"></i></span><span class="issue_item_discuss_count" data-reactid=".0.2.0.0.0.4:$2.0.3">1</span></div><div class="q_text" data-reactid=".0.2.0.0.0.4:$2.1">
+<p>隱私影響評估，以事先防範為原則。考量學術研究申請資料，與向不特定人提供之開放資料有別，我們的建議如下：</p>
+<ol>
+<li>隱私風險評估，應由專門之審議委員會行之。<ul>
+<li>審議時應納入外部專家：如消費者保護專家、人權保護專家、資訊技術專家、該領域專家，以及利益相關者。</li>
+<li>視申請之需要，應執行有心侵入者測試、專家測試等項目。</li>
+</ul>
+</li>
+<li>概略化、亂數化技術之參數值應由個案討論訂定。<ul>
+<li>全民健保研究資料庫應包含在首批個案研討內。</li>
+<li><span class="hint" data-hint="個資法第2條第1款定義之個人資料，除了姓名、出生年月日、身分證編號等資料之外，也包含其他「得以直接或間接方式識別該個人之資料」。「去識別化」即是將資料進行處理，使其不致落入上列的定義裡。">去識別化</span>之技術日新月異，相關評估均應定期、持續更新。</li>
+</ul>
+</li>
+<li>學術研究之申請，除隱私風險外，亦應同時考慮是否滿足公共利益。<ul>
+<li>公共利益之加強，可納入經濟回饋、<a href="https://en.wikipedia.org/wiki/Open_access" target="_blank">知識共享</a>等因素。</li>
+</ul>
+</li>
+<li>主責部會應提出如何進行評估之範本，就何種情況一定要進行、進行的規模簡易或詳盡、如何進行（包含如何組成隱私諮詢團體）等進行討論、規範。</li>
+</ol>
+</div></div><div class="issue_item" data-reactid=".0.2.0.0.0.4:$3"><div class="issue_item_title" data-reactid=".0.2.0.0.0.4:$3.0"><span class="prompt" data-reactid=".0.2.0.0.0.4:$3.0.0"></span><span class="q_text" data-reactid=".0.2.0.0.0.4:$3.0.1">引入第三方機構</span><span class="Issue-titleIcon" data-reactid=".0.2.0.0.0.4:$3.0.2"><i class="fa fa-comments-o" data-reactid=".0.2.0.0.0.4:$3.0.2.0"></i></span><span class="issue_item_discuss_count" data-reactid=".0.2.0.0.0.4:$3.0.3">1</span></div><div class="q_text" data-reactid=".0.2.0.0.0.4:$3.1">
+<p>考慮到現行充份<span class="hint" data-hint="個資法第2條第1款定義之個人資料，除了姓名、出生年月日、身分證編號等資料之外，也包含其他「得以直接或間接方式識別該個人之資料」。「去識別化」即是將資料進行處理，使其不致落入上列的定義裡。">去識別化</span>之技術，並非所有機關皆有執行能力，我們的建議是：</p>
+<ol>
+<li>機關進行不可逆之識別符代碼化運算時，得結合特定密鑰為之。<ul>
+<li>此密鑰無法從資料集取回識別符，但可結合識別符取得資料集內之代碼。</li>
+<li>當事人應可隨時申請、撤銷「排除特定目的外之<span class="hint" data-hint="指將蒐集之個人資料為處理以外之使用。">利用</span>」註記。</li>
+</ul>
+</li>
+<li>代碼化後之資料，不含上述註記者，可委託第三方機構執行<span class="hint" data-hint="個資法第2條第1款定義之個人資料，除了姓名、出生年月日、身分證編號等資料之外，也包含其他「得以直接或間接方式識別該個人之資料」。「去識別化」即是將資料進行處理，使其不致落入上列的定義裡。">去識別化</span>運算。<ul>
+<li>機關得授權該機構將資料充份<span class="hint" data-hint="個資法第2條第1款定義之個人資料，除了姓名、出生年月日、身分證編號等資料之外，也包含其他「得以直接或間接方式識別該個人之資料」。「去識別化」即是將資料進行處理，使其不致落入上列的定義裡。">去識別化</span>處理後，向通過申請之特定研究者揭露。</li>
+<li>機關得授權該機構製作「任何人（含原資料持有人）皆無從識別」之合成資料。</li>
+</ul>
+</li>
+<li>事後註記為「排除特定目的外之<span class="hint" data-hint="指將蒐集之個人資料為處理以外之使用。">利用</span>」者，機關應結合密鑰計算其代碼，使第三方機構刪除相應資料。</li>
+<li>第三方機構之業務執行方式應明確規範，並受公開監督。<ul>
+<li>執行此項監督之單位，應代表所有資料當事人利益行之。</li>
+</ul>
+</li>
+</ol>
+</div></div><a class="Category-navigation Category-navigationPre" href="/personal-data-protection/spec/" data-reactid=".0.2.0.0.0.5"><i class="fa fa-chevron-left" data-reactid=".0.2.0.0.0.5.0"></i></a><span data-reactid=".0.2.0.0.0.6"></span></div><div class="Category-discussion" data-reactid=".0.2.0.0.1"><div class="Category-discussionNavClose" data-reactid=".0.2.0.0.1.0"><i class="fa fa-remove" data-reactid=".0.2.0.0.1.0.0"></i></div><span data-reactid=".0.2.0.0.1.1"></span><img class="Category-loadingImg" src="/190c4ff52631516d9f7f396c6a8f94f6.gif" data-reactid=".0.2.0.0.1.2"></div></div></div></div></div></div>
+  
+
+</body>
+        <script src="/bundle.js"></script>
+    </html>
