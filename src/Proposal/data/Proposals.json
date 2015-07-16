@@ -509,6 +509,15 @@
     "slides_url": "http://www.slideshare.net/vtaiwan/ss-47314074",
     "stages": [
       {
+        "name": "建議",
+        "gitbook_url": "https://g0v.github.io/personal-data-protection-gitbook",
+        "discourse_url": "https://talk.vtaiwan.tw",
+        "category": "spec",
+        "start_date": "July 17, 2015 00:00:00",
+        "end_date": "August 17, 2015 23:59:59",
+        "category_num": 96
+      },
+      {
         "name": "討論",
         "gitbook_url": "https://g0v.github.io/personal-data-protection-gitbook",
         "discourse_url": "https://talk.vtaiwan.tw",

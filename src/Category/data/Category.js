@@ -164,6 +164,13 @@ module.exports = {
     },
     "personal-data-protection":
     {
+        "spec" :
+        {
+            "gitbook_url": "https://g0v.github.io/personal-data-protection-spec-gitbook",
+            "category_num": 96,
+            "proposal_cht":"個資利用與去識別化",
+            "category_cht":"建議"
+        },
         "init" :
         {
             "gitbook_url": "https://g0v.github.io/personal-data-protection-gitbook",
