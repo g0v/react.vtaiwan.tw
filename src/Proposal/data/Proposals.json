@@ -436,6 +436,17 @@
     ],
     "stages": [
       {
+        "name": "草案 #1",
+        "proposer_abbr_eng": "opendata_mis_ndc",
+        "proposer_abbr_cht": "國發會",
+        "gitbook_url": "https://g0v.github.io/data-levy-ref1-gitbook",
+        "discourse_url": "https://talk.vtaiwan.tw",
+        "category": "ref1",
+        "start_date": "July 17, 2015 00:00:00",
+        "end_date": "August 17, 2015 23:59:59",
+        "category_num": 98
+      },
+      {
         "name": "建議",
         "gitbook_url": "https://g0v.github.io/data-levy-spec-gitbook",
         "discourse_url": "https://talk.vtaiwan.tw",

@@ -137,6 +137,13 @@ module.exports = {
     },
     "data-levy":
     {
+        "ref1" :
+        {
+            "gitbook_url": "https://g0v.github.io/data-levy-ref1-gitbook",
+            "category_num": 98,
+            "proposal_cht":"群眾募資",
+            "category_cht":"草案 #1"
+        },
         "spec" :
         {
             "gitbook_url": "https://g0v.github.io/data-levy-spec-gitbook",
