@@ -141,7 +141,7 @@ module.exports = {
         {
             "gitbook_url": "https://g0v.github.io/data-levy-ref1-gitbook",
             "category_num": 98,
-            "proposal_cht":"群眾募資",
+            "proposal_cht":"資料分類及授權利用",
             "category_cht":"草案 #1"
         },
         "spec" :
