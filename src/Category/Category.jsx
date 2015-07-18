@@ -191,7 +191,7 @@ class Category extends React.Component {
 
         // Used in breadcrumbs
         // 目前的討論主題（遠距教育、群眾募資...等）以及階段（討論、草案、定案...等）
-        const {proposal_cht, category_cht} = categoryData[proposalName][category]
+        const {proposal_cht, category_cht, gitbook_url} = categoryData[proposalName][category]
 
         // 某一個討論話題的討論 posts
         const {showDiscussion} = this.state
@@ -284,7 +284,10 @@ class Category extends React.Component {
                     </Link>
                 </div>
                 <div className="Category-title" dangerouslySetInnerHTML={{__html: title }} />
-                <div dangerouslySetInnerHTML={{__html: content }} />
+                <div dangerouslySetInnerHTML={{__html: content.replace(
+                    /(src=")([^/])/g, '$1' + gitbook_url + '/$2'
+                )
+                }} />
                 { issueItems }
                 { (page > 1) ?
                      <Link to="categoryPage"

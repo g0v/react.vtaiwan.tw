@@ -107,6 +107,9 @@
   display: none;
 
 }
+.Category-categoryList img {
+    max-width: 100%;
+}
 @media screen and (min-width: 600px){
   .Category-categoryList {
       margin: 0 auto;
