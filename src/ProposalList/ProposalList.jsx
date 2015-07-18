@@ -8,6 +8,10 @@ import {img, figure} from 'react'
 import proposalData from '../Proposal/data/Proposals.json'
 
 const stageIntro = {
+    "collect": [
+        "當部會對特定議題未有具體政策，或議題的權責上不明確，屬跨部會議題時，我們會先透過此階段，徵詢民間意見。",
+        "而後，我們會彙整相關意見，再由部會正式提出討論案。",
+    ],
     "init": [
         "本階段的目標為：廣徵意見，凝聚出「要討論的問題」。",
         "不是一開始就給法規草案討論，而是「提出問題」來討論。",
@@ -33,30 +37,52 @@ const stageIntro = {
 class ProposalList extends React.Component {
     render() {
         let proposalList = Object.keys(proposalData).map((k) => proposalData[k])
+        
         if (this.props.stage) {
             proposalList = proposalList.filter((item, key) =>
               new RegExp("^" + this.props.stage).test(item.stages[0].category))
         }
         if (!proposalList.length) { return <section className="ProposalList" /> }
-        proposalList = proposalList.map((item, key)=>
-            <Link to="proposal" key={key}
-                params={{proposalName: item.title_eng}}
-                className="ProposalList-item">
-                <div className="ProposalList-item-outer">
-                <div className="ProposalList-item-inner">
-                <div className="ProposalList-item-innermost">
-                <img className="ProposalList-item-image"
-                    src={item.slides_image} /></div></div></div>
-                <div className="ProposalList-item-info">
-                    <span className="ProposalList-item-title">
-                        {item.title_cht}
-                    </span>
-                    <span className="ProposalList-item-proposer">
-                        @{item.proposer_abbr_cht}
-                    </span>
-                </div>
-            </Link>
-        )
+        
+
+        if(this.props.stage === "collect"){
+            proposalList = proposalList.map((item, key)=>
+                <Link to="proposal" key={key}
+                    params={{proposalName: item.title_eng}}
+                    className="ProposalList-item">
+                    
+                    <div className="ProposalList-item-info">
+                        <span className="ProposalList-item-title">
+                            {item.title_cht}
+                        </span>
+                        <span className="ProposalList-item-proposer">
+                            @{item.proposer_abbr_cht}
+                        </span>
+                    </div>
+
+                </Link>
+            )
+        }else{
+            proposalList = proposalList.map((item, key)=>
+                <Link to="proposal" key={key}
+                    params={{proposalName: item.title_eng}}
+                    className="ProposalList-item">
+                    <div className="ProposalList-item-outer">
+                    <div className="ProposalList-item-inner">
+                    <div className="ProposalList-item-innermost">
+                    <img className="ProposalList-item-image"
+                        src={item.slides_image} /></div></div></div>
+                    <div className="ProposalList-item-info">
+                        <span className="ProposalList-item-title">
+                            {item.title_cht}
+                        </span>
+                        <span className="ProposalList-item-proposer">
+                            @{item.proposer_abbr_cht}
+                        </span>
+                    </div>
+                </Link>
+            )
+        }
         return <section className="ProposalList">
             <h2 className="ProposalList-title">
                 <img className="ProposalList-stage-image"

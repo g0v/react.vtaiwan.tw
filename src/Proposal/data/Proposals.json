@@ -1,4 +1,21 @@
 {
+  "uberx": {
+    "title_cht": "UberX 自用車載客",
+    "title_eng": "uberx",
+    "proposer_abbr_cht": "交通部",
+    "proposer_abbr_eng": "motc",
+    "fact_url" : "http://fact.g0v.tw/wikipedia/uber",
+    "stages": [
+      {
+        "name": "意見徵集",
+        "category": "collect",
+        "start_date": "July 15, 2015 00:00:00",
+        "end_date": "August 15, 2015 23:59:59",
+        "polis_id" : "3phdex2kjf" 
+      }
+      
+    ]
+  },
   "cyberbullying": {
     "title_cht": "網路霸凌",
     "title_eng": "cyberbullying",
