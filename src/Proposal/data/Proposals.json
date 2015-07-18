@@ -68,31 +68,31 @@
     "proposer_abbr_cht": "金管會證期局",
     "proposer_abbr_eng": "sfb",
     "slides_url": "http://www.slideshare.net/vtaiwan/ss-46213074",
-    "links" : [
-        {
-            "title" : "諮詢會議：群眾募資",
-            "date": "March 24, 2015 19:00:00",
-            "links" : [
-                { 
-                    "title" : "重播",
-                    "link" : "https://www.youtube.com/watch?v=MdNC9XAOhps"
-                },
-                {
-                    "title" : "PDF",
-                    "link" : "http://www.vtaiwan.org.tw/model.aspx?no=242"
-                }
-            ]  
-        },
-        {
-            "title" : "工作組聚會：「數位商務模式」建議規格彙整",
-            "date": "March 14, 2015 19:00:00",
-            "links" : [
-                { 
-                    "title" : "共筆",
-                    "link" : "https://g0v.hackpad.com/vTaiwan--zjiELIjtDUc"
-                }
-            ]  
-        }
+    "links": [
+      {
+        "title": "諮詢會議：群眾募資",
+        "date": "March 24, 2015 19:00:00",
+        "links": [
+          {
+            "title": "重播",
+            "link": "https://www.youtube.com/watch?v=MdNC9XAOhps"
+          },
+          {
+            "title": "PDF",
+            "link": "http://www.vtaiwan.org.tw/model.aspx?no=242"
+          }
+        ]
+      },
+      {
+        "title": "工作組聚會：「數位商務模式」建議規格彙整",
+        "date": "March 14, 2015 19:00:00",
+        "links": [
+          {
+            "title": "共筆",
+            "link": "https://g0v.hackpad.com/vTaiwan--zjiELIjtDUc"
+          }
+        ]
+      }
     ],
     "stages": [
       {
@@ -134,31 +134,31 @@
     "proposer_abbr_cht": "經濟部商業司",
     "proposer_abbr_eng": "DOCMOEA",
     "slides_url": "http://www.slideshare.net/vtaiwan/ss-45719299",
-    "links" : [
-        {
-            "title" : "工作組聚會：「數位商務模式」建議規格彙整",
-            "date": "March 14, 2015 19:00:00",
-            "links" : [
-                { 
-                    "title" : "共筆",
-                    "link" : "https://g0v.hackpad.com/vTaiwan--zjiELIjtDUc"
-                }
-            ]  
-       },
-       {
-            "title" : "諮詢會議：閉鎖型公司及網路交易課稅",
-            "date": "March 12, 2015 19:00:00",
-            "links" : [
-                { 
-                    "title" : "重播",
-                    "link" : "https://www.youtube.com/watch?v=pK3X7AVgjjo"
-                },
-                {
-                    "title" : "PDF",
-                    "link" : "http://www.vtaiwan.org.tw/model.aspx?no=241"
-                }
-            ]  
-       }
+    "links": [
+      {
+        "title": "工作組聚會：「數位商務模式」建議規格彙整",
+        "date": "March 14, 2015 19:00:00",
+        "links": [
+          {
+            "title": "共筆",
+            "link": "https://g0v.hackpad.com/vTaiwan--zjiELIjtDUc"
+          }
+        ]
+      },
+      {
+        "title": "諮詢會議：閉鎖型公司及網路交易課稅",
+        "date": "March 12, 2015 19:00:00",
+        "links": [
+          {
+            "title": "重播",
+            "link": "https://www.youtube.com/watch?v=pK3X7AVgjjo"
+          },
+          {
+            "title": "PDF",
+            "link": "http://www.vtaiwan.org.tw/model.aspx?no=241"
+          }
+        ]
+      }
     ],
     "stages": [
       {
@@ -211,31 +211,31 @@
     "proposer_abbr_eng": "MOFTA",
     "proposer_abbr_cht": "財政部賦稅署",
     "slides_url": "http://www.slideshare.net/vtaiwan/ss-45719169",
-    "links" : [
-        {
-            "title" : "工作組聚會：「數位商務模式」建議規格彙整",
-            "date": "March 14, 2015 19:00:00",
-            "links" : [
-                { 
-                    "title" : "共筆",
-                    "link" : "https://g0v.hackpad.com/vTaiwan--zjiELIjtDUc"
-                }
-            ]  
-       },
-       {
-            "title" : "諮詢會議：閉鎖型公司及網路交易課稅",
-            "date": "March 12, 2015 19:00:00",
-            "links" : [
-                { 
-                    "title" : "重播",
-                    "link" : "https://www.youtube.com/watch?v=pK3X7AVgjjo"
-                },
-                {
-                    "title" : "PDF",
-                    "link" : "http://www.vtaiwan.org.tw/model.aspx?no=241"
-                }
-            ]  
-       }
+    "links": [
+      {
+        "title": "工作組聚會：「數位商務模式」建議規格彙整",
+        "date": "March 14, 2015 19:00:00",
+        "links": [
+          {
+            "title": "共筆",
+            "link": "https://g0v.hackpad.com/vTaiwan--zjiELIjtDUc"
+          }
+        ]
+      },
+      {
+        "title": "諮詢會議：閉鎖型公司及網路交易課稅",
+        "date": "March 12, 2015 19:00:00",
+        "links": [
+          {
+            "title": "重播",
+            "link": "https://www.youtube.com/watch?v=pK3X7AVgjjo"
+          },
+          {
+            "title": "PDF",
+            "link": "http://www.vtaiwan.org.tw/model.aspx?no=241"
+          }
+        ]
+      }
     ],
     "stages": [
       {
@@ -268,39 +268,39 @@
     "proposer_abbr_eng": "MOE",
     "proposer_abbr_cht": "教育部",
     "slides_url": "http://www.slideshare.net/vtaiwan/ss-46845072",
-    "links" : [
-        {
-            "title" : "工作組聚會：「遠距教育及開放資料」建議規格彙整",
-            "date": "April 25, 2015 14:00:00",
-            "links" : [
-                { 
-                    "title" : "共筆",
-                    "link" : "https://g0v.hackpad.com/vTaiwan--zjiELIjtDUc"
-                },
-                { 
-                    "title" : "重播",
-                    "link" : "https://livehouse.in/channel/vtaiwan/record/-Jnj9-4eG9dfh-D33RBK"
-                }
-            ]  
-       },
-       {
-            "title" : "諮詢會議：遠距教育及開放資料",
-            "date": "April 14, 2015 19:00:00",
-            "links" : [
-                { 
-                    "title" : "共筆",
-                    "link" : "https://hackpad.com/2015-04-14--JSea6WC3EdD"
-                },
-                { 
-                    "title" : "重播",
-                    "link" : "https://www.youtube.com/watch?v=DPNPZcfaQgs"
-                },
-                {
-                    "title" : "PDF",
-                    "link" : "http://www.vtaiwan.org.tw/model.aspx?no=245"
-                }
-            ]  
-       }
+    "links": [
+      {
+        "title": "工作組聚會：「遠距教育及開放資料」建議規格彙整",
+        "date": "April 25, 2015 14:00:00",
+        "links": [
+          {
+            "title": "共筆",
+            "link": "https://g0v.hackpad.com/vTaiwan--zjiELIjtDUc"
+          },
+          {
+            "title": "重播",
+            "link": "https://livehouse.in/channel/vtaiwan/record/-Jnj9-4eG9dfh-D33RBK"
+          }
+        ]
+      },
+      {
+        "title": "諮詢會議：遠距教育及開放資料",
+        "date": "April 14, 2015 19:00:00",
+        "links": [
+          {
+            "title": "共筆",
+            "link": "https://hackpad.com/2015-04-14--JSea6WC3EdD"
+          },
+          {
+            "title": "重播",
+            "link": "https://www.youtube.com/watch?v=DPNPZcfaQgs"
+          },
+          {
+            "title": "PDF",
+            "link": "http://www.vtaiwan.org.tw/model.aspx?no=245"
+          }
+        ]
+      }
     ],
     "stages": [
       {
@@ -334,25 +334,25 @@
     "proposer_abbr_cht": "勞動部",
     "slides_url": "http://www.slideshare.net/vtaiwan/ss-47895897",
     "slides_image": "//image.slidesharecdn.com/smgujq1zt3elebyhqm1a-signature-d9c5201d679f72edc0da5064304fb66ecc7efa5af534c7559c595ca070c62896-poli-150508045107-lva1-app6891/95/-1-1024.jpg",
-    "links" : [
-        {
-            "title" : "諮詢會議：電傳勞動及網路交易契約",
-            "date": "May 14, 2015 19:00:00",
-            "links" : [
-                { 
-                    "title" : "共筆",
-                    "link" : "https://hackpad.com/2015-05-14--WaejnuSdnkS"
-                },
-                {
-                    "title" : "重播",
-                    "link" : "https://www.youtube.com/watch?v=i7WEtXVjKbo"
-                },
-                {
-                    "title" : "PDF",
-                    "link" : "http://www.vtaiwan.org.tw/model.aspx?no=247"
-                }
-            ]  
-        }
+    "links": [
+      {
+        "title": "諮詢會議：電傳勞動及網路交易契約",
+        "date": "May 14, 2015 19:00:00",
+        "links": [
+          {
+            "title": "共筆",
+            "link": "https://hackpad.com/2015-05-14--WaejnuSdnkS"
+          },
+          {
+            "title": "重播",
+            "link": "https://www.youtube.com/watch?v=i7WEtXVjKbo"
+          },
+          {
+            "title": "PDF",
+            "link": "http://www.vtaiwan.org.tw/model.aspx?no=247"
+          }
+        ]
+      }
     ],
     "stages": [
       {
@@ -375,39 +375,25 @@
     "proposer_abbr_eng": "MOHW",
     "proposer_abbr_cht": "衛福部",
     "slides_url": "http://www.slideshare.net/vtaiwan/ss-47314038",
-    "links" : [
-        {
-            "title" : "工作組聚會：「遠距教育及開放資料」建議規格彙整",
-            "date": "April 25, 2015 14:00:00",
-            "links" : [
-                { 
-                    "title" : "共筆",
-                    "link" : "https://g0v.hackpad.com/vTaiwan--zjiELIjtDUc"
-                },
-                {
-                    "title" : "重播",
-                    "link" : "https://livehouse.in/channel/vtaiwan/record/-Jnj9-4eG9dfh-D33RBK"
-                }
-            ]  
-        },
-        {
-            "title" : "諮詢會議：遠距醫療照護及個資利用",
-            "date": "April 24, 2015 19:00:00",
-            "links" : [
-                { 
-                    "title" : "共筆",
-                    "link" : "https://hackpad.com/2015-04-24--Ar7eHtSVSHb"
-                },
-                {
-                    "title" : "重播",
-                    "link" : "https://www.youtube.com/watch?v=Uhpi0UftNlQ"
-                },
-                {
-                    "title" : "PDF",
-                    "link" : "http://www.vtaiwan.org.tw/model.aspx?no=246"
-                }
-            ]  
-        }
+    "links": [
+      {
+        "title": "諮詢會議：遠距醫療照護及個資利用",
+        "date": "April 24, 2015 19:00:00",
+        "links": [
+          {
+            "title": "共筆",
+            "link": "https://hackpad.com/2015-04-24--Ar7eHtSVSHb"
+          },
+          {
+            "title": "重播",
+            "link": "https://www.youtube.com/watch?v=Uhpi0UftNlQ"
+          },
+          {
+            "title": "PDF",
+            "link": "http://www.vtaiwan.org.tw/model.aspx?no=246"
+          }
+        ]
+      }
     ],
     "stages": [
       {
@@ -431,41 +417,52 @@
     "proposer_abbr_eng": "opendata_mis_ndc",
     "proposer_abbr_cht": "國發會",
     "slides_url": "http://www.slideshare.net/vtaiwan/ndc-20150413",
-    "links" : [
-        {
-            "title" : "工作組聚會：「遠距教育及開放資料」建議規格彙整",
-            "date": "April 25, 2015 14:00:00",
-            "links" : [
-                { 
-                    "title" : "共筆",
-                    "link" : "https://g0v.hackpad.com/vTaiwan--zjiELIjtDUc"
-                },
-                {
-                    "title" : "重播",
-                    "link" : "https://livehouse.in/channel/vtaiwan/record/-Jnj9-4eG9dfh-D33RBK"
-                }
-            ]  
-        },
-        {
-            "title" : "諮詢會議：遠距醫療照護及個資利用",
-            "date": "April 24, 2015 19:00:00",
-            "links" : [
-                { 
-                    "title" : "共筆",
-                    "link" : "https://hackpad.com/2015-04-24--Ar7eHtSVSHb"
-                },
-                {
-                    "title" : "重播",
-                    "link" : "https://www.youtube.com/watch?v=Uhpi0UftNlQ"
-                },
-                {
-                    "title" : "PDF",
-                    "link" : "http://www.vtaiwan.org.tw/model.aspx?no=246"
-                }
-            ]  
-        }
+    "links": [
+      {
+        "title": "工作組聚會：「遠距教育及開放資料」建議規格彙整",
+        "date": "April 25, 2015 14:00:00",
+        "links": [
+          {
+            "title": "共筆",
+            "link": "https://g0v.hackpad.com/vTaiwan--zjiELIjtDUc"
+          },
+          {
+            "title": "重播",
+            "link": "https://livehouse.in/channel/vtaiwan/record/-Jnj9-4eG9dfh-D33RBK"
+          }
+        ]
+      },
+      {
+        "title": "諮詢會議：遠距醫療照護及個資利用",
+        "date": "April 24, 2015 19:00:00",
+        "links": [
+          {
+            "title": "共筆",
+            "link": "https://hackpad.com/2015-04-24--Ar7eHtSVSHb"
+          },
+          {
+            "title": "重播",
+            "link": "https://www.youtube.com/watch?v=Uhpi0UftNlQ"
+          },
+          {
+            "title": "PDF",
+            "link": "http://www.vtaiwan.org.tw/model.aspx?no=246"
+          }
+        ]
+      }
     ],
     "stages": [
+      {
+        "name": "草案 #1",
+        "proposer_abbr_eng": "opendata_mis_ndc",
+        "proposer_abbr_cht": "國發會",
+        "gitbook_url": "https://g0v.github.io/data-levy-ref1-gitbook",
+        "discourse_url": "https://talk.vtaiwan.tw",
+        "category": "ref1",
+        "start_date": "July 17, 2015 00:00:00",
+        "end_date": "August 17, 2015 23:59:59",
+        "category_num": 98
+      },
       {
         "name": "建議",
         "gitbook_url": "https://g0v.github.io/data-levy-spec-gitbook",
@@ -496,25 +493,25 @@
     "proposer_abbr_eng": "CPCEY",
     "proposer_abbr_cht": "消費者保護處",
     "slides_url": "http://www.slideshare.net/vtaiwan/10405142",
-    "links" : [
-        {
-            "title" : "諮詢會議：電傳勞動及網路交易契約",
-            "date": "May 14, 2015 19:00:00",
-            "links" : [
-                { 
-                    "title" : "共筆",
-                    "link" : "https://hackpad.com/2015-05-14--WaejnuSdnkS"
-                },
-                {
-                    "title" : "重播",
-                    "link" : "https://www.youtube.com/watch?v=i7WEtXVjKbo"
-                },
-                {
-                    "title" : "PDF",
-                    "link" : "http://www.vtaiwan.org.tw/model.aspx?no=247"
-                }
-            ]  
-        }
+    "links": [
+      {
+        "title": "諮詢會議：電傳勞動及網路交易契約",
+        "date": "May 14, 2015 19:00:00",
+        "links": [
+          {
+            "title": "共筆",
+            "link": "https://hackpad.com/2015-05-14--WaejnuSdnkS"
+          },
+          {
+            "title": "重播",
+            "link": "https://www.youtube.com/watch?v=i7WEtXVjKbo"
+          },
+          {
+            "title": "PDF",
+            "link": "http://www.vtaiwan.org.tw/model.aspx?no=247"
+          }
+        ]
+      }
     ],
     "stages": [
       {
@@ -540,13 +537,56 @@
     "slides_url": "http://www.slideshare.net/vtaiwan/ss-47314074",
     "stages": [
       {
+        "name": "建議",
+        "gitbook_url": "https://g0v.github.io/personal-data-protection-gitbook",
+        "discourse_url": "https://talk.vtaiwan.tw",
+        "category": "spec",
+        "start_date": "July 17, 2015 00:00:00",
+        "end_date": "August 17, 2015 23:59:59",
+        "category_num": 96
+      },
+      {
         "name": "討論",
         "gitbook_url": "https://g0v.github.io/personal-data-protection-gitbook",
         "discourse_url": "https://talk.vtaiwan.tw",
         "category": "init",
         "start_date": "March 1, 2015 00:00:00",
-        "end_date": "June 30, 2015 23:59:59",
+        "end_date": "July 10, 2015 23:59:59",
         "category_num": 22
+      }
+    ],
+    "links": [
+      {
+        "title": "工作組聚會：「個資利用/去識別化」建議規格彙整",
+        "date": "July 11, 2015 13:00:00",
+        "links": [
+          {
+            "title": "共筆",
+            "link": "http://beta.hackfoldr.org/2015-07-11"
+          },
+          {
+            "title": "重播",
+            "link": "https://www.youtube.com/watch?v=_hMkL3o2Gyc"
+          }
+        ]
+      },
+      {
+        "title": "諮詢會議：遠距醫療照護及個資利用",
+        "date": "April 24, 2015 19:00:00",
+        "links": [
+          {
+            "title": "共筆",
+            "link": "https://hackpad.com/2015-04-24--Ar7eHtSVSHb"
+          },
+          {
+            "title": "重播",
+            "link": "https://www.youtube.com/watch?v=Uhpi0UftNlQ"
+          },
+          {
+            "title": "PDF",
+            "link": "http://www.vtaiwan.org.tw/model.aspx?no=246"
+          }
+        ]
       }
     ],
     "slides_image": "//image.slidesharecdn.com/u7rr2hheqccbnto3bx5a-signature-882046dafd033976da70848690905ff33362c0496a3c0744302f4ed2f8758782-poli-150422220627-conversion-gate01/95/-1-1024.jpg",
