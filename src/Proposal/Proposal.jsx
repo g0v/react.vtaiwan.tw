@@ -65,6 +65,7 @@ class Proposal extends React.Component {
 
             /////////////////////// needs refine
             if(item.polis_id){
+                location.href = 'https://pol.is/' + item.polis_id;
                 var start_date = moment(new Date(item.start_date)).format('YYYY-MM-DD');
                 content = (<div className="Proposal-polis">
                     <div className="Proposal-stageDate">{start_date}</div>
