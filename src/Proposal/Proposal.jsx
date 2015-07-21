@@ -7,6 +7,7 @@ import './Proposal.css'
 import Proposals from './data/Proposals.json'
 import Stage from '../Stage/Stage.jsx'
 import LabeledLinks from '../LabeledLinks/LabeledLinks.jsx'
+import ProgressBar from "../ProgressBar/ProgressBar.jsx"
 
 class Proposal extends React.Component {
     componentWillMount() {
@@ -40,7 +41,8 @@ class Proposal extends React.Component {
         (data.links || []).map((item, key)=>{
             timelineItems.push(item)
         });
-        console.log(timelineItems);
+
+        //console.log(timelineItems);
         timelineItems.sort((a, b)=>{
             var dateA = moment(new Date(a.start_date || a.date))
             var dateB = moment(new Date(b.start_date || b.date))
@@ -48,28 +50,53 @@ class Proposal extends React.Component {
             return dateB-dateA
         });
 
+        let cover = (data.slides_url) ? ( <div className="Proposal-slides">
+                    <iframe className="Proposal-iframe"
+                            src={data.slides_embed_url}
+                            frameBorder="0" marginWidth="0" marginHeight="0" scrolling="no" allowFullScreen> </iframe>
+                </div>) : 
+        (<iframe className="Proposal-factIframe" src={data.fact_url}
+                            frameBorder="0" marginWidth="0" marginHeight="0" scrolling="no" allowFullScreen></iframe>);
+
 
         var stages = timelineItems.map((item, key)=>{
             var content="";
-            if(item.start_date){
-                var start_date = moment(new Date(item.start_date)).format('YYYY-MM-DD');
-                content = (
-                    <div className="Proposal-stage">
-                        <div className="Proposal-stageDate">{start_date}</div>
-                        <Stage data={item}
-                               gitbookURL={item.gitbook_url}
-                               categoryNum={item.category_num}
-                               proposalName={data.title_eng} />
-                    </div>
-                )
 
-            }else{//
-                
-                content = (
-                    <div className="Proposal-link">
-                        <LabeledLinks data={item} />
-                    </div>
-                )
+
+            /////////////////////// needs refine
+            if(item.polis_id){
+                location.href = 'https://pol.is/' + item.polis_id;
+                var start_date = moment(new Date(item.start_date)).format('YYYY-MM-DD');
+                content = (<div className="Proposal-polis">
+                    <div className="Proposal-stageDate">{start_date}</div>
+                    <ProgressBar data={item}/>
+                    <div className="polis" data-conversation_id={item.polis_id}></div>
+                    
+                </div>)
+
+            }else{
+
+                if(item.start_date){
+                    var start_date = moment(new Date(item.start_date)).format('YYYY-MM-DD');
+                    content = (
+                        <div className="Proposal-stage">
+                            <div className="Proposal-stageDate">{start_date}</div>
+                            <Stage data={item}
+                                   gitbookURL={item.gitbook_url}
+                                   categoryNum={item.category_num}
+                                   proposalName={data.title_eng} />
+                        </div>
+                    )
+    
+                }else{//
+                    
+                    content = (
+                        <div className="Proposal-link">
+                            <LabeledLinks data={item} />
+                        </div>
+                    )
+    
+                }
 
             }
 
@@ -84,11 +111,7 @@ class Proposal extends React.Component {
                     <div className="Proposal-title">{data.prefix_cht}{data.title_cht}</div>
                     <div className="Proposal-proposer">@{data.proposer_abbr_cht}</div>
                 </div>
-                <div className="Proposal-slides">
-                    <iframe className="Proposal-iframe"
-                            src={data.slides_embed_url}
-                            frameBorder="0" marginWidth="0" marginHeight="0" scrolling="no" allowFullScreen> </iframe>
-                </div>
+                {cover}
                 <div className="Proposal-stages">{stages}</div>
             </div>
         )

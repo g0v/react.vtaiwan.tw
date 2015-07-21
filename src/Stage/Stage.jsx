@@ -6,6 +6,8 @@ import Transmit from 'react-transmit'
 import request from '../utils/request'
 import './Stage.css'
 
+
+
 class Stage extends React.Component {
     static propTypes = { gitbookURL: React.PropTypes.string }
     constructor(props) { super(props)
@@ -100,6 +102,7 @@ class Stage extends React.Component {
                     <div dangerouslySetInnerHTML={{__html: previewHTML}} />
                 </div>
                 {progressBarItem}
+                
                 <div>
                     {leftTimeItem}
                     <div className="Stage-stat">討論話題<div className="Stage-statHighlight">{topicCount}</div></div>

@@ -1,4 +1,21 @@
 {
+  "uberx": {
+    "title_cht": "UberX 自用車載客",
+    "title_eng": "uberx",
+    "proposer_abbr_cht": "交通部",
+    "proposer_abbr_eng": "motc",
+    "fact_url" : "http://fact.g0v.tw/wikipedia/uber",
+    "stages": [
+      {
+        "name": "意見徵集",
+        "category": "collect",
+        "start_date": "July 15, 2015 00:00:00",
+        "end_date": "August 15, 2015 23:59:59",
+        "polis_id" : "3phdex2kjf" 
+      }
+      
+    ]
+  },
   "cyberbullying": {
     "title_cht": "網路霸凌",
     "title_eng": "cyberbullying",
@@ -416,20 +433,20 @@
         ]
       },
       {
-        "title": "諮詢會議：遠距醫療照護及個資利用",
-        "date": "April 24, 2015 19:00:00",
+        "title": "諮詢會議：遠距教育及開放資料",
+        "date": "April 14, 2015 19:00:00",
         "links": [
           {
             "title": "共筆",
-            "link": "https://hackpad.com/2015-04-24--Ar7eHtSVSHb"
+            "link": "https://hackpad.com/2015-04-14--JSea6WC3EdD"
           },
           {
             "title": "重播",
-            "link": "https://www.youtube.com/watch?v=Uhpi0UftNlQ"
+            "link": "https://www.youtube.com/watch?v=DPNPZcfaQgs"
           },
           {
             "title": "PDF",
-            "link": "http://www.vtaiwan.org.tw/model.aspx?no=246"
+            "link": "http://www.vtaiwan.org.tw/model.aspx?no=245"
           }
         ]
       }
