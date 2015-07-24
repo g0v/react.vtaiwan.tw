@@ -50,6 +50,19 @@ class Category extends React.Component {
             showDiscussion: !this.state.showDiscussion,
             showFullDiscussion: false
         });
+
+        var {proposalName, category, page} = this.props.params
+        var currentState = history.state
+
+        if(!this.state.showDiscussion){
+            var newURL = `/${proposalName}/${category}/${page}/${postID}/`
+            history.pushState(currentState, document.title, newURL)
+            
+        }else{
+            var newURL = `/${proposalName}/${category}/${page}/`
+            history.pushState(currentState, document.title, newURL)
+        }
+
     }
 
     _toggleShowDiscussionWeb (postID, event){
@@ -64,11 +77,22 @@ class Category extends React.Component {
             })
         }
 
+        var {proposalName, category, page} = this.props.params
+        var currentState = history.state
+
         if(!this.state.showDiscussion){
             this.setState({
                 showDiscussion: true
             });
+
+            var newURL = `/${proposalName}/${category}/${page}/${postID}/`
+            history.pushState(currentState, document.title, newURL)
+            
+        }else{
+            var newURL = `/${proposalName}/${category}/${page}/`
+            istory.pushState(currentState, document.title, newURL)
         }
+
         this.setState({
             showFullDiscussion: false
         });
@@ -78,6 +102,10 @@ class Category extends React.Component {
         this.setState({
             showDiscussion: false
         });
+        var {proposalName, category, page} = this.props.params
+        var currentState = history.state;
+        var newURL = `/${proposalName}/${category}/${page}/`;
+        history.pushState(currentState, document.title, newURL);
     }
 
     _toggleShowFullDiscussion(){
