@@ -33,7 +33,8 @@ class Category extends React.Component {
     constructor (props) { super(props)
         this.state = {
             showDiscussion: !!this.props.params.postID,
-            showFullDiscussion: false
+            showFullDiscussion: false,
+            posts: [] // 主題底下的 post id，用來做隱藏 link 
         }
     }
 
@@ -117,6 +118,10 @@ class Category extends React.Component {
     componentWillMount() {
         const {proposalName, category, postID} = this.props.params
         const metaData = categoryData[proposalName][category]
+        //console.log(metaData.discussions_id)
+        this.setState({
+            posts: metaData.discussions_id
+        })
 
         this.props.setQueryParams({
             gitbookURL: metaData.gitbook_url,
@@ -295,7 +300,24 @@ class Category extends React.Component {
             category.replace(/\d+$/, '')
         }.png`)
 
+
+        //
+
+       
+        let hiddenLinks = ""
+        if(this.state.posts){
+            hiddenLinks = this.state.posts.map((v,i)=>{
+                return (
+                    
+                    <Link to="categoryPagePost"
+                           params={{proposalName: proposalName, category:category, page:v.page, postID: v.postID}}>
+                    </Link>
+                )
+            })
+        }
+
         return <div className="Category">
+            {hiddenLinks}
             <div className={categoryListClasses}>
                 <img className="Category-icon" src={icon} />
                 <div className="Category-breadcrumbs">
