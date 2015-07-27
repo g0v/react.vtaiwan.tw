@@ -9,10 +9,13 @@ class LabeledLinks extends React.Component {
     render() {
         const { data } = this.props
         var linkItems = data.links.map((v,i)=>{
-        	var icon = "";
+        	var icon = "fa fa-link";
         	switch(v.title){
         		case '共筆':
         			icon = "fa fa-pencil"
+        			break
+        		case '紀錄':
+        			icon = "fa fa-comments"
         			break
         		case '重播':
         		case '直播':
@@ -20,6 +23,9 @@ class LabeledLinks extends React.Component {
         			break
         		case 'PDF':
         			icon = "fa fa-file-pdf-o"
+        			break
+        		case '授權條款':
+        			icon = "fa fa-legal"
         			break
 
         	}
