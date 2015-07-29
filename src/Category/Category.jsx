@@ -33,7 +33,8 @@ class Category extends React.Component {
     constructor (props) { super(props)
         this.state = {
             showDiscussion: !!this.props.params.postID,
-            showFullDiscussion: false
+            showFullDiscussion: false,
+            posts: [] // 主題底下的 post id，用來做隱藏 link 
         }
     }
 
@@ -50,6 +51,19 @@ class Category extends React.Component {
             showDiscussion: !this.state.showDiscussion,
             showFullDiscussion: false
         });
+
+        var {proposalName, category, page} = this.props.params
+        var currentState = history.state
+
+        if(!this.state.showDiscussion){
+            var newURL = `/${proposalName}/${category}/${page}/${postID}/`
+            history.pushState(currentState, document.title, newURL)
+            
+        }else{
+            var newURL = `/${proposalName}/${category}/${page}/`
+            history.pushState(currentState, document.title, newURL)
+        }
+
     }
 
     _toggleShowDiscussionWeb (postID, event){
@@ -64,11 +78,22 @@ class Category extends React.Component {
             })
         }
 
+        var {proposalName, category, page} = this.props.params
+        var currentState = history.state
+
         if(!this.state.showDiscussion){
             this.setState({
                 showDiscussion: true
             });
+
+            var newURL = `/${proposalName}/${category}/${page}/${postID}/`
+            history.pushState(currentState, document.title, newURL)
+            
+        }else{
+            var newURL = `/${proposalName}/${category}/${page}/`
+            istory.pushState(currentState, document.title, newURL)
         }
+
         this.setState({
             showFullDiscussion: false
         });
@@ -78,6 +103,10 @@ class Category extends React.Component {
         this.setState({
             showDiscussion: false
         });
+        var {proposalName, category, page} = this.props.params
+        var currentState = history.state;
+        var newURL = `/${proposalName}/${category}/${page}/`;
+        history.pushState(currentState, document.title, newURL);
     }
 
     _toggleShowFullDiscussion(){
@@ -89,6 +118,10 @@ class Category extends React.Component {
     componentWillMount() {
         const {proposalName, category, postID} = this.props.params
         const metaData = categoryData[proposalName][category]
+        //console.log(metaData.discussions_id)
+        this.setState({
+            posts: metaData.discussions_id
+        })
 
         this.props.setQueryParams({
             gitbookURL: metaData.gitbook_url,
@@ -267,7 +300,24 @@ class Category extends React.Component {
             category.replace(/\d+$/, '')
         }.png`)
 
+
+        //
+
+       
+        let hiddenLinks = ""
+        if(this.state.posts){
+            hiddenLinks = this.state.posts.map((v,i)=>{
+                return (
+                    
+                    <Link to="categoryPagePost"
+                           params={{proposalName: proposalName, category:category, page:v.page, postID: v.postID}}>
+                    </Link>
+                )
+            })
+        }
+
         return <div className="Category">
+            {hiddenLinks}
             <div className={categoryListClasses}>
                 <img className="Category-icon" src={icon} />
                 <div className="Category-breadcrumbs">

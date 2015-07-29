@@ -1,4 +1,5 @@
 "use strict"
+
 import request from './utils/request'
 import React from 'react'
 import App from './App/App.jsx'
@@ -8,7 +9,7 @@ import Proposal from './Proposal/Proposal.jsx'
 import Category from './Category/Category.jsx'
 import HTML from './HTML/HTML.jsx'
 
-import './normalize.css'
+import 'normalize.css/normalize.css'
 import './index.css'
 
 const routes = (
