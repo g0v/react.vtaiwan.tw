@@ -60,7 +60,7 @@ client.export(process.argv[2], 'latest', 'html', (err, html) => {
   var an = {akomaNtoso: [{ debate: [
     // {meta: [{references: References}]}, // 替TLCPerson 保留
     // {preface: Preface}, // 替文件名稱保留
-    {debateBody: { debateSection: debateSection } }
+    {debateBody: [{ debateSection: debateSection }] }
   ]}]}
   console.log(To_XML(an))
 })
