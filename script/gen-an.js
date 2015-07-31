@@ -14,25 +14,41 @@ client.export(process.argv[2], 'latest', 'html', (err, html) => {
   var markdown_content = To_markdown(html)
   var debateSection = []
 
-  var speaker_name = '', speech = []
+  var speaker_name = '', speech = [], narrative = []
   markdown_content.split('\n').forEach(function (line, index, arr) {
     var matcher
+    // 去除 markdown link 語法
+    line = line.replace(/\[.*\]\(.+\)/, "")
+
     if(line.startsWith('#')) {
       debateSection.push({heading: line.split('#')[1].trim() })
     }
 
     if( line.startsWith('*') ) {
-      speech = speech.concat([ { p: line.split('*')[1].trim() + '\n' }])
+      // 處理 narrative
+      if(line.match(/<u>/)) {
+        narrative = narrative.concat([{ p:
+          [{ i: line.replace(/<\/?u>|&lt;.+&gt;|\*\s+/g, "") }] }])
+      }
+      else {
+        speech = speech.concat([ { p: line.split('*')[1].trim() + '\n' }])
+      }
     }
 
     if( !line.startsWith('*') && (matcher = line.match(/^(.+)(?::|：)$/))) {
       if(speaker_name !== '' && speech.length > 0) {
+        // narrative 都會出現在對話內容中
+        if(narrative.length > 0) {
+          debateSection.push({ narrative })
+          narrative = []
+        }
         debateSection.push({
           speech: [{_attr: { by: `#${speaker_name}`,
         }}].concat(speech)})
       }
       speaker_name = matcher[1]
       speech = []
+
     }
 
     if(index === arr.length -1) {
