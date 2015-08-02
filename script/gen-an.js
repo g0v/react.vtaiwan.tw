@@ -1,7 +1,7 @@
 import Hackpad from 'hackpad'
 import To_markdown from 'to-markdown'
 import To_XML from 'xml'
-
+// If babel-node is not in PATH, install it with: sudo npm i -g babel-node
 // help: CLIENT_ID=xxx SECRET=yyy babel-node script/gen-an.js [pad_id]
 // ex: CLIENT_ID=xxx SECRET=yyy babel-node script/gen-an.js 3RvGJjHbZ3Z
 // Get your Client ID and Secret from https://g0v.hackpad.com/ep/account/settings/
