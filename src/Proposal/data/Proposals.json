@@ -24,6 +24,22 @@
     "proposer_abbr_cht": "法務部、衛福部",
     "proposer_abbr_eng": "MOJ-MOHW",
     "slides_url": "http://www.slideshare.net/vtaiwan/cyberbullying-49304122",
+    "links": [
+      {
+        "title": "諮詢會議：網路霸凌",
+        "date": "August 14, 2015 19:00:00",
+        "links": [
+          {
+            "title": "共筆",
+            "link": "https://hackpad.com/2015-08-13--p8VAnQ24OqO"
+          },
+          {
+            "title": "重播",
+            "link": "https://www.youtube.com/watch?v=D5bwEja0-O0"
+          }
+        ]
+      }
+    ],
     "stages": [
       {
         "name": "討論",
@@ -31,7 +47,7 @@
         "discourse_url": "https://talk.vtaiwan.tw",
         "category": "init",
         "start_date": "June 16, 2015 00:00:00",
-        "end_date": "July 31, 2015 23:59:59",
+        "end_date": "August 31, 2015 23:59:59",
         "category_num": 92
       }
     ],
