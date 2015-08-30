@@ -66,7 +66,12 @@ class Proposal extends React.Component {
             if(item.start_date){
 
                 var start_date = moment(new Date(item.start_date)).format('YYYY-MM-DD');
-                var polis = (item.polis_id)? <div className="polis" data-conversation_id={item.polis_id}></div> : "";
+                var polis = (item.polis_id) ? (
+                <iframe src={`https://pol.is/${item.polis_id}`}
+                        frameBorder="0"
+                        width="100%"
+                        height="1000px"></iframe>
+                ) : "";
                 content = (
                     <div className="Proposal-stage">
                         <div className="Proposal-stageDate">{start_date}</div>
