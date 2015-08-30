@@ -89,7 +89,26 @@ class Stage extends React.Component {
             })
         }
         let icon = require('../NavBar/images/' + data.category.replace(/\d*$/, '.png'))
-        return (
+        return (data.polis_id)?(
+             <a className="Stage"
+                href={`https://pol.is/${data.polis_id}`}
+                target="_blank">
+                
+                <img style={{"float": "right"}} className="NavBar-subItemIcon" src={icon} />
+                <div className="Stage-header">
+                    <div className="Stage-title">{data.name}</div>
+                </div>
+                <div className="Stage-content">
+                    <div dangerouslySetInnerHTML={{__html: previewHTML}} />
+                </div>
+                {progressBarItem}
+                
+                <div>
+                    {leftTimeItem}
+                </div>
+            </a>
+        ):
+        (
             <Link className="Stage"
                   to="category"
                   key={data.category}

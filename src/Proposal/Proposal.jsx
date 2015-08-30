@@ -60,47 +60,34 @@ class Proposal extends React.Component {
 
 
         var stages = timelineItems.map((item, key)=>{
+            
             var content="";
 
+            if(item.start_date){
 
-            /////////////////////// needs refine
-            if(item.polis_id){
-                location.href = 'https://pol.is/' + item.polis_id;
                 var start_date = moment(new Date(item.start_date)).format('YYYY-MM-DD');
-                content = (<div className="Proposal-polis">
-                    <div className="Proposal-stageDate">{start_date}</div>
-                    <ProgressBar data={item}/>
-                    <div className="polis" data-conversation_id={item.polis_id}></div>
-                    
-                </div>)
-
+                var polis = (item.polis_id)? <div className="polis" data-conversation_id={item.polis_id}></div> : "";
+                content = (
+                    <div className="Proposal-stage">
+                        <div className="Proposal-stageDate">{start_date}</div>
+                        <Stage data={item}
+                               gitbookURL={item.gitbook_url}
+                               categoryNum={item.category_num}
+                               proposalName={data.title_eng} />
+                        {polis}
+                    </div>
+                )
+    
             }else{
-
-                if(item.start_date){
-                    var start_date = moment(new Date(item.start_date)).format('YYYY-MM-DD');
-                    content = (
-                        <div className="Proposal-stage">
-                            <div className="Proposal-stageDate">{start_date}</div>
-                            <Stage data={item}
-                                   gitbookURL={item.gitbook_url}
-                                   categoryNum={item.category_num}
-                                   proposalName={data.title_eng} />
-                        </div>
-                    )
+               
+                content = (
+                    <div className="Proposal-link">
+                        <LabeledLinks data={item} />
+                    </div>
+                )
     
-                }else{//
-                    
-                    content = (
-                        <div className="Proposal-link">
-                            <LabeledLinks data={item} />
-                        </div>
-                    )
-    
-                }
-
             }
 
-           
             return <div key={key}>{content}</div>
         })
 

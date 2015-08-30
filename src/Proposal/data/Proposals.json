@@ -6,6 +6,22 @@
     "proposer_abbr_eng": "motc",
     "slides_url": "http://www.slideshare.net/vtaiwan/uberx-vtaiwantw-iii",
     "fact_url": "http://fact.g0v.tw/wikipedia/uber",
+    "links": [
+      {
+        "title": "諮詢會議：uberX 自用車載客意見徵集",
+        "date": "August 27, 2015 19:00:00",
+        "links": [
+          {
+            "title": "共筆",
+            "link": "https://hackpad.com/2015-08-27-uberX--isBiN9W1GF0"
+          },
+          {
+            "title": "重播",
+            "link": "https://www.youtube.com/watch?v=jPG2owMCjMc"
+          }
+        ]
+      }
+    ],
     "stages": [
       {
         "name": "意見徵集",
