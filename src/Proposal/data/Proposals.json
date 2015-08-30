@@ -4,17 +4,19 @@
     "title_eng": "uberx",
     "proposer_abbr_cht": "交通部",
     "proposer_abbr_eng": "motc",
-    "fact_url" : "http://fact.g0v.tw/wikipedia/uber",
+    "slides_url": "http://www.slideshare.net/vtaiwan/uberx-vtaiwantw-iii",
+    "fact_url": "http://fact.g0v.tw/wikipedia/uber",
     "stages": [
       {
         "name": "意見徵集",
         "category": "collect",
         "start_date": "July 15, 2015 00:00:00",
         "end_date": "August 15, 2015 23:59:59",
-        "polis_id" : "3phdex2kjf" 
+        "polis_id": "3phdex2kjf"
       }
-      
-    ]
+    ],
+    "slides_image": "//image.slidesharecdn.com/vtaiwan-iii-2015-08-27-150827081332-lva1-app6891/95/-1-1024.jpg",
+    "slides_embed_url": "//www.slideshare.net/slideshow/embed_code/key/pbWRU3vlCYhyVc"
   },
   "cyberbullying": {
     "title_cht": "網路霸凌",
