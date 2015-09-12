@@ -47,7 +47,8 @@ class NavBar extends React.Component {
         this.setOGImage(section);
         const NavList = (this.props.nav_list || []).map(( {label, type, icon, path, title}, key) => {
             const styleClass = (type === 'title') ? 'NavBar-item--title' : 'NavBar-item'
-            if(type === 'sub') {
+            if (/\bcollect\/*$/.test(path)) { path = null }
+            if(type === 'sub' && path) {
                 return (
                     <Link key={key} to={path} className="NavBar-subItem" onClick={this._onListItemClicked.bind(this)}>
                         { icon ? <img className="NavBar-subItemIcon" src={require(`./images/${icon}`)} /> : '' }
@@ -55,7 +56,7 @@ class NavBar extends React.Component {
                     </Link>
                 );
             }
-            if(type === 'title'){
+            if(type === 'title' && path){
                 return <Link key={key} to={path || '/'} className={styleClass} >
                 <span className="NavBar-backIcon"><i className="fa fa-chevron-left"></i></span> {label}</Link>;
             }
