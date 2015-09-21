@@ -1,4 +1,20 @@
 {
+  "airbnb": {
+    "title_cht": "Airbnb 自用住宅招租",
+    "title_eng": "airbnb",
+    "proposer_abbr_cht": "交通部觀光局",
+    "proposer_abbr_eng": "motcbot",
+    "fact_url" : "http://fact.g0v.tw/wikipedia/airbnb",
+    "stages": [
+      {
+        "name": "意見徵集",
+        "category": "collect",
+        "start_date": "September 1, 2015 00:00:00",
+        "end_date": "September 27, 2015 23:59:59",
+        "polis_id" : "2kcrtx"
+      }
+    ]
+  },
   "uberx": {
     "title_cht": "UberX 自用車載客",
     "title_eng": "uberx",
