@@ -49,7 +49,14 @@ class ProposalList extends React.Component {
         proposalList = proposalList.map((item, key)=>
             <Link to="proposal" key={key}
                 params={{proposalName: item.title_eng}}
-                className="ProposalList-item">
+                className="ProposalList-item"
+                onClick={(e) => {
+                // TODO: Stage 0, during the survey period
+                if (item.title_eng === 'airbnb') {
+                    e.stopPropagation();
+                    location.href = '/airbnb/';
+                }
+                }}>
                 <div className="ProposalList-item-outer">
                 <div className="ProposalList-item-inner">
                 <div className="ProposalList-item-innermost">
