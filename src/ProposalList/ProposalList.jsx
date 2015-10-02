@@ -45,44 +45,36 @@ class ProposalList extends React.Component {
         if (!proposalList.length) { return <section className="ProposalList" /> }
         
 
-        if(this.props.stage === "collect"){
-            proposalList = proposalList.map((item, key)=>
-                <Link to="proposal" key={key}
-                    params={{proposalName: item.title_eng}}
-                    className="ProposalList-item">
-                    
-                    <div className="ProposalList-item-info">
-                        <span className="ProposalList-item-title">
-                            {item.title_cht}
-                        </span>
-                        <span className="ProposalList-item-proposer">
-                            @{item.proposer_abbr_cht}
-                        </span>
-                    </div>
-
-                </Link>
-            )
-        }else{
-            proposalList = proposalList.map((item, key)=>
-                <Link to="proposal" key={key}
-                    params={{proposalName: item.title_eng}}
-                    className="ProposalList-item">
-                    <div className="ProposalList-item-outer">
-                    <div className="ProposalList-item-inner">
-                    <div className="ProposalList-item-innermost">
-                    <img className="ProposalList-item-image"
-                        src={item.slides_image} /></div></div></div>
-                    <div className="ProposalList-item-info">
-                        <span className="ProposalList-item-title">
-                            {item.title_cht}
-                        </span>
-                        <span className="ProposalList-item-proposer">
-                            @{item.proposer_abbr_cht}
-                        </span>
-                    </div>
-                </Link>
-            )
-        }
+       
+        proposalList = proposalList.map((item, key)=>
+            <Link to="proposal" key={key}
+                params={{proposalName: item.title_eng}}
+                className="ProposalList-item"
+                onClick={(e) => {
+                // TODO: Stage 0, during the survey period, e.g.:
+                /*
+                if (item.title_eng === 'airbnb') {
+                    e.stopPropagation();
+                    location.href = '/airbnb/';
+                }
+                */
+                }}>
+                <div className="ProposalList-item-outer">
+                <div className="ProposalList-item-inner">
+                <div className="ProposalList-item-innermost">
+                <img className="ProposalList-item-image"
+                    src={item.slides_image} /></div></div></div>
+                <div className="ProposalList-item-info">
+                    <span className="ProposalList-item-title">
+                        {item.title_cht}
+                    </span>
+                    <span className="ProposalList-item-proposer">
+                        @{item.proposer_abbr_cht}
+                    </span>
+                </div>
+            </Link>
+        )
+       
         return <section className="ProposalList">
             <h2 className="ProposalList-title">
                 <img className="ProposalList-stage-image"

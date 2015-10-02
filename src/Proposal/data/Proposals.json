@@ -1,20 +1,77 @@
 {
+  "airbnb": {
+    "title_cht": "Airbnb 自用住宅招租",
+    "title_eng": "airbnb",
+    "proposer_abbr_cht": "交通部觀光局",
+    "proposer_abbr_eng": "motc_tb",
+    "fact_url": "http://fact.g0v.tw/wikipedia/airbnb",
+    "slides_url": "http://www.slideshare.net/vtaiwan/airbnb-vtaiwantw-iii",
+    "links": [
+      {
+        "title": "諮詢會議：Airbnb 自用住宅招租",
+        "date": "October 1, 2015 19:00:00",
+        "links": [
+          {
+            "title": "共筆",
+            "link": "https://g0v.hackpad.com/vTaiwan-Airbnb--Jqv5FwD48vn"
+          },
+          {
+            "title": "重播",
+            "link": "https://www.youtube.com/watch?v=l8zOi1Wv1Jk"
+          }
+        ]
+      }
+    ],
+    "stages": [
+      {
+        "name": "意見徵集",
+        "category": "collect",
+        "start_date": "September 1, 2015 00:00:00",
+        "end_date": "September 27, 2015 23:59:59",
+        "polis_id": "6sc6vt"
+      }
+    ],
+    "slides_image": "//image.slidesharecdn.com/vtaiwan-airbnb-151001071911-lva1-app6892/95/-1-1024.jpg",
+    "slides_embed_url": "//www.slideshare.net/slideshow/embed_code/key/qjhkdmfSu9mm3g"
+  },
   "uberx": {
     "title_cht": "UberX 自用車載客",
     "title_eng": "uberx",
     "proposer_abbr_cht": "交通部",
     "proposer_abbr_eng": "motc",
-    "fact_url" : "http://fact.g0v.tw/wikipedia/uber",
+    "slides_url": "http://www.slideshare.net/vtaiwan/uberx-vtaiwantw-iii",
+    "fact_url": "http://fact.g0v.tw/wikipedia/uber",
+    "links": [
+      {
+        "title": "諮詢會議：uberX 自用車載客",
+        "date": "August 27, 2015 19:00:00",
+        "links": [
+          {
+            "title": "共筆",
+            "link": "https://hackpad.com/2015-08-27-uberX--isBiN9W1GF0"
+          },
+          {
+            "title": "重播",
+            "link": "https://www.youtube.com/watch?v=QxHkGq57pWw"
+          },
+          {
+            "title": "紀錄",
+            "link": "http://sayit.archive.tw/2015-08-27-uberx-%E8%87%AA%E7%94%A8%E8%BB%8A%E8%BC%89%E5%AE%A2%E6%84%8F%E8%A6%8B%E5%BE%B5%E9%9B%86%E8%AB%AE%E8%A9%A2%E6%9C%83%E8%AD%B0"
+          }
+        ]
+      }
+    ],
     "stages": [
       {
         "name": "意見徵集",
         "category": "collect",
         "start_date": "July 15, 2015 00:00:00",
         "end_date": "August 15, 2015 23:59:59",
-        "polis_id" : "3phdex2kjf" 
+        "polis_id": "3phdex2kjf"
       }
-      
-    ]
+    ],
+    "slides_image": "//image.slidesharecdn.com/vtaiwan-iii-2015-08-27-150827081332-lva1-app6891/95/-1-1024.jpg",
+    "slides_embed_url": "//www.slideshare.net/slideshow/embed_code/key/pbWRU3vlCYhyVc"
   },
   "cyberbullying": {
     "title_cht": "網路霸凌",
@@ -24,6 +81,22 @@
     "proposer_abbr_cht": "法務部、衛福部",
     "proposer_abbr_eng": "MOJ-MOHW",
     "slides_url": "http://www.slideshare.net/vtaiwan/cyberbullying-49304122",
+    "links": [
+      {
+        "title": "諮詢會議：網路霸凌",
+        "date": "August 14, 2015 19:00:00",
+        "links": [
+          {
+            "title": "共筆",
+            "link": "https://hackpad.com/2015-08-13--p8VAnQ24OqO"
+          },
+          {
+            "title": "重播",
+            "link": "https://www.youtube.com/watch?v=D5bwEja0-O0"
+          }
+        ]
+      }
+    ],
     "stages": [
       {
         "name": "討論",
@@ -31,7 +104,7 @@
         "discourse_url": "https://talk.vtaiwan.tw",
         "category": "init",
         "start_date": "June 16, 2015 00:00:00",
-        "end_date": "July 31, 2015 23:59:59",
+        "end_date": "August 31, 2015 23:59:59",
         "category_num": 92
       }
     ],
@@ -432,7 +505,7 @@
           },
           {
             "title": "紀錄",
-            "link": "http://vtaiwan.sayit.mysociety.org/2015-07-22-ey-meeting-on-open-data#s650153"
+            "link": "http://sayit.archive.tw/722-%E8%B3%87%E6%96%99%E5%88%86%E9%A1%9E%E5%8F%8A%E6%8E%88%E6%AC%8A%E5%88%A9%E7%94%A8%E6%94%B6%E8%B2%BB%E5%8E%9F%E5%89%87%E6%9C%83%E8%AD%B0"
           }
         ]
       },

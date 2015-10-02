@@ -10,7 +10,8 @@ module.exports = {
             "gitbook_url": "https://g0v.github.io/cyberbullying-gitbook",
             "category_num": 92,
             "proposal_cht":"網路霸凌",
-            "category_cht":"討論"
+            "category_cht":"討論",
+            "discussions_id":[ {"page":1, "postID": 554}, {"page":1, "postID": 548}]
         }
     },
     "infosecurity":
