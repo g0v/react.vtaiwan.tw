@@ -4,17 +4,35 @@
     "title_eng": "airbnb",
     "proposer_abbr_cht": "交通部觀光局",
     "proposer_abbr_eng": "motc_tb",
-    "fact_url" : "http://fact.g0v.tw/wikipedia/airbnb",
-    "slides_image": "//lh3.googleusercontent.com/-vrLduKNkS78/TlOQEu7VbyI/AAAAAAAApcc/e4_ErlFIftM/s800/taiwan_1.gif",
+    "fact_url": "http://fact.g0v.tw/wikipedia/airbnb",
+    "slides_url": "http://www.slideshare.net/vtaiwan/airbnb-vtaiwantw-iii",
+    "links": [
+      {
+        "title": "諮詢會議：Airbnb 自用住宅招租",
+        "date": "October 1, 2015 19:00:00",
+        "links": [
+          {
+            "title": "共筆",
+            "link": "https://g0v.hackpad.com/vTaiwan-Airbnb--Jqv5FwD48vn"
+          },
+          {
+            "title": "重播",
+            "link": "https://www.youtube.com/watch?v=l8zOi1Wv1Jk"
+          }
+        ]
+      }
+    ],
     "stages": [
       {
         "name": "意見徵集",
         "category": "collect",
         "start_date": "September 1, 2015 00:00:00",
         "end_date": "September 27, 2015 23:59:59",
-        "polis_id" : "6sc6vt"
+        "polis_id": "6sc6vt"
       }
-    ]
+    ],
+    "slides_image": "//image.slidesharecdn.com/vtaiwan-airbnb-151001071911-lva1-app6892/95/-1-1024.jpg",
+    "slides_embed_url": "//www.slideshare.net/slideshow/embed_code/key/qjhkdmfSu9mm3g"
   },
   "uberx": {
     "title_cht": "UberX 自用車載客",
@@ -25,7 +43,7 @@
     "fact_url": "http://fact.g0v.tw/wikipedia/uber",
     "links": [
       {
-        "title": "諮詢會議：uberX 自用車載客意見徵集",
+        "title": "諮詢會議：uberX 自用車載客",
         "date": "August 27, 2015 19:00:00",
         "links": [
           {
