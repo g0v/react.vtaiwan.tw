@@ -642,8 +642,17 @@
     "slides_url": "http://www.slideshare.net/vtaiwan/ss-47314074",
     "stages": [
       {
+        "name": "草案 #1",
+        "gitbook_url": "https://g0v.github.io/personal-data-protection-ref1-gitbook",
+        "discourse_url": "https://talk.vtaiwan.tw",
+        "category": "ref1",
+        "start_date": "Feb 1, 2016 00:00:00",
+        "end_date": "May 19, 2016 23:59:59",
+        "category_num": 101
+      },
+      {
         "name": "建議",
-        "gitbook_url": "https://g0v.github.io/personal-data-protection-gitbook",
+        "gitbook_url": "https://g0v.github.io/personal-data-protection-spec-gitbook",
         "discourse_url": "https://talk.vtaiwan.tw",
         "category": "spec",
         "start_date": "July 17, 2015 00:00:00",
