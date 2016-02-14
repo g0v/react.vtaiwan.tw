@@ -142,6 +142,13 @@ module.exports = {
     },
     "data-levy":
     {
+        "act1" :
+        {
+            "gitbook_url": "https://g0v.github.io/data-levy-act1-gitbook",
+            "category_num": 105,
+            "proposal_cht":"資料分類及授權利用",
+            "category_cht":"定案"
+        },
         "ref1" :
         {
             "gitbook_url": "https://g0v.github.io/data-levy-ref1-gitbook",
@@ -176,6 +183,13 @@ module.exports = {
     },
     "personal-data-protection":
     {
+        "ref1" :
+        {
+            "gitbook_url": "https://g0v.github.io/personal-data-protection-ref1-gitbook",
+            "category_num": 101,
+            "proposal_cht":"個資利用與去識別化",
+            "category_cht":"草案 #1"
+        },
         "spec" :
         {
             "gitbook_url": "https://g0v.github.io/personal-data-protection-spec-gitbook",

@@ -335,7 +335,7 @@ class Category extends React.Component {
                 </div>
                 <div className="Category-title" dangerouslySetInnerHTML={{__html: title }} />
                 <div dangerouslySetInnerHTML={{__html: content.replace(
-                    /(src=")([^/])/g, '$1' + gitbook_url + '/$2'
+                    /(src="(?!https?:))([^/])/g, '$1' + gitbook_url + '/$2'
                 )
                 }} />
                 { issueItems }
