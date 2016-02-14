@@ -558,6 +558,17 @@
     ],
     "stages": [
       {
+        "name": "定案 #1",
+        "proposer_abbr_eng": "opendata_mis_ndc",
+        "proposer_abbr_cht": "國發會",
+        "gitbook_url": "https://g0v.github.io/data-levy-act1-gitbook",
+        "discourse_url": "https://talk.vtaiwan.tw",
+        "category": "act1",
+        "start_date": "November 24, 2015 00:00:00",
+        "end_date": "May 19, 2016 23:59:59",
+        "category_num": 105
+      },
+      {
         "name": "草案 #1",
         "proposer_abbr_eng": "opendata_mis_ndc",
         "proposer_abbr_cht": "國發會",
