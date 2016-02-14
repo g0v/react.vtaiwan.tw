@@ -558,7 +558,7 @@
     ],
     "stages": [
       {
-        "name": "定案 #1",
+        "name": "定案",
         "proposer_abbr_eng": "opendata_mis_ndc",
         "proposer_abbr_cht": "國發會",
         "gitbook_url": "https://g0v.github.io/data-levy-act1-gitbook",
