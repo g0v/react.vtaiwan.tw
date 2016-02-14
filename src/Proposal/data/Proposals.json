@@ -648,9 +648,9 @@
     "title_eng": "personal-data-protection",
     "prefix_cht": "數位公民環境：",
     "prefix_eng": "civic",
-    "proposer_abbr_eng": "moj",
-    "proposer_abbr_cht": "法務部",
-    "slides_url": "http://www.slideshare.net/vtaiwan/ss-47314074",
+    "proposer_abbr_eng": "bsmi",
+    "proposer_abbr_cht": "經濟部標準檢驗局",
+    "slides_url": "http://www.slideshare.net/vtaiwan/ss-57359605",
     "stages": [
       {
         "name": "草案 #1",
@@ -714,7 +714,7 @@
         ]
       }
     ],
-    "slides_image": "//image.slidesharecdn.com/u7rr2hheqccbnto3bx5a-signature-882046dafd033976da70848690905ff33362c0496a3c0744302f4ed2f8758782-poli-150422220627-conversion-gate01/95/-1-1024.jpg",
-    "slides_embed_url": "//www.slideshare.net/slideshow/embed_code/key/1MoTEZ16YhbjN4"
+    "slides_image": "//image.slidesharecdn.com/f1447142556627-160122071207/95/-1-1024.jpg",
+    "slides_embed_url": "//www.slideshare.net/slideshow/embed_code/key/LmOQYeuGfzanFd"
   }
 }
