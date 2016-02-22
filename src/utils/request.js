@@ -5,7 +5,7 @@ import Promise from 'bluebird'
 
 if (typeof window !== 'undefined') {
     const TIME_STAMP = ((location.port === 3000) ? Math.random() :
-    'Sun Feb 14 14:49:06 CST 2016'
+    'Tue Feb 23 01:00:53 CST 2016'
     )
     if (!(window.Promise)) { window.Promise = Promise }
     if (window.localStorage.getItem('TIME_STAMP') !== TIME_STAMP) {

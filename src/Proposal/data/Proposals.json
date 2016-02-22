@@ -650,7 +650,7 @@
     "prefix_eng": "civic",
     "proposer_abbr_eng": "bsmi",
     "proposer_abbr_cht": "經濟部標準檢驗局",
-    "slides_url": "http://www.slideshare.net/vtaiwan/ss-57359605",
+    "slides_url": "http://www.slideshare.net/vtaiwan/ss-58562437",
     "stages": [
       {
         "name": "草案 #1",
@@ -681,6 +681,20 @@
       }
     ],
     "links": [
+      {
+        "title": "諮詢會議：個資去識別化",
+        "date": "February 23, 2016 19:00:00",
+        "links": [
+          {
+            "title": "共筆",
+            "link": "https://hackpad.com/2016-02-23--inDy8nGi4LE"
+          },
+          {
+            "title": "直播",
+            "link": "https://livehouse.in/channel/vtaiwan"
+          }
+        ]
+      },
       {
         "title": "工作組聚會：「個資利用/去識別化」建議規格彙整",
         "date": "July 11, 2015 13:00:00",
@@ -714,7 +728,7 @@
         ]
       }
     ],
-    "slides_image": "//image.slidesharecdn.com/f1447142556627-160122071207/95/-1-1024.jpg",
-    "slides_embed_url": "//www.slideshare.net/slideshow/embed_code/key/LmOQYeuGfzanFd"
+    "slides_image": "//image.slidesharecdn.com/z-160222160443/95/-1-1024.jpg",
+    "slides_embed_url": "//www.slideshare.net/slideshow/embed_code/key/lJbXLNmCaMC7MA"
   }
 }
