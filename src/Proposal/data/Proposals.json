@@ -1,4 +1,22 @@
 {
+  "eliquor": {
+    "title_cht": "網路賣酒配套措施",
+    "title_eng": "eliquor",
+    "proposer_abbr_cht": "財政部國庫署",
+    "proposer_abbr_eng": "nta",
+    "slides_url": "https://www.slideshare.net/vtaiwan/ss-59160815",
+    "stages": [
+      {
+        "name": "意見徵集",
+        "category": "collect",
+        "start_date": "March 7, 2016 00:00:00",
+        "end_date": "March 30, 2016 23:59:59",
+        "polis_id": "6nbf3mwttd"
+      }
+    ],
+    "slides_image": "//image.slidesharecdn.com/1050304-pdfa-160306184026/95/-1-1024.jpg",
+    "slides_embed_url": "//www.slideshare.net/slideshow/embed_code/key/XEuM2tLmHDCPe"
+  },
   "airbnb": {
     "title_cht": "Airbnb 自用住宅招租",
     "title_eng": "airbnb",
