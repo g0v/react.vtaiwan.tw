@@ -1,6 +1,7 @@
 module.exports = {
   NavList: [
     { label: '主題'},
+    { path: '/eliquor/', label: '網路賣酒配套措施', icon: 'MOFTA.png', type: 'sub'},
     { path: '/airbnb/', label: 'Airbnb 自用住宅招租', icon: 'motc_tb.png', type: 'sub'},
     { path: '/uberx/', label: 'UberX 自用車載客', icon: 'motc.png', type: 'sub'},
     { path: '/cyberbullying/', label: '網路霸凌', icon: 'MOJ-MOHW.png', type: 'sub'},
