@@ -52,12 +52,10 @@ class ProposalList extends React.Component {
                 className="ProposalList-item"
                 onClick={(e) => {
                 // TODO: Stage 0, during the survey period, e.g.:
-                /*
-                if (item.title_eng === 'airbnb') {
+                if (item.title_eng === 'eliquor') {
                     e.stopPropagation();
-                    location.href = '/airbnb/';
+                    location.href = '/eliquor/';
                 }
-                */
                 }}>
                 <div className="ProposalList-item-outer">
                 <div className="ProposalList-item-inner">
