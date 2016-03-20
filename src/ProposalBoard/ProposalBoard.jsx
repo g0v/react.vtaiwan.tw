@@ -18,6 +18,8 @@ class ProposalBoard extends React.Component {
       <div>
             <div className="App-cover">
                 <div className="App-intro">
+                    <a href="https://dc.vtaiwan.tw/" style={{display: 'block', textAlign: 'center', marginTop: '-50px', background: '#eee', borderRadius: '10px' }}>
+                    <img style={{ verticalAlign: 'middle' }} src="https://dc.vtaiwan.tw/4a6f6a12637f945b5f6a96bcf6fd3662.png" width="64" height="64" />「匯流五法」線上徵詢專區，請按此進入。</a>
                     <p>在數位化生活的時代，要怎樣利用網路無遠弗屆的特性，創造更多的想像空間？</p>
                     <p>我們希望能完整討論相關問題，進而為每項提案徵集工作小組，形成法規草案。</p>
                     <p>作為公眾參與政策形成與法令訂定過程透明化的一次實驗，各項議題會分四個階段進行，分別為：討論、建議、草案、定案。</p>

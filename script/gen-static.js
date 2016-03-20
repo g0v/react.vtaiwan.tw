@@ -48,7 +48,7 @@ browser.visit(path, ()=>{
             seen[p] = true
             waitFor++
             console.log(p)
-            const cmd = child_process.spawn("./node_modules/immutable-request/node_modules/.bin/babel-node", ["script/gen-static.js", p])
+            const cmd = child_process.spawn("./node_modules/.bin/babel-node", ["script/gen-static.js", p])
             cmd.stdout.on('data', (data) => {
                 if (data && !/WDS|HMR|DevTools/.test(data)) {
                     console.log(('> ' + data).replace(/\n/g, ''))
