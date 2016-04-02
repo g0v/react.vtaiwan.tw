@@ -4,7 +4,23 @@
     "title_eng": "eliquor",
     "proposer_abbr_cht": "財政部國庫署",
     "proposer_abbr_eng": "nta",
-    "slides_url": "https://www.slideshare.net/vtaiwan/ss-59160815",
+    "slides_url": "http://www.slideshare.net/vtaiwan/ss-60188611",
+    "links": [
+      {
+        "title": "諮詢會議：網路賣酒",
+        "date": "March 31, 2016 19:00:00",
+        "links": [
+          {
+            "title": "共筆",
+            "link": " https://hackpad.com/331--sxKbHuO1tYw"
+          },
+          {
+            "title": "重播",
+            "link": "https://www.youtube.com/watch?v=BXa0Bqn02UI"
+          }
+        ]
+      }
+    ],
     "stages": [
       {
         "name": "意見徵集",
@@ -14,8 +30,8 @@
         "polis_id": "6nbf3mwttd"
       }
     ],
-    "slides_image": "//image.slidesharecdn.com/1050304-pdfa-160306184026/95/-1-1024.jpg",
-    "slides_embed_url": "//www.slideshare.net/slideshow/embed_code/key/XEuM2tLmHDCPe"
+    "slides_image": "//image.slidesharecdn.com/zbxi01iqoy2zrsqzsu1a-signature-a2c1b04c1b0e46e92533427e0ed861b29a57eaa126a150b1594cb3e1174531a0-poli-160329231814/95/-1-1024.jpg",
+    "slides_embed_url": "//www.slideshare.net/slideshow/embed_code/key/F3yREt15zbGOSG"
   },
   "airbnb": {
     "title_cht": "Airbnb 自用住宅招租",
@@ -31,7 +47,7 @@
         "links": [
           {
             "title": "共筆",
-            "link": "https://g0v.hackpad.com/vTaiwan-Airbnb--Jqv5FwD48vn"
+            "link": "https://hackpad.com/2015-10-01-Airbnb--PTD3vnvhMjv"
           },
           {
             "title": "重播",

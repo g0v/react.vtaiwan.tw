@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "build": "npm run static",
-    "update": "./node_modules/immutable-request/node_modules/.bin/babel-node script/update-proposal-slides.js",
-    "static": "rm -rf build/* ; env NODE_ENV=production webpack -content-base build/ ; ./node_modules/immutable-request/node_modules/.bin/babel-node script/gen-static.js /; echo www.vtaiwan.tw > build/CNAME",
+    "update": "./node_modules/.bin/babel-node script/update-proposal-slides.js",
+    "static": "rm -rf build/* ; env NODE_ENV=production ./node_modules/.bin/webpack -content-base build/ ; ./node_modules/.bin/babel-node script/gen-static.js /; echo www.vtaiwan.tw > build/CNAME",
     "deploy": "gh-pages -d build"
   },
   "repository": {
