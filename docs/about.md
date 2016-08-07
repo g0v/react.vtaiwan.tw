@@ -1,6 +1,6 @@
 # 關於 vTaiwan
 
-這是**行政院**[虛擬世界發展法規調適規劃方案](http://www.ey.gov.tw/News_Content.aspx?n=3D06E532B0D8316C&s=A1747AEA93F0BF62)的線上法規討論平台，由**資策會**[科技法律研究所](https://stli.iii.org.tw/)與 **g0v** [vTaiwan.tw 專案參與者](https://g0v.hackpad.com/vTaiwan.tw--oWRxOF4ilfx)共同建置。
+這是<b>行政院</b>數位法制議題的線上法規討論平台，由 <b><tt>g0v</tt></b> [vTaiwan.tw 專案參與者](https://g0v.hackpad.com/vTaiwan.tw--oWRxOF4ilfx)共同建置，<b>國發會</b>[法制協調中心](http://www.ndc.gov.tw/cp.aspx?n=7ED9DDBE126EEE48) 及<b>資策會</b>[科技法律研究所](https://stli.iii.org.tw/)協力支援。
 
 ## 為何參加？
 
