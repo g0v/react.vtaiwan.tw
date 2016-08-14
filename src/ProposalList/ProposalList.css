@@ -5,6 +5,9 @@
 .ProposalList-sectionIntro li {
   line-height: 1.6;
 }
+.ProposalList-item.active {
+  box-shadow: 0px 2px 15px 0px rgba(100, 200, 200, 1);
+}
 .ProposalList-item, .ProposalList-item:visited {
 	color: rgb(53,55,54);
 	text-decoration: none;
