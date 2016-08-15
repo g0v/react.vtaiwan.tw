@@ -50,7 +50,7 @@ class ProposalList extends React.Component {
             <Link to="proposal" key={key}
                 params={{proposalName: item.title_eng}}
                 className={
-                    (item.title_eng === 'sandbox') // TODO: Check date
+                    (item.title_eng === 'sandbox' || item.title_eng === 'naming') // TODO: Check date
                         ? "ProposalList-item active"
                         : "ProposalList-item inactive"
                 }
