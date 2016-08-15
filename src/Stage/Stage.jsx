@@ -89,9 +89,12 @@ class Stage extends React.Component {
             })
         }
         let icon = require('../NavBar/images/' + data.category.replace(/\d*$/, '.png'))
-        return (data.polis_id)?(
+        var external_url =
+            (data.polis_id) ? `https://pol.is/${data.polis_id}` :
+            (data.slido_id) ? `https://app.sli.do/event/${data.slido_id}/polls` : null;
+        return (external_url)?(
              <a className="Stage"
-                href={`https://pol.is/${data.polis_id}`}
+                href={external_url}
                 target="_blank">
                 
                 <img style={{"float": "right"}} className="NavBar-subItemIcon" src={icon} />
