@@ -11,19 +11,20 @@ import Posts from '../Posts/Posts.jsx'
 
 class Issue extends React.Component {
     render() {
-        var {title, content, post_count, clickHandler} = this.props;
+        var {title, content, post_count, clickHandler} = this.props
 
         return (
-        <div className="issue_item"
-             onClick={clickHandler}>
-            <div className="issue_item_title">
-                <span className="prompt"></span>
-                <span className="q_text" dangerouslySetInnerHTML={{ __html: title }} />
-                <span className="Issue-titleIcon"><i className="fa fa-comments-o"></i></span>
-                <span className="issue_item_discuss_count">{post_count || ''}</span>
+            <div className="issue_item"
+                 onClick={clickHandler}>
+                <div className="issue_item_title">
+                    <span className="prompt"></span>
+                    <span className="q_text" dangerouslySetInnerHTML={{ __html: title }} />
+                    <span className="Issue-titleIcon"><i className="fa fa-comments-o"></i></span>
+                    <span className="issue_item_discuss_count">{post_count || ''}</span>
+                </div>
+                <div className="q_text" dangerouslySetInnerHTML={{ __html: content }} />
             </div>
-            <div className="q_text" dangerouslySetInnerHTML={{ __html: content }} />
-        </div>);
+        )
     }
 }
 
@@ -50,7 +51,7 @@ class Category extends React.Component {
         this.setState({
             showDiscussion: !this.state.showDiscussion,
             showFullDiscussion: false
-        });
+        })
 
         var {proposalName, category, page} = this.props.params
         var currentState = history.state
@@ -67,10 +68,10 @@ class Category extends React.Component {
     }
 
     _toggleShowDiscussionWeb (postID, event){
-        window.scrollTo(500, 0);
+        window.scrollTo(500, 0)
 
-        var discussion = document.getElementsByClassName("Category-discussion");
-        discussion.scrollTop = 0;
+        var discussion = document.getElementsByClassName("Category-discussion")
+        discussion.scrollTop = 0
 
         if(postID){
             this.props.setQueryParams({
@@ -84,7 +85,7 @@ class Category extends React.Component {
         if(!this.state.showDiscussion){
             this.setState({
                 showDiscussion: true
-            });
+            })
 
             var newURL = `/${proposalName}/${category}/${page}/${postID}/`
             history.pushState(currentState, document.title, newURL)
@@ -96,17 +97,17 @@ class Category extends React.Component {
 
         this.setState({
             showFullDiscussion: false
-        });
+        })
     }
 
     _hideDiscussion(){
         this.setState({
             showDiscussion: false
-        });
+        })
         var {proposalName, category, page} = this.props.params
-        var currentState = history.state;
-        var newURL = `/${proposalName}/${category}/${page}/`;
-        history.pushState(currentState, document.title, newURL);
+        var currentState = history.state
+        var newURL = `/${proposalName}/${category}/${page}/`
+        history.pushState(currentState, document.title, newURL)
     }
 
     _toggleShowFullDiscussion(){
@@ -132,13 +133,13 @@ class Category extends React.Component {
         })
     }
     componentWillReceiveProps(nextProps) {
-        const {proposalName, category, postID, page} = this.props.params;
-        const nextProposalName = nextProps.params.proposalName;
-        const nextCategory = nextProps.params.category;
-        const nextPage = nextProps.params.page;
+        const {proposalName, category, postID, page} = this.props.params
+        const nextProposalName = nextProps.params.proposalName
+        const nextCategory = nextProps.params.category
+        const nextPage = nextProps.params.page
 
         if (nextProps.gitbook.length) {
-            const {topic_list} = nextProps.talk || {};
+            const {topic_list} = nextProps.talk || {}
             const {proposal_cht, category_cht} = categoryData[proposalName][category]
             const icon = category.replace(/\d+$/, '') + '.png'
             const base = `/${proposalName}/`
@@ -175,7 +176,7 @@ class Category extends React.Component {
         //When changing page, always hide the discussion
         this.setState({
             showDiscussion: false
-        });
+        })
 
         const metaData = categoryData[nextProposalName][nextCategory]
         this.props.setQueryParams({
@@ -187,8 +188,8 @@ class Category extends React.Component {
         })
     }
     _removeLexicon (text) {
-        const hint = /<span\ class=\"hint\"\ data-hint=\"(?:.+\n?)+\">(.+)<\/span>/;
-        return text.replace(hint, (matched, raw) => raw);
+        const hint = /<span\ class=\"hint\"\ data-hint=\"(?:.+\n?)+\">(.+)<\/span>/
+        return text.replace(hint, (matched, raw) => raw)
     }
     render() {
 
@@ -206,14 +207,14 @@ class Category extends React.Component {
                 titleToPostCount[value.fancy_title] = {
                     id: value.id,
                     post_count: value.posts_count
-                };
+                }
             })
         }
         // Add post_count, topic_id data to gitbook data
         const {title, content, children} = gitbook[page]
         if (children){ children.forEach((item)=>{
 
-            item.title = this._removeLexicon(item.title);
+            item.title = this._removeLexicon(item.title)
             if (titleToPostCount[item.title]){
                 item.post_count = titleToPostCount[item.title].post_count || 0
                 item.id = titleToPostCount[item.title].id
@@ -249,9 +250,9 @@ class Category extends React.Component {
                     handleToggleFullDiscussion={bindToggleFullDiscussion}
                     showFull={showFullDiscussion}
                 />
-                loadingItem = "";
+                loadingItem = ""
             } else {
-                // loadingItem = "沒有討論";
+                // loadingItem = "沒有討論"
             }
         }
 
@@ -266,6 +267,7 @@ class Category extends React.Component {
                 {postsItem}
             </div>
         )
+
         const discussionContentWeb = (
             <div className={discussionClasses}>
                 <div className="Category-discussionNavClose"
@@ -275,7 +277,8 @@ class Category extends React.Component {
                 {postsItem}
                 {loadingItem}
             </div>
-        );
+        )
+
         const discussionContent = (window.innerWidth > 600)
             ? discussionContentWeb
             : discussionContentMobile
@@ -296,14 +299,11 @@ class Category extends React.Component {
             "Category-categoryList": true,
             "is-hidden": showDiscussion
         })
+
         const icon = require(`../NavBar/images/${
             category.replace(/\d+$/, '')
         }.png`)
 
-
-        //
-
-       
         let hiddenLinks = ""
         if(this.state.posts){
             hiddenLinks = this.state.posts.map((v,i)=>{
@@ -400,9 +400,9 @@ export default Transmit.createContainer(Category, {
                     res.categories
                         .filter((c)=> c.parent_category_id === categoryNum)
                         .map(({id, parent_category_id})=>{
-                            var slug = (category === 'init') ? proposalName : `${proposalName}-${category}`;
-                            if(proposalName === 'crowdfunding' && category ==='act1') slug = 'crowdfunding-ref1';
-                            const baseURL = (!parent_category_id)? `//talk.vtaiwan.tw/c/${id}-category.json`:`//talk.vtaiwan.tw/c/${slug}/${id}-category.json`;
+                            var slug = (category === 'init') ? proposalName : `${proposalName}-${category}`
+                            if(proposalName === 'crowdfunding' && category ==='act1') slug = 'crowdfunding-ref1'
+                            const baseURL = (!parent_category_id)? `//talk.vtaiwan.tw/c/${id}-category.json`:`//talk.vtaiwan.tw/c/${slug}/${id}-category.json`
                             getJSON(baseURL)
                         })
                 })
@@ -411,7 +411,7 @@ export default Transmit.createContainer(Category, {
         posts({postID}){
 
             if (!postID) { return new Promise((cb)=>cb([])) }
-            const result = {};
+            const result = {}
             const url = `//talk.vtaiwan.tw/t/topic/${postID}.json`
             return new Promise((resolve, reject)=>{
                 request.get(url).then((data)=>{

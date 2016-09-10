@@ -5,9 +5,7 @@ import {Link} from 'react-router'
 import './AppBar.css'
 
 class AppBar extends React.Component {
-
     render() {
-
         var imgURL = require("./images/AppBar-logo.png");
         var toggleIcon = window.innerWidth > 600 ? (
                 <span className="fa-stack">
