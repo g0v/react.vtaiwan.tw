@@ -8,7 +8,8 @@
     "build": "npm run static",
     "update": "./node_modules/.bin/babel-node script/update-proposal-slides.js",
     "static": "rm -rf build/* ; env NODE_ENV=production ./node_modules/.bin/webpack -content-base build/ ; ./node_modules/.bin/babel-node script/gen-static.js /; echo www.vtaiwan.tw > build/CNAME",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "lint": "eslint src --ext .jsx"
   },
   "repository": {
     "type": "git",
@@ -26,8 +27,10 @@
   "homepage": "https://github.com/g0v/react.vtaiwan.tw",
   "devDependencies": {
     "autoprefixer": "^6.0.3",
+    "babel-eslint": "^6.1.2",
     "caching-fetch": "^1.0.8",
     "css-loader": "^0.11.0",
+    "eslint": "^3.5.0",
     "extract-text-webpack-plugin": "^0.8.1",
     "file-loader": "^0.8.1",
     "gh-pages": "^0.11.0",
