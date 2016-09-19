@@ -25,6 +25,15 @@
     "slides_url": "http://www.slideshare.net/vtaiwan/ss-64723713",
     "stages": [
       {
+        "name": "討論",
+        "gitbook_url": "https://g0v.github.io/naming-gitbook",
+        "discourse_url": "https://talk.vtaiwan.tw",
+        "category": "init",
+        "start_date": "September 23, 2016 00:00:00",
+        "end_date": "October 23, 2016 23:59:59",
+        "category_num": 122
+      },
+      {
         "name": "意見徵集",
         "category": "collect",
         "start_date": "August 14, 2016 00:00:00",
