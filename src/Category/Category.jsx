@@ -190,7 +190,7 @@ class Category extends React.Component {
     }
     _removeLexicon (text) {
         const hint = /<span\ class=\"hint\"\ data-hint=\"(?:.+\n?)+\">(.+)<\/span>/
-        return text.replace(hint, (matched, raw) => raw)
+        return text.replace(hint, (matched, raw) => raw).replace(/<[^>]*>/g, '').replace(/&#x([a-fA-F0-9]+);/g, (match, hex) => { return String.fromCharCode(Number.parseInt(hex, 16)); });
     }
     render() {
 
