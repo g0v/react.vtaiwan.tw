@@ -27,7 +27,6 @@ class LabeledLinks extends React.Component {
         		case '授權條款':
         			icon = "fa fa-legal"
         			break
-
         	}
         	
         	return (

@@ -47,7 +47,7 @@ class NavBar extends React.Component {
         this.setOGImage(section);
         const NavList = (this.props.nav_list || []).map(( {label, type, icon, path, title}, key) => {
             const styleClass = (type === 'title') ? 'NavBar-item--title' : 'NavBar-item'
-            if (/\bcollect\/*$/.test(path)) { path = null }
+//            if (/\bcollect\/*$/.test(path)) { path = null }
             if(type === 'sub' && path) {
                 return (
                     <Link key={key} to={path} className="NavBar-subItem" onClick={this._onListItemClicked.bind(this)}>
