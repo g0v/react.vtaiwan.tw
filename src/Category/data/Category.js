@@ -204,5 +204,15 @@ module.exports = {
             "proposal_cht":"個資利用與去識別化",
             "category_cht":"討論"
         }
+    },
+    "naming":
+    {
+        "init" :
+        {
+            "gitbook_url": "https://g0v.github.io/naming-gitbook",
+            "category_num": 122,
+            "proposal_cht":"公司英文名稱登記",
+            "category_cht":"討論"
+        }
     }
 }

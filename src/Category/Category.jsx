@@ -154,10 +154,10 @@ class Category extends React.Component {
                     type: 'sub',
                 }] : [{
                     path: `${base}${category}/${pageID}/`,
-                    label: title.replace(/<[^>]*>/g, ''),
+                    label: title.replace(/<[^>]*>/g, '').replace(/&#x([a-fA-F0-9]+);/g, (match, hex) => { return String.fromCharCode(Number.parseInt(hex, 16)); }),
                     type: 'section',
                 }].concat( (topic_list && topic_list.topics) ? children.map((c)=>{
-                    const label = c.title.replace(/<[^>]*>/g, '')
+                    const label = c.title.replace(/<[^>]*>/g, '').replace(/<[^>]*>/g, '').replace(/&#x([a-fA-F0-9]+);/g, (match, hex) => { return String.fromCharCode(Number.parseInt(hex, 16)); });
                     const {id} = topic_list.topics.filter(
                         ({fancy_title})=>fancy_title === label
                     )[0] || {}
@@ -166,6 +166,7 @@ class Category extends React.Component {
                     return { path, label, type: 'sub' } }) : []
                 )
             ).reduce((a, b)=>a.concat(b))))
+
         }
 
         if (!proposalName || !nextProposalName) { return }
