@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "build": "npm run static",
-    "update": "./node_modules/.bin/babel-node script/update-proposal-slides.js",
+    "update": "./node_modules/.bin/lsc script/parse-summary.ls; ./node_modules/.bin/babel-node script/update-proposal-slides.js",
     "static": "rm -rf build/* ; env NODE_ENV=production ./node_modules/.bin/webpack -content-base build/ ; ./node_modules/.bin/babel-node script/gen-static.js /; echo www.vtaiwan.tw > build/CNAME",
     "deploy": "gh-pages -d build",
     "lint": "eslint src --ext .jsx"
@@ -34,8 +34,10 @@
     "extract-text-webpack-plugin": "^0.8.1",
     "file-loader": "^0.8.1",
     "gh-pages": "^0.11.0",
+    "gitbook-markdown": "^1.2.0",
     "hackpad": "0.0.3",
     "html-loader": "^0.3.0",
+    "livescript": "^1.4.0",
     "postcss-loader": "^0.6.0",
     "react-hot-loader": "^1.2.2",
     "static-site-generator-webpack-plugin": "^1.0.0",
