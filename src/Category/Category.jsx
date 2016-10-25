@@ -8,6 +8,7 @@ import {Link} from 'react-router'
 import classNames from 'classnames'
 import categoryData from './data/Category'
 import Posts from '../Posts/Posts.jsx'
+import proposalData from '../Proposal/data/Proposals.json'
 
 class Issue extends React.Component {
     render() {
@@ -35,7 +36,7 @@ class Category extends React.Component {
         this.state = {
             showDiscussion: !!this.props.params.postID,
             showFullDiscussion: false,
-            posts: [] // 主題底下的 post id，用來做隱藏 link 
+            posts: [] // 主題底下的 post id，用來做隱藏 link
         }
     }
 
@@ -59,7 +60,7 @@ class Category extends React.Component {
         if(!this.state.showDiscussion){
             var newURL = `/${proposalName}/${category}/${page}/${postID}/`
             history.pushState(currentState, document.title, newURL)
-            
+
         }else{
             var newURL = `/${proposalName}/${category}/${page}/`
             history.pushState(currentState, document.title, newURL)
@@ -89,7 +90,7 @@ class Category extends React.Component {
 
             var newURL = `/${proposalName}/${category}/${page}/${postID}/`
             history.pushState(currentState, document.title, newURL)
-            
+
         }else{
             var newURL = `/${proposalName}/${category}/${page}/`
             istory.pushState(currentState, document.title, newURL)
@@ -118,19 +119,21 @@ class Category extends React.Component {
 
     componentWillMount() {
         const {proposalName, category, postID} = this.props.params
-        const metaData = categoryData[proposalName][category]
-        //console.log(metaData.discussions_id)
-        this.setState({
-            posts: metaData.discussions_id
-        })
+        if (postID) {
+          const metaData = categoryData[proposalName][category]
+          //console.log(metaData.discussions_id)
+          this.setState({
+              posts: metaData.discussions_id
+          })
 
-        this.props.setQueryParams({
-            gitbookURL: metaData.gitbook_url,
-            categoryNum: metaData.category_num,
-            proposalName: proposalName,
-            category: category,
-            postID: postID
-        })
+          this.props.setQueryParams({
+              gitbookURL: metaData.gitbook_url,
+              categoryNum: metaData.category_num,
+              proposalName: proposalName,
+              category: category,
+              postID: postID
+          })
+        }
     }
     componentWillReceiveProps(nextProps) {
         const {proposalName, category, postID, page} = this.props.params
@@ -197,7 +200,29 @@ class Category extends React.Component {
         const {gitbookURL, categoryNum, gitbook, talk, posts, onChange} = this.props
         const {proposalName, category, postID} = this.props.params
         const page = Number(this.props.params.page) || 0
-
+        if (category === 'collect') {
+          let [ collect ] = proposalData[proposalName]["stages"]
+            .filter(stage => stage.category === 'collect')
+          let { polis_id, slido_id } = collect
+          if (slido_id) {
+            return (
+              <div className="Category">
+                <iframe src={`https://app.sli.do/event/${slido_id}`}
+                        frameBorder="0"
+                        width="100%"
+                        height="1000px"></iframe>
+              </div>
+            )
+          }
+          return (
+            <div className="Category">
+              <iframe src={`https://pol.is/${polis_id}`}
+                      frameBorder="0"
+                      width="100%"
+                      height="1000px"></iframe>
+            </div>
+          )
+        }
         if(!gitbook || !gitbook[page]) { return <div/> }
 
         // Get post_count, topic_id from talk.vtaiwan json
@@ -309,7 +334,7 @@ class Category extends React.Component {
         if(this.state.posts){
             hiddenLinks = this.state.posts.map((v,i)=>{
                 return (
-                    
+
                     <Link to="categoryPagePost"
                            params={{proposalName: proposalName, category:category, page:v.page, postID: v.postID}}>
                     </Link>
