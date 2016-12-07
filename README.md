@@ -6,18 +6,29 @@
 
 需要安裝 [__Node.js__](https://nodejs.org/)。安裝好後，開啟 Terminal 視窗按下列步驟執行指令。
 
-1. `$ npm install`
-2. `$ npm start`
+1. `npm install`
+2. `npm start`
 3. 開啟瀏覽器鍵入 `http://localhost:3000`
 
 (Node.js 0.10.x+ 也可用來開發，但部署時仍建議使用 4.x。)
 
 # 部署
 
-行政院法規線上諮詢系統 2.0 使用 [zombie.js](http://zombie.js.org/) 搭配 [reactjs](https://facebook.github.io/react/) 的 server-side render 產生靜態網頁，並且使用 [gh-pages](https://pages.github.com/) 作為部署環境。請在 `npm start` 執行時，另開視窗按照下列步驟執行指令。
+行政院法規線上諮詢系統 2.0 使用 [zombie.js](http://zombie.js.org/) 搭配 [reactjs](https://facebook.github.io/react/) 的 server-side render 產生靜態網頁，並且使用 [gh-pages](https://pages.github.com/) 作為部署環境。
 
-1. `$ npm run static`
-2. `$ npm run deploy`
+請在 `npm start` 執行時，另開視窗，按照下列步驟執行指令：
+
+1. `npm run static`
+2. `npm run deploy`
+
+每次從 `dev` 部署完成後，請將 `dev` 合併回 `master`：
+
+1. `git checkout master`
+2. `git merge dev`
+3. `git push`
+4. `git checkout dev`
+
+
 
 # 分支
 
