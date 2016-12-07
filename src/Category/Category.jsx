@@ -119,8 +119,8 @@ class Category extends React.Component {
 
     componentWillMount() {
         const {proposalName, category, postID} = this.props.params
-        if (postID) {
-          const metaData = categoryData[proposalName][category]
+        const metaData = categoryData[proposalName][category]
+        if (metaData) {
           //console.log(metaData.discussions_id)
           this.setState({
               posts: metaData.discussions_id

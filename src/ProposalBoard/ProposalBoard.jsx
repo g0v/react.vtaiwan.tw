@@ -27,7 +27,7 @@ class ProposalBoard extends React.Component {
         <div className="ProposalBoard">
         {
             Stages.map(({stage, title}) =>
-                <ProposalList title={title} stage={stage} />
+                <ProposalList key={stage} title={title} stage={stage} />
             )
         }</div>
         </div>
