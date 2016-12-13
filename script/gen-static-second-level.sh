@@ -20,6 +20,7 @@
 ./node_modules/.bin/babel-node script/gen-static.js /infosecurity/init/
 ./node_modules/.bin/babel-node script/gen-static.js /naming/collect/
 ./node_modules/.bin/babel-node script/gen-static.js /naming/init/
+./node_modules/.bin/babel-node script/gen-static.js /securitization/init/
 ./node_modules/.bin/babel-node script/gen-static.js /personal-data-protection/init/
 ./node_modules/.bin/babel-node script/gen-static.js /personal-data-protection/ref1/
 ./node_modules/.bin/babel-node script/gen-static.js /personal-data-protection/spec/
