@@ -16,6 +16,8 @@
 
 行政院法規線上諮詢系統 2.0 使用 [zombie.js](http://zombie.js.org/) 搭配 [reactjs](https://facebook.github.io/react/) 的 server-side render 產生靜態網頁，並且使用 [gh-pages](https://pages.github.com/) 作為部署環境。
 
+完整的上稿流程，請參閱[教學影片](https://www.youtube.com/watch?v=AuBb_M-gRfo&list=PLbf_J5xlMK0GlSQURSj0b_NsozBZsh-Tn)。
+
 請在 `npm start` 執行時，另開視窗，按照下列步驟執行指令：
 
 1. `npm run build`
