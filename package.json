@@ -5,9 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "build": "npm run static",
+    "build": "sh script/build.sh",
     "update": "babel-node script/update-proposal-slides.js",
-    "static": "rm -rf build/* ; echo www.vtaiwan.tw > build/CNAME ; env NODE_ENV=production webpack ; mv bundle.js build/ ; babel-node script/gen-static.js /; sh script/gen-static-second-level.sh ; grep -lr iframe build | xargs perl -pi -e 's!<iframe.*localhost.*none.*/iframe>!!'",
+    "static": "sh script/build.sh",
     "deploy": "gh-pages -d build",
     "lint": "eslint src --ext .jsx"
   },
@@ -45,7 +45,7 @@
     "webpack": "^1.9.10",
     "webpack-dev-server": "^1.9.10",
     "xml": "^1.0.0",
-    "zombie": "^4.0.10"
+    "zombie": "^5.0.5"
   },
   "dependencies": {
     "babel-core": "^5.4.7",

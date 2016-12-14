@@ -15,6 +15,7 @@ try { fs.mkdirSync("build/" + path) } catch (e) {}
 const outputFile = "build/" + path + "/index.html"
 fs.writeFileSync(outputFile, `<body>Error: Building ${path} failed!`)
 
+browser.features = 'scripts css img no-iframe'
 browser.visit(path, ()=>{
     let image = 'https://vtaiwan.tw/1ddd8d3c1e5ab44666b115976cee99c8.png'
     let meta = browser.document.querySelector('meta[property="og:image"]')
@@ -48,7 +49,7 @@ browser.visit(path, ()=>{
             seen[p] = true
             waitFor++
             console.log(p)
-            const cmd = child_process.spawn("./node_modules/.bin/babel-node", ["script/gen-static.js", p])
+            const cmd = child_process.spawn("babel-node", ["script/gen-static.js", p])
             cmd.stdout.on('data', (data) => {
                 if (data && !/WDS|HMR|DevTools/.test(data)) {
                     console.log(('> ' + data).replace(/\n/g, ''))
