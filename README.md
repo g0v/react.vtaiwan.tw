@@ -23,13 +23,6 @@
 1. `npm run build`
 2. `npm run deploy`
 
-每次從 `dev` 部署完成後，請將 `dev` 合併回 `master`：
-
-1. `git checkout master`
-2. `git merge dev`
-3. `git push`
-4. `git checkout dev`
-
 # 分支
 
 如果您想自己架設一套衍生系統，請參考[匯流五法：線上徵詢](https://github.com/g0v/dc.vtaiwan.tw)的設定方式，分支該檔案庫後，再編輯其中的 `SUMMARY.md` 即可。
