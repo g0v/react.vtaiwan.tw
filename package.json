@@ -8,7 +8,7 @@
     "build": "sh script/build.sh",
     "update": "babel-node script/update-proposal-slides.js",
     "static": "cd build; static-here",
-    "deploy": "gh-pages -d build && git commit -v -a -m 'deploy' && git push && git checkout master && git merge dev -m 'merge from dev' && git push && git checkout dev"
+    "deploy": "gh-pages -d build && git commit -v -a -m 'deploy' && git push && git checkout master && git merge dev -m 'merge from dev' && git push && git checkout dev",
     "lint": "eslint src --ext .jsx"
   },
   "repository": {
