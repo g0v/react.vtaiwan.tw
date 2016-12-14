@@ -214,5 +214,15 @@ module.exports = {
             "proposal_cht":"公司英文名稱登記",
             "category_cht":"討論"
         }
+    },
+    "securitization":
+    {
+        "init" :
+        {
+            "gitbook_url": "https://g0v.github.io/securitization-gitbook",
+            "category_num": 126,
+            "proposal_cht":"企業資產擔保法",
+            "category_cht":"討論"
+        }
     }
 }

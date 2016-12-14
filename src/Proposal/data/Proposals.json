@@ -1,4 +1,25 @@
 {
+  "securitization": {
+    "title_cht": "企業資產擔保法",
+    "title_eng": "securitization",
+    "proposer_abbr_cht": "法務部",
+    "proposer_abbr_eng": "moj",
+    "slides_url": "http://www.slideshare.net/vtaiwan/ss-69782889",
+    "links": [],
+    "stages": [
+      {
+        "name": "討論",
+        "gitbook_url": "https://g0v.github.io/securitization-gitbook",
+        "discourse_url": "https://talk.vtaiwan.tw",
+        "category": "init",
+        "start_date": "December 14, 2016 00:00:00",
+        "end_date": "January 13, 2017 23:59:59",
+        "category_num": 126
+      }
+    ],
+    "slides_image": "//image.slidesharecdn.com/c8s7nxdwrwook9zljomq-signature-ec5edf5b8d62ee9ad208e4446437b7c1fc16efb6db28685b63bb2604d25236c7-poli-161203074816/95/-1-1024.jpg",
+    "slides_embed_url": "//www.slideshare.net/slideshow/embed_code/key/6kAGK8GPdZqU0W"
+  },
   "sandbox": {
     "title_cht": "金融監理沙盒",
     "title_eng": "sandbox",
