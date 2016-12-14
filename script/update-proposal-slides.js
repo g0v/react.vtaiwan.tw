@@ -1,6 +1,10 @@
-import superagent from 'superagent-bluebird-promise'
-import fs from 'mz/fs'
-import co from 'co'
+//import superagent from 'superagent-bluebird-promise'
+//import fs from 'mz/fs'
+//import co from 'co'
+var superagent = require('superagent-bluebird-promise')
+var fs = require('mz/fs')
+var co = require('co')
+
 
 const proposalDataFile = './src/Proposal/data/Proposals.json';
 
