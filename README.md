@@ -18,7 +18,7 @@
 
 請在 `npm start` 執行時，另開視窗，按照下列步驟執行指令：
 
-1. `npm run static`
+1. `npm run build`
 2. `npm run deploy`
 
 每次從 `dev` 部署完成後，請將 `dev` 合併回 `master`：
@@ -27,8 +27,6 @@
 2. `git merge dev`
 3. `git push`
 4. `git checkout dev`
-
-
 
 # 分支
 
