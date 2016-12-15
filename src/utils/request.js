@@ -5,7 +5,7 @@ import Promise from 'bluebird'
 
 if (typeof window !== 'undefined') {
     const TIME_STAMP = ((location.port === 3000) ? Math.random() :
-    "Wed Dec 14 13:32:45 2016" // auto-updated on static build
+    "Fri Dec 16 07:54:37 2016" // auto-updated on static build
     )
     if (!(window.Promise)) { window.Promise = Promise }
     if (window.localStorage.getItem('TIME_STAMP') !== TIME_STAMP) {
@@ -33,7 +33,7 @@ export default {
             if (item) { return resolve(JSON.parse(item)) }
         }
         const {protocol, host, pathname, query} = Url.parse(url)
-        return requestFrom(`${protocol}//${host}`).GET(`${pathname}?${query}`).then((rv)=>{
+        return requestFrom(`${protocol}//${host}`).GET(`${pathname}?${query || ''}`).then((rv)=>{
             if ((typeof window !== 'undefined')) {
                 window.localStorage.setItem(encodeURI(url), JSON.stringify(rv))
             }
