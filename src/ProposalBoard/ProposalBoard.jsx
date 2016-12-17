@@ -43,7 +43,7 @@ class ProposalBoard extends React.Component {
         ).map(({title_eng, title_cht, proposer_abbr_eng})=>{ return {
             path: `/${title_eng}/`,
             label: title_cht,
-            icon: proposer_abbr_eng + '.png',
+            icon: title_eng + '.png',
             type: 'sub',
         } })
     )).reduce(((a, b)=>a.concat(b)), [])

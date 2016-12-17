@@ -50,7 +50,11 @@ class NavBar extends React.Component {
 //            if (/\bcollect\/*$/.test(path)) { path = null }
             if(type === 'sub' && path) {
                 return (
-                    <Link key={key} to={path} className="NavBar-subItem" onClick={this._onListItemClicked.bind(this)}>
+<Link key={key} to={path} className="NavBar-subItem" onClick={this._onListItemClicked.bind(this)} style={
+    (path === '/securitization/' || path === '/social-enterprise/')
+        ? {fontWeight: 'bold', textShadow: '0px 0px 10px rgba(100, 200, 200, 0.9)'}
+        : {}
+    }>
                         { icon ? <img className="NavBar-subItemIcon" src={require(`./images/${icon}`)} /> : '' }
                         <span className="title_cht">{label}</span>
                     </Link>

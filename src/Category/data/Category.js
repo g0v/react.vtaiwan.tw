@@ -224,5 +224,15 @@ module.exports = {
             "proposal_cht":"企業資產擔保法",
             "category_cht":"討論"
         }
+    },
+    "social-enterprise":
+    {
+        "init" :
+        {
+            "gitbook_url": "https://g0v.github.io/social-enterprise-gitbook",
+            "category_num": 128,
+            "proposal_cht":"社會企業公司法",
+            "category_cht":"討論"
+        }
     }
 }

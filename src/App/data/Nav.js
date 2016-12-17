@@ -1,6 +1,7 @@
 module.exports = {
   NavList: [
     { label: '主題'},
+    { path: '/social-enterprise/', label: '社會企業公司法', icon: 'social-enterprise.png', type: 'sub'},
     { path: '/securitization/', label: '企業資產擔保法', icon: 'securitization.png', type: 'sub'},
     { path: '/sandbox/', label: '金融監理沙盒', icon: 'sandbox.png', type: 'sub'},
     { path: '/naming/', label: '公司英文名稱登記', icon: 'naming.png', type: 'sub'},

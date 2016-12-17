@@ -1,4 +1,25 @@
 {
+  "social-enterprise": {
+    "title_cht": "社會企業公司法",
+    "title_eng": "social-enterprise",
+    "proposer_abbr_cht": "經濟部商業司",
+    "proposer_abbr_eng": "DOCMOEA",
+    "slides_url": "http://www.slideshare.net/vtaiwan/ss-70125094",
+    "links": [],
+    "stages": [
+      {
+        "name": "討論",
+        "gitbook_url": "https://g0v.github.io/social-enterprise-gitbook",
+        "discourse_url": "https://talk.vtaiwan.tw",
+        "category": "init",
+        "start_date": "December 17, 2016 00:00:00",
+        "end_date": "January 16, 2017 23:59:59",
+        "category_num": 128
+      }
+    ],
+    "slides_image": "//image.slidesharecdn.com/nvjywftrlextehypgj0v-signature-fa6faf14fa187ba18d504b57e35bd4d5c80a70e8ef166f1b2f7f812970e40fa9-poli-161214081534/95/-1-1024.jpg",
+    "slides_embed_url": "//www.slideshare.net/slideshow/embed_code/key/qURANeo46q5Xx"
+  },
   "securitization": {
     "title_cht": "企業資產擔保法",
     "title_eng": "securitization",
