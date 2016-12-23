@@ -96,6 +96,18 @@ class Proposal extends React.Component {
             return <div key={key}>{content}</div>
         })
 
+        if (data.mailto) { return (
+            <div className="Proposal">
+                <div className="Proposal-intro">
+                    <div className="Proposal-title">{data.prefix_cht}{data.title_cht}</div>
+                    <div className="Proposal-proposer"><a href={"mailto:" + data.mailto}><i className="fa fa-envelope-o" /> 書面意見電郵信箱
+                    </a></div>
+                </div>
+                {cover}
+                <div className="Proposal-stages">{stages}</div>
+            </div>
+        ) }
+
         return (
 
             <div className="Proposal">
