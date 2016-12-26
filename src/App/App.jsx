@@ -26,7 +26,7 @@ class App extends React.Component {
     }
 
     handleResize() {
-        if (typeof window === 'undefined') {
+        if (typeof window === 'undefined' || this.state.onClickSticky) {
             return;
         }
 
@@ -44,7 +44,11 @@ class App extends React.Component {
         window.removeEventListener('resize', this.handleResize.bind(this), false);
     }
 
-    handleNavBar () {
+    handleNavBar (event) {
+        if (event && event.type === 'click') {
+            this.setState({ onClickSticky: true });
+        }
+
         this.setState({ showNavBar: !this.state.showNavBar });
     }
 
