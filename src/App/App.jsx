@@ -1,41 +1,67 @@
-"use strict"
-import React from 'react'
-import Transmit from 'react-transmit'
-import './App.css'
+'use strict';
+import React from 'react';
+import Transmit from 'react-transmit';
+import './App.css';
 
-import AppBar from '../AppBar/AppBar.jsx'
-import NavBar from '../NavBar/NavBar.jsx'
-import {RouteHandler} from 'react-router'
+import AppBar from '../AppBar/AppBar.jsx';
+import NavBar from '../NavBar/NavBar.jsx';
+import {RouteHandler} from 'react-router';
 
-import Nav, {NavList} from './data/Nav'
-import categoryData from '../Category/data/Category'
+import Nav, {NavList} from './data/Nav';
+import categoryData from '../Category/data/Category';
 
 class App extends React.Component {
     static propTypes = { id: React.PropTypes.string }
     static contextTypes = { router: React.PropTypes.func }
-    constructor(props) { super(props)
-        var showNavBar = true; //window.innerWidth < 600 ? false:true;
+    static viewportWidth = 600;
+
+    constructor(props) {
+        super(props);
 
         this.state = {
-            showNavBar: showNavBar,
-            navList: null
+            showNavBar: true,
+            navList: null,
+            onClickSticky: false
+        };
+    }
+
+    handleResize() {
+        if (typeof window === 'undefined' || this.state.onClickSticky) {
+            return;
         }
+
+        this.state.showNavBar = window.innerWidth <= App.viewportWidth;
+        this.handleNavBar();
     }
-    componentWillMount() {
-        if(typeof window !== 'undefined' && window.screen.availWidth <= 600) {
-            this.setState({ showNavBar: false });
+
+    componentDidMount() {
+        this.handleResize();
+
+        window.addEventListener('resize', this.handleResize.bind(this), false);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleResize.bind(this), false);
+    }
+
+    handleNavBar (event) {
+        if (event && event.type === 'click') {
+            this.setState({ onClickSticky: true });
         }
-    }
-    componentWillReceiveProps(nextProps) {
-    }
-    handleNavBar () {
+
         this.setState({ showNavBar: !this.state.showNavBar });
     }
+
     setNavList(navList) {
-        const prevNavList = this.state.navList
-        if (JSON.stringify(navList) === JSON.stringify(prevNavList)) { return }
+        var prevNavList = this.state.navList
+
+        if (JSON.stringify(navList) === JSON.stringify(prevNavList)) {
+            return;
+        }
+
         this.setState({navList, prevNavList})
     }
+
     render() {
         var {router} = this.context;
         var {proposalName, category} = router.getCurrentParams();
@@ -47,9 +73,10 @@ class App extends React.Component {
                         activePath={router.getCurrentPath()}
                         showNavBar={this.state.showNavBar}/>
                 <AppBar handleNavBar={this.handleNavBar.bind(this)} />
-                <div className={ this.state.showNavBar ? "App-content activeNavBar" : "App-content"} >
+                <div className={ this.state.showNavBar ?
+                        'App-content activeNavBar' : 'App-content'} >
                     <div className="App-wrapper">
-                    <RouteHandler setNavList={this.setNavList.bind(this)} />
+                      <RouteHandler setNavList={this.setNavList.bind(this)} />
                     </div>
                 </div>
             </div>
