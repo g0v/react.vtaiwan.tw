@@ -34,7 +34,7 @@ class Post extends React.Component {
             const avatar_template = p.avatar_template.replace('{size}', 90);
             const avatarURL = "//talk.vtaiwan.tw//" + avatar_template;
             const __html = p.cooked.replace(
-                /href="\//g,
+                /href="\/(?!\/)/g,
                 'target="_blank" href="https://talk.vtaiwan.tw/'
             )
 
