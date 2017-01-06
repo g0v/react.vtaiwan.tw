@@ -231,7 +231,17 @@ module.exports = {
         {
             "gitbook_url": "https://g0v.github.io/social-enterprise-gitbook",
             "category_num": 128,
-            "proposal_cht":"社會企業公司法",
+            "proposal_cht":"公司法：社會企業",
+            "category_cht":"討論"
+        }
+    },
+    "directors-election":
+    {
+        "init" :
+        {
+            "gitbook_url": "https://g0v.github.io/directors-election-gitbook",
+            "category_num": 134,
+            "proposal_cht":"公司法：董監事選任",
             "category_cht":"討論"
         }
     }

@@ -50,7 +50,7 @@ class ProposalList extends React.Component {
             <Link to="proposal" key={key}
                 params={{proposalName: item.title_eng}}
                 className={
-                    (item.title_eng === 'securitization' || item.title_eng === 'social-enterprise') // TODO: Check date
+                    (/securitization|social-enterprise|directors-election/.exec(item.title_eng)) // TODO: check date
                         ? "ProposalList-item active"
                         : "ProposalList-item inactive"
                 }

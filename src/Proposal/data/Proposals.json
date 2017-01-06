@@ -1,6 +1,28 @@
 {
+  "directors-election": {
+    "title_cht": "公司法：董監事選任",
+    "title_eng": "directors-election",
+    "mailto": "replies+directors-election@vtaiwan.tw",
+    "proposer_abbr_cht": "經濟部商業司",
+    "proposer_abbr_eng": "DOCMOEA",
+    "slides_url": "http://www.slideshare.net/vtaiwan/ss-70544383",
+    "links": [],
+    "stages": [
+      {
+        "name": "討論",
+        "gitbook_url": "https://g0v.github.io/directors-election-gitbook",
+        "discourse_url": "https://talk.vtaiwan.tw",
+        "category": "init",
+        "start_date": "January 7, 2016 00:00:00",
+        "end_date": "February 6, 2017 23:59:59",
+        "category_num": 134
+      }
+    ],
+    "slides_image": "//image.slidesharecdn.com/images-161230074412/95/-1-1024.jpg",
+    "slides_embed_url": "//www.slideshare.net/slideshow/embed_code/key/IgIXkzwKyISCwN"
+  },
   "social-enterprise": {
-    "title_cht": "社會企業公司法",
+    "title_cht": "公司法：社會企業",
     "title_eng": "social-enterprise",
     "mailto": "replies+social-enterprise@vtaiwan.tw",
     "proposer_abbr_cht": "經濟部商業司",
@@ -16,7 +38,7 @@
             "link": "https://sayit.archive.tw/2016-12-02-%E7%A4%BE%E6%9C%83%E4%BC%81%E6%A5%AD%E5%B0%88%E7%AB%A0%E4%BF%AE%E6%B3%95%E8%A8%8E%E8%AB%96"
           }
         ]
-      }    
+      }
     ],
     "stages": [
       {

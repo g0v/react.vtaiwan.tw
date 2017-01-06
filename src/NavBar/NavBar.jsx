@@ -51,7 +51,7 @@ class NavBar extends React.Component {
             if(type === 'sub' && path) {
                 return (
 <Link key={key} to={path} className="NavBar-subItem" onClick={this._onListItemClicked.bind(this)} style={
-    (path === '/securitization/' || path === '/social-enterprise/')
+    (path === '/securitization/' || path === '/social-enterprise/' || path === '/directors-election/')
         ? {fontWeight: 'bold', textShadow: '0px 0px 10px rgba(100, 200, 200, 0.9)'}
         : {}
     }>
