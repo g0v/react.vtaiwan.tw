@@ -8,5 +8,6 @@ env NODE_ENV=production webpack
 babel-node script/gen-static.js /
 babel-node script/gen-static.js /social-enterprise/
 babel-node script/gen-static.js /securitization/
+babel-node script/gen-static.js /directors-election/
 #ls build/*/*/index.html | perl -pe 's/build/babel-node script\/gen-static.js /; s/index.html/ | grep -v "WDS\\|HMR\\|DevTools"/' | sh
 grep -lr iframe build | xargs perl -pi -e 's!<iframe.*localhost.*none.*/iframe>!!'
