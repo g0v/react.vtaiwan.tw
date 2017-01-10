@@ -6,7 +6,18 @@
     "proposer_abbr_cht": "經濟部商業司",
     "proposer_abbr_eng": "DOCMOEA",
     "slides_url": "http://www.slideshare.net/vtaiwan/ss-70544383",
-    "links": [],
+    "links": [
+      {
+        "title": "公司法全盤修正委員會關於董監事產生方式建議之說明",
+        "date": "January 8, 2017 19:00:00",
+        "links": [
+          {
+            "title": "PDF",
+            "link": "http://www.slideshare.net/vtaiwan/ss-70844954"
+          }
+        ]
+      }
+    ],
     "stages": [
       {
         "name": "討論",
