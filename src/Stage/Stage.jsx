@@ -127,7 +127,7 @@ class Stage extends React.Component {
                 
                 <div>
                     {leftTimeItem}
-                    <div className="Stage-stat">討論話題<div className="Stage-statHighlight">{topicCount}</div></div>
+                    <div className="Stage-stat">討論話題<div className="Stage-statHighlight">{topicCount-1}</div></div>
                     <div className="Stage-stat">意見數<div className="Stage-statHighlight">{postCount}</div></div>
                 </div>
             </Link>
