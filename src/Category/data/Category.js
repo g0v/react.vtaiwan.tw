@@ -217,6 +217,13 @@ module.exports = {
     },
     "securitization":
     {
+        "ref1" :
+        {
+            "gitbook_url": "https://g0v.github.io/securitization-ref1-gitbook/",
+            "category_num": 147,
+            "proposal_cht":"企業資產擔保法",
+            "category_cht":"草案 #1"
+        },
         "init" :
         {
             "gitbook_url": "https://g0v.github.io/securitization-gitbook",

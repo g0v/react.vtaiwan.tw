@@ -94,6 +94,16 @@
     "slides_url": "http://www.slideshare.net/vtaiwan/ss-69782889",
     "links": [
       {
+        "title": "企業資產擔保法諮詢會議",
+        "date": "Jan 20, 2017 19:00:00",
+        "links": [
+          {
+            "title": "紀錄",
+            "link": "https://sayit.archive.tw/2017-1-20-%E4%BC%81%E6%A5%AD%E8%B3%87%E7%94%A2%E6%93%94%E4%BF%9D%E6%B3%95%E8%AB%AE%E8%A9%A2%E6%9C%83%E8%AD%B0"
+          }
+        ]
+      },
+      {
         "title": "「企業資產擔保法草案可行性之研究」專家會議",
         "date": "November 14, 2016 19:00:00",
         "links": [
@@ -105,6 +115,15 @@
       }
     ],
     "stages": [
+      {
+        "name": "草案 #1",
+        "gitbook_url": "https://g0v.github.io/securitization-ref1-gitbook/",
+        "discourse_url": "https://talk.vtaiwan.tw",
+        "category": "ref1",
+        "start_date": "Feb 5, 2017 00:00:00",
+        "end_date": "May 5, 2017 23:59:59",
+        "category_num": 147
+      },
       {
         "name": "討論",
         "gitbook_url": "https://g0v.github.io/securitization-gitbook",
