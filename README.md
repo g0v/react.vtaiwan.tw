@@ -1,3 +1,10 @@
+開發請改到這裡： http://github.com/g0v/vue.vtaiwan.tw
+
+This repository is not actively maintained; the current
+https://vtaiwan.tw/ site is being developed in this repository:
+
+http://github.com/g0v/vue.vtaiwan.tw
+
 # react.vtaiwan.tw
 
 行政院法規線上諮詢系統 界面 2.0
